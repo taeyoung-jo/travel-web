@@ -5,7 +5,8 @@
          version="4.0">
     <servlet>
         <servlet-name>openapi</servlet-name>
-        <servlet-class>io.swagger.v3.jaxrs2.integration.OpenApiServlet</servlet-class>
+        <servlet-class>com.travelers.travelweb.global.swagger.OpenApiServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>openapi</servlet-name>
