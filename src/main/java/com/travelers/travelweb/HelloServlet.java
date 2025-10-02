@@ -1,25 +1,64 @@
 package com.travelers.travelweb;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.List;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
-    private String message;
 
-    public void init() {
-        message = "Hello World!";
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, java.io.IOException {
+        // JSON 서버에서 데이터 가져오기
+        String jsonResult = fetchJsonFromServer("http://localhost:3000/hotels");
+        JSONArray filteredHotels = new JSONArray();
+        try {
+            // db.json이 배열 형태라면 JSONArray로 바로 읽기
+            JSONArray hotels = new JSONArray(jsonResult);
+            for (int i = 0; i < hotels.length(); i++) {
+                JSONObject hotel = hotels.getJSONObject(i);
+                // city가 "Tokyo"인 것만 필터
+                int tokyoId = 4;
+                if (hotel.getInt("city") == tokyoId) {
+                    JSONObject obj = new JSONObject();
+                    obj.put("name", hotel.getString("name"));
+                    obj.put("rating", hotel.getString("rating"));
+                    filteredHotels.put(obj);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        response.setContentType("application/json;charset=UTF-8");
+        response.getWriter().write(filteredHotels.toString());
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
+    private String fetchJsonFromServer(String urlStr) {
+        StringBuilder result = new StringBuilder();
+        try {
+            URL url = new URL(urlStr);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
 
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+            String line;
+            while ((line = rd.readLine()) != null) {
+                result.append(line);
+            }
+            rd.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result.toString();
     }
 
     public void destroy() {
