@@ -5,552 +5,552 @@
       "name": "Tokyo Bay Shiomi Prince Hotel",
       "city": 4,
       "country": "JP",
-      "price": "786,300",
-      "rating": "3.1"
+      "price": "675,500",
+      "rating": "3.4"
     },
     {
       "id": 2,
-      "name": "Shinagawa Prince Hotel",
-      "city": 4,
-      "country": "JP",
-      "price": "141,300",
-      "rating": "3.0"
-    },
-    {
-      "id": 3,
       "name": "Shinjuku Granbell Hotel",
       "city": 4,
       "country": "JP",
-      "price": "257,500",
-      "rating": "3.0"
+      "price": "681,700",
+      "rating": "3.4"
+    },
+    {
+      "id": 3,
+      "name": "FOCUS KURAMAE",
+      "city": 4,
+      "country": "JP",
+      "price": "481,400",
+      "rating": "3.4"
     },
     {
       "id": 4,
-      "name": "MIKAMI HOTEL ASAKUSABASHI",
-      "city": 4,
-      "country": "JP",
-      "price": "640,600",
-      "rating": "4.3"
-    },
-    {
-      "id": 5,
-      "name": "CITAN",
-      "city": 4,
-      "country": "JP",
-      "price": "330,900",
-      "rating": "2.3"
-    },
-    {
-      "id": 6,
       "name": "hotel MONday TOKYO NISHIKASAI",
       "city": 4,
       "country": "JP",
-      "price": "611,700",
-      "rating": "4.3"
+      "price": "732,400",
+      "rating": "4.9"
+    },
+    {
+      "id": 5,
+      "name": "Karaksa Hotel Premier Tokyo Ginza",
+      "city": 4,
+      "country": "JP",
+      "price": "642,000",
+      "rating": "1.8"
+    },
+    {
+      "id": 6,
+      "name": "Keisei Richmond Hotel Tokyo Kinshicho",
+      "city": 4,
+      "country": "JP",
+      "price": "126,000",
+      "rating": "1.6"
     },
     {
       "id": 7,
-      "name": "The Blossom Hibiya",
+      "name": "InterContinental the Strings Tokyo by IHG",
       "city": 4,
       "country": "JP",
-      "price": "70,200",
-      "rating": "1.0"
-    },
-    {
-      "id": 8,
-      "name": "Mitsui Garden Hotel Gotanda",
-      "city": 4,
-      "country": "JP",
-      "price": "714,900",
-      "rating": "3.5"
-    },
-    {
-      "id": 9,
-      "name": "The Royal Park Hotel Tokyo Shiodome",
-      "city": 4,
-      "country": "JP",
-      "price": "237,200",
-      "rating": "3.0"
-    },
-    {
-      "id": 10,
-      "name": "MONday Apart Premium Nihonbashi",
-      "city": 4,
-      "country": "JP",
-      "price": "672,600",
-      "rating": "2.5"
-    },
-    {
-      "id": 11,
-      "name": "Koko Hotel Tsukiji Ginza",
-      "city": 4,
-      "country": "JP",
-      "price": "610,600",
-      "rating": "4.5"
-    },
-    {
-      "id": 12,
-      "name": "Apa Hotel & Resort Roppongi-Eki-Higashi Station East",
-      "city": 4,
-      "country": "JP",
-      "price": "724,900",
-      "rating": "2.5"
-    },
-    {
-      "id": 13,
-      "name": "The Gate Hotel Ryogoku by HULIC",
-      "city": 4,
-      "country": "JP",
-      "price": "91,600",
-      "rating": "4.4"
-    },
-    {
-      "id": 14,
-      "name": "APA Hotel Asakusa Tawaramachi-Ekimae",
-      "city": 4,
-      "country": "JP",
-      "price": "720,800",
-      "rating": "2.2"
-    },
-    {
-      "id": 15,
-      "name": "Hotel Metropolitan Edmont",
-      "city": 4,
-      "country": "JP",
-      "price": "128,700",
-      "rating": "3.5"
-    },
-    {
-      "id": 16,
-      "name": "HOTEL THE CELESTINE TOKYO SHIBA",
-      "city": 4,
-      "country": "JP",
-      "price": "609,500",
-      "rating": "2.8"
-    },
-    {
-      "id": 17,
-      "name": "Tmark City Hotel Tokyo Omori",
-      "city": 4,
-      "country": "JP",
-      "price": "727,000",
-      "rating": "4.2"
-    },
-    {
-      "id": 18,
-      "name": "APA Hotel Nishi Shinjuku Gochome Eki Tower",
-      "city": 4,
-      "country": "JP",
-      "price": "584,500",
-      "rating": "2.9"
-    },
-    {
-      "id": 19,
-      "name": "Four Seasons Hotel Osaka",
-      "city": 3,
-      "country": "JP",
-      "price": "777,700",
-      "rating": "2.2"
-    },
-    {
-      "id": 20,
-      "name": "Osaka Marriott Miyako Hotel",
-      "city": 3,
-      "country": "JP",
-      "price": "214,100",
-      "rating": "4.5"
-    },
-    {
-      "id": 21,
-      "name": "Osaka Excel Hotel Tokyu",
-      "city": 3,
-      "country": "JP",
-      "price": "64,300",
-      "rating": "3.3"
-    },
-    {
-      "id": 22,
-      "name": "The Royal Park Hotel Iconic Osaka-Midosuji",
-      "city": 3,
-      "country": "JP",
-      "price": "285,200",
-      "rating": "2.9"
-    },
-    {
-      "id": 23,
-      "name": "HOTEL THE FLAG Shinsaibashi",
-      "city": 3,
-      "country": "JP",
-      "price": "383,000",
-      "rating": "2.2"
-    },
-    {
-      "id": 24,
-      "name": "The Ritz-Carlton, Osaka",
-      "city": 3,
-      "country": "JP",
-      "price": "146,500",
+      "price": "585,000",
       "rating": "4.1"
     },
     {
-      "id": 25,
-      "name": "Holiday Inn Osaka Namba",
-      "city": 3,
+      "id": 8,
+      "name": "Aman Tokyo",
+      "city": 4,
       "country": "JP",
-      "price": "544,600",
+      "price": "554,200",
+      "rating": "4.6"
+    },
+    {
+      "id": 9,
+      "name": "APA Hotel Asakusa Tawaramachi-Ekimae",
+      "city": 4,
+      "country": "JP",
+      "price": "445,800",
+      "rating": "4.3"
+    },
+    {
+      "id": 10,
+      "name": "HOTEL WINDS ASAKUSA Capsule Inn",
+      "city": 4,
+      "country": "JP",
+      "price": "647,900",
+      "rating": "4.9"
+    },
+    {
+      "id": 11,
+      "name": "APA HOTEL Roppongi Six",
+      "city": 4,
+      "country": "JP",
+      "price": "693,100",
+      "rating": "1.4"
+    },
+    {
+      "id": 12,
+      "name": "Hotel Metropolitan Tokyo Ikebukuro",
+      "city": 4,
+      "country": "JP",
+      "price": "711,200",
+      "rating": "1.1"
+    },
+    {
+      "id": 13,
+      "name": "Mitsui Garden Hotel Gotanda",
+      "city": 4,
+      "country": "JP",
+      "price": "425,500",
+      "rating": "4.6"
+    },
+    {
+      "id": 14,
+      "name": "ICI HOTEL Tokyo Hatchobori",
+      "city": 4,
+      "country": "JP",
+      "price": "799,200",
+      "rating": "2.7"
+    },
+    {
+      "id": 15,
+      "name": "Tmark City Hotel Tokyo Omori",
+      "city": 4,
+      "country": "JP",
+      "price": "350,800",
+      "rating": "3.0"
+    },
+    {
+      "id": 16,
+      "name": "HOSHINOYA Tokyo",
+      "city": 4,
+      "country": "JP",
+      "price": "294,400",
+      "rating": "3.2"
+    },
+    {
+      "id": 17,
+      "name": "Four Seasons Hotel Tokyo at Otemachi",
+      "city": 4,
+      "country": "JP",
+      "price": "232,200",
+      "rating": "3.1"
+    },
+    {
+      "id": 18,
+      "name": "Koraku Garden Hotel",
+      "city": 4,
+      "country": "JP",
+      "price": "192,000",
+      "rating": "1.4"
+    },
+    {
+      "id": 19,
+      "name": "YOOSUU North Xiaoyan",
+      "city": 4,
+      "country": "JP",
+      "price": "419,800",
       "rating": "2.1"
     },
     {
-      "id": 26,
-      "name": "Hotel Hankyu RESPIRE OSAKA",
+      "id": 20,
+      "name": "匠の宿",
+      "city": 4,
+      "country": "JP",
+      "price": "518,200",
+      "rating": "4.9"
+    },
+    {
+      "id": 21,
+      "name": "The Royal Park Hotel Iconic Osaka-Midosuji",
       "city": 3,
       "country": "JP",
-      "price": "411,000",
-      "rating": "3.1"
+      "price": "223,800",
+      "rating": "1.3"
+    },
+    {
+      "id": 22,
+      "name": "THE OSAKA STATION HOTEL, Autograph Collection",
+      "city": 3,
+      "country": "JP",
+      "price": "645,400",
+      "rating": "4.2"
+    },
+    {
+      "id": 23,
+      "name": "Osaka Marriott Miyako Hotel",
+      "city": 3,
+      "country": "JP",
+      "price": "203,400",
+      "rating": "2.7"
+    },
+    {
+      "id": 24,
+      "name": "Swissôtel Nankai Osaka",
+      "city": 3,
+      "country": "JP",
+      "price": "398,800",
+      "rating": "3.4"
+    },
+    {
+      "id": 25,
+      "name": "The Ritz-Carlton, Osaka",
+      "city": 3,
+      "country": "JP",
+      "price": "117,000",
+      "rating": "4.9"
+    },
+    {
+      "id": 26,
+      "name": "Liber Hotel Osaka",
+      "city": 3,
+      "country": "JP",
+      "price": "577,500",
+      "rating": "4.6"
     },
     {
       "id": 27,
       "name": "Hilton Osaka",
       "city": 3,
       "country": "JP",
-      "price": "89,100",
-      "rating": "1.5"
+      "price": "81,700",
+      "rating": "2.0"
     },
     {
       "id": 28,
-      "name": "Arashi Hotel Tengachaya",
+      "name": "HOTEL VISCHIO OSAKA by GRANVIA",
       "city": 3,
       "country": "JP",
-      "price": "796,100",
-      "rating": "1.6"
+      "price": "425,900",
+      "rating": "4.9"
     },
     {
       "id": 29,
-      "name": "Conrad Osaka",
+      "name": "Four Seasons Hotel Osaka",
       "city": 3,
       "country": "JP",
-      "price": "538,200",
-      "rating": "4.4"
+      "price": "633,700",
+      "rating": "2.8"
     },
     {
       "id": 30,
-      "name": "The St. Regis Osaka",
+      "name": "Patina Osaka パティーナ大阪",
       "city": 3,
       "country": "JP",
-      "price": "772,000",
-      "rating": "2.4"
+      "price": "282,300",
+      "rating": "3.6"
     },
     {
       "id": 31,
-      "name": "Shinsaibashi Grand Hotel - Osaka",
+      "name": "voco Osaka Central",
       "city": 3,
       "country": "JP",
-      "price": "747,800",
-      "rating": "4.0"
+      "price": "420,900",
+      "rating": "4.8"
     },
     {
       "id": 32,
-      "name": "THE OSAKA STATION HOTEL, Autograph Collection",
+      "name": "APA Hotel & Resort Midosuji Hommachi-Eki Tower",
       "city": 3,
       "country": "JP",
-      "price": "602,500",
-      "rating": "4.5"
+      "price": "447,100",
+      "rating": "4.8"
     },
     {
       "id": 33,
-      "name": "Hotel Eins Osaka Kadoma City Station",
+      "name": "The St. Regis Osaka",
       "city": 3,
       "country": "JP",
-      "price": "464,400",
-      "rating": "1.1"
+      "price": "392,400",
+      "rating": "1.5"
     },
     {
       "id": 34,
-      "name": "Hotel Abitare Namba West",
+      "name": "Citadines Namba Osaka",
       "city": 3,
       "country": "JP",
-      "price": "645,200",
+      "price": "772,700",
       "rating": "2.6"
     },
     {
       "id": 35,
-      "name": "Waldorf Astoria Osaka",
+      "name": "W Osaka",
       "city": 3,
       "country": "JP",
-      "price": "255,100",
-      "rating": "4.8"
+      "price": "536,700",
+      "rating": "2.0"
     },
     {
       "id": 36,
-      "name": "Meander Osaka",
+      "name": "APA Hotel Shin-Osaka Minamikata Ekimae",
       "city": 3,
       "country": "JP",
-      "price": "638,600",
-      "rating": "4.4"
+      "price": "75,900",
+      "rating": "1.9"
     },
     {
       "id": 37,
-      "name": "H2H Dotonbori",
+      "name": "カモンホテル なんば",
       "city": 3,
       "country": "JP",
-      "price": "597,500",
-      "rating": "3.7"
+      "price": "560,100",
+      "rating": "2.1"
     },
     {
       "id": 38,
-      "name": "Ostay Vermillion Namba",
+      "name": "&Here OSAKA NAMBA",
       "city": 3,
       "country": "JP",
-      "price": "436,400",
-      "rating": "2.6"
+      "price": "388,600",
+      "rating": "4.2"
     },
     {
       "id": 39,
-      "name": "ANA Crowne Plaza Resort Okinawa Uruma Hills by IHG",
-      "city": 5,
+      "name": "H2H Dotonbori",
+      "city": 3,
       "country": "JP",
-      "price": "548,300",
-      "rating": "2.8"
+      "price": "391,300",
+      "rating": "1.7"
     },
     {
       "id": 40,
-      "name": "Hiyagun Lanai Resort",
-      "city": 5,
+      "name": "Ostay Vermillion Namba",
+      "city": 3,
       "country": "JP",
-      "price": "351,700",
-      "rating": "4.8"
+      "price": "192,600",
+      "rating": "1.1"
     },
     {
       "id": 41,
-      "name": "Okinawa Grand Mer Resort",
+      "name": "ANA Crowne Plaza Resort Okinawa Uruma Hills by IHG",
       "city": 5,
       "country": "JP",
-      "price": "757,900",
-      "rating": "3.8"
+      "price": "50,800",
+      "rating": "2.8"
     },
     {
       "id": 42,
-      "name": "Okinawa City Hotel",
+      "name": "Okinawa Grand Mer Resort",
       "city": 5,
       "country": "JP",
-      "price": "756,000",
-      "rating": "1.4"
+      "price": "71,700",
+      "rating": "4.3"
     },
     {
       "id": 43,
-      "name": "REF Okinawa Arena by Vessel Hotels",
+      "name": "Hiyagun Lanai Resort",
       "city": 5,
       "country": "JP",
-      "price": "405,400",
-      "rating": "2.9"
+      "price": "784,500",
+      "rating": "1.6"
     },
     {
       "id": 44,
-      "name": "Hotel Pacific View",
-      "city": 5,
-      "country": "JP",
-      "price": "636,600",
-      "rating": "1.3"
-    },
-    {
-      "id": 45,
-      "name": "Villa Blu Okinawa Chatan",
-      "city": 5,
-      "country": "JP",
-      "price": "181,700",
-      "rating": "3.3"
-    },
-    {
-      "id": 46,
-      "name": "Crown Hotel Okinawa.",
-      "city": 5,
-      "country": "JP",
-      "price": "701,800",
-      "rating": "2.7"
-    },
-    {
-      "id": 47,
-      "name": "Sunrise Hotel",
-      "city": 5,
-      "country": "JP",
-      "price": "364,500",
-      "rating": "4.4"
-    },
-    {
-      "id": 48,
       "name": "Okinawa City Hotel",
       "city": 5,
       "country": "JP",
-      "price": "37,500",
-      "rating": "3.5"
+      "price": "375,200",
+      "rating": "4.1"
+    },
+    {
+      "id": 45,
+      "name": "Hotel Pacific View",
+      "city": 5,
+      "country": "JP",
+      "price": "540,600",
+      "rating": "4.5"
+    },
+    {
+      "id": 46,
+      "name": "REF Okinawa Arena by Vessel Hotels",
+      "city": 5,
+      "country": "JP",
+      "price": "391,100",
+      "rating": "1.9"
+    },
+    {
+      "id": 47,
+      "name": "Villa Blu Okinawa Chatan",
+      "city": 5,
+      "country": "JP",
+      "price": "437,700",
+      "rating": "2.1"
+    },
+    {
+      "id": 48,
+      "name": "Crown Hotel Okinawa.",
+      "city": 5,
+      "country": "JP",
+      "price": "544,000",
+      "rating": "3.3"
     },
     {
       "id": 49,
-      "name": "D-and Stay HH.Y Resort Okinawa",
+      "name": "Okinawa City Hotel",
       "city": 5,
       "country": "JP",
-      "price": "770,000",
-      "rating": "1.8"
+      "price": "258,600",
+      "rating": "3.2"
     },
     {
       "id": 50,
-      "name": "Deigo Hotel",
+      "name": "D-and Stay HH.Y Resort Okinawa",
       "city": 5,
       "country": "JP",
-      "price": "183,400",
-      "rating": "3.8"
+      "price": "451,600",
+      "rating": "2.9"
     },
     {
       "id": 51,
       "name": "SPICE MOTEL OKINAWA",
       "city": 5,
       "country": "JP",
-      "price": "642,800",
-      "rating": "3.7"
+      "price": "343,300",
+      "rating": "1.5"
     },
     {
       "id": 52,
-      "name": "An's yado",
+      "name": "Deigo Hotel",
       "city": 5,
       "country": "JP",
-      "price": "486,600",
-      "rating": "2.5"
+      "price": "562,100",
+      "rating": "4.3"
     },
     {
       "id": 53,
-      "name": "Music Hotel KOZA by Coldio Premium",
+      "name": "Awase Bay Street Hotel",
       "city": 5,
       "country": "JP",
-      "price": "614,800",
-      "rating": "3.0"
+      "price": "661,700",
+      "rating": "1.6"
     },
     {
       "id": 54,
       "name": "ZOE RESORT THE Sunset Village OKINAWA CHATAN",
       "city": 5,
       "country": "JP",
-      "price": "510,000",
-      "rating": "2.0"
+      "price": "752,500",
+      "rating": "4.0"
     },
     {
       "id": 55,
-      "name": "Awase Bay Street Hotel",
+      "name": "An's yado",
       "city": 5,
       "country": "JP",
-      "price": "114,500",
-      "rating": "3.2"
+      "price": "347,400",
+      "rating": "3.3"
     },
     {
       "id": 56,
       "name": "Mr. Kinjo in Uruma",
       "city": 5,
       "country": "JP",
-      "price": "122,000",
-      "rating": "4.2"
+      "price": "198,100",
+      "rating": "4.9"
     },
     {
       "id": 57,
-      "name": "L.O.A resort, Okinawa",
-      "city": 5,
-      "country": "JP",
-      "price": "127,300",
-      "rating": "4.4"
-    },
-    {
-      "id": 58,
       "name": "Rycom Crystal Hotel",
       "city": 5,
       "country": "JP",
-      "price": "758,700",
-      "rating": "1.5"
+      "price": "736,400",
+      "rating": "2.1"
+    },
+    {
+      "id": 58,
+      "name": "L.O.A resort, Okinawa",
+      "city": 5,
+      "country": "JP",
+      "price": "557,900",
+      "rating": "3.5"
     },
     {
       "id": 59,
-      "name": "Sofitel Xining",
-      "city": 21,
-      "country": "CN",
-      "price": "356,000",
-      "rating": "1.2"
+      "name": "&Monde Okinawa Arena Condominium（＆MONDE沖縄アリーナコンドミニアム）",
+      "city": 5,
+      "country": "JP",
+      "price": "211,600",
+      "rating": "4.5"
     },
     {
       "id": 60,
-      "name": "Hampton by Hilton Xining Shangri-la Road",
-      "city": 21,
-      "country": "CN",
-      "price": "795,900",
-      "rating": "3.6"
+      "name": "オールステイ胡屋",
+      "city": 5,
+      "country": "JP",
+      "price": "166,500",
+      "rating": "2.7"
     },
     {
       "id": 61,
       "name": "Fairfield By Marriott Xining North Hotel",
       "city": 21,
       "country": "CN",
-      "price": "154,500",
-      "rating": "4.2"
-    },
-    {
-      "id": 62,
-      "name": "Holiday Inn Express Xining Railway Station, an IHG Hotel",
-      "city": 21,
-      "country": "CN",
-      "price": "543,600",
-      "rating": "4.6"
-    },
-    {
-      "id": 63,
-      "name": "Xining Kunlun Hampton By Hilton Hotel",
-      "city": 21,
-      "country": "CN",
-      "price": "607,400",
-      "rating": "4.0"
-    },
-    {
-      "id": 64,
-      "name": "Holiday Inn Xining Hot-Spring",
-      "city": 21,
-      "country": "CN",
-      "price": "687,400",
-      "rating": "3.6"
-    },
-    {
-      "id": 65,
-      "name": "Wanda Realm Xining",
-      "city": 21,
-      "country": "CN",
-      "price": "470,700",
-      "rating": "3.0"
-    },
-    {
-      "id": 66,
-      "name": "The Sebel Xi Ning",
-      "city": 21,
-      "country": "CN",
-      "price": "710,900",
-      "rating": "1.6"
-    },
-    {
-      "id": 67,
-      "name": "Hampton by Hilton",
-      "city": 21,
-      "country": "CN",
-      "price": "674,100",
+      "price": "517,200",
       "rating": "1.1"
     },
     {
-      "id": 68,
-      "name": "Qinghai Hotel",
+      "id": 62,
+      "name": "Sofitel Xining",
       "city": 21,
       "country": "CN",
-      "price": "51,400",
-      "rating": "2.8"
+      "price": "293,400",
+      "rating": "1.1"
+    },
+    {
+      "id": 63,
+      "name": "Holiday Inn Express Xining Railway Station, an IHG Hotel",
+      "city": 21,
+      "country": "CN",
+      "price": "434,700",
+      "rating": "4.5"
+    },
+    {
+      "id": 64,
+      "name": "Hampton by Hilton Xining Shangri-la Road",
+      "city": 21,
+      "country": "CN",
+      "price": "471,500",
+      "rating": "1.7"
+    },
+    {
+      "id": 65,
+      "name": "Xining Kunlun Hampton By Hilton Hotel",
+      "city": 21,
+      "country": "CN",
+      "price": "654,400",
+      "rating": "2.5"
+    },
+    {
+      "id": 66,
+      "name": "Holiday Inn Xining Hot-Spring",
+      "city": 21,
+      "country": "CN",
+      "price": "154,800",
+      "rating": "1.2"
+    },
+    {
+      "id": 67,
+      "name": "The Sebel Xi Ning",
+      "city": 21,
+      "country": "CN",
+      "price": "572,500",
+      "rating": "3.2"
+    },
+    {
+      "id": 68,
+      "name": "Hampton by Hilton",
+      "city": 21,
+      "country": "CN",
+      "price": "636,300",
+      "rating": "4.2"
     },
     {
       "id": 69,
-      "name": "Holiday Inn Xining Datong, an IHG Hotel",
+      "name": "Wanda Realm Xining",
       "city": 21,
       "country": "CN",
-      "price": "277,700",
-      "rating": "2.8"
+      "price": "529,100",
+      "rating": "1.7"
     },
     {
       "id": 70,
@@ -558,2608 +558,2641 @@
       "city": 21,
       "country": "CN",
       "image": "N/A",
-      "price": "50,500",
-      "rating": "3.2"
+      "price": "677,000",
+      "rating": "4.9"
     },
     {
       "id": 71,
-      "name": "Enraton International Hotel",
-      "city": 21,
-      "country": "CN",
-      "price": "628,700",
-      "rating": "2.4"
-    },
-    {
-      "id": 72,
-      "name": "Vienna Hotel Xining Shengli Road",
-      "city": 21,
-      "country": "CN",
-      "price": "189,900",
-      "rating": "1.4"
-    },
-    {
-      "id": 73,
-      "name": "Jinjiang Inn",
-      "city": 21,
-      "country": "CN",
-      "price": "692,200",
-      "rating": "2.3"
-    },
-    {
-      "id": 74,
-      "name": "Xining Vienna Hotel Tianjunqiao",
-      "city": 21,
-      "country": "CN",
-      "price": "300,600",
-      "rating": "3.7"
-    },
-    {
-      "id": 75,
-      "name": "Starway Hotel",
-      "city": 21,
-      "country": "CN",
-      "price": "559,500",
-      "rating": "3.3"
-    },
-    {
-      "id": 76,
       "name": "Jinjiang Inn Select Xining West Wusi Road New Hualian Square",
       "city": 21,
       "country": "CN",
-      "price": "226,000",
-      "rating": "2.0"
+      "price": "687,000",
+      "rating": "4.2"
+    },
+    {
+      "id": 72,
+      "name": "Enraton International Hotel",
+      "city": 21,
+      "country": "CN",
+      "price": "56,000",
+      "rating": "4.4"
+    },
+    {
+      "id": 73,
+      "name": "Holiday Inn Xining Datong, an IHG Hotel",
+      "city": 21,
+      "country": "CN",
+      "price": "379,300",
+      "rating": "2.9"
+    },
+    {
+      "id": 74,
+      "name": "Qinghai Hotel",
+      "city": 21,
+      "country": "CN",
+      "price": "711,400",
+      "rating": "3.9"
+    },
+    {
+      "id": 75,
+      "name": "Vienna Hotel Xining Shengli Road",
+      "city": 21,
+      "country": "CN",
+      "price": "183,700",
+      "rating": "3.1"
+    },
+    {
+      "id": 76,
+      "name": "Jinjiang Inn",
+      "city": 21,
+      "country": "CN",
+      "price": "359,000",
+      "rating": "3.7"
     },
     {
       "id": 77,
-      "name": "安逸宿",
+      "name": "Lavande Hotel",
       "city": 21,
       "country": "CN",
-      "price": "209,100",
-      "rating": "3.5"
+      "price": "307,600",
+      "rating": "4.6"
     },
     {
       "id": 78,
-      "name": "JW Marriott Hotel Harbin River North",
-      "city": 27,
+      "name": "Jinjiang Inn Xi'ning East Avenue",
+      "city": 21,
       "country": "CN",
-      "price": "551,800",
+      "price": "238,100",
       "rating": "3.7"
     },
     {
       "id": 79,
-      "name": "Mercure Harbin Sophia Church",
-      "city": 27,
+      "name": "安逸宿",
+      "city": 21,
       "country": "CN",
-      "price": "488,900",
-      "rating": "3.7"
+      "price": "572,800",
+      "rating": "1.2"
     },
     {
       "id": 80,
-      "name": "Shangri-la Hotel,Harbin",
+      "name": "JW Marriott Hotel Harbin River North",
       "city": 27,
       "country": "CN",
-      "price": "221,700",
-      "rating": "2.4"
+      "price": "745,900",
+      "rating": "1.4"
     },
     {
       "id": 81,
-      "name": "Crowne Plaza Harbin Songbei",
+      "name": "Shangri-la Hotel,Harbin",
       "city": 27,
       "country": "CN",
-      "price": "302,800",
-      "rating": "3.8"
+      "price": "733,400",
+      "rating": "3.4"
     },
     {
       "id": 82,
-      "name": "Wanda Vista Harbin",
-      "city": 27,
-      "country": "CN",
-      "price": "77,800",
-      "rating": "3.2"
-    },
-    {
-      "id": 83,
       "name": "Fairfield by Marriott Harbin Downtown",
       "city": 27,
       "country": "CN",
-      "price": "120,800",
-      "rating": "2.7"
+      "price": "357,400",
+      "rating": "3.1"
     },
     {
-      "id": 84,
-      "name": "Hampton by Hilton Harbin zhongyang Street",
+      "id": 83,
+      "name": "Crowne Plaza Harbin Songbei",
       "city": 27,
       "country": "CN",
-      "price": "230,900",
+      "price": "137,700",
       "rating": "4.4"
     },
     {
-      "id": 85,
-      "name": "哈尔滨万达索菲特大酒店",
-      "city": 27,
-      "country": "CN",
-      "price": "447,800",
-      "rating": "4.9"
-    },
-    {
-      "id": 86,
-      "name": "Wanda Realm Harbin Hotel",
-      "city": 27,
-      "country": "CN",
-      "price": "535,600",
-      "rating": "2.5"
-    },
-    {
-      "id": 87,
-      "name": "The Ritz-Carlton, Harbin",
-      "city": 27,
-      "country": "CN",
-      "price": "96,800",
-      "rating": "2.6"
-    },
-    {
-      "id": 88,
+      "id": 84,
       "name": "Songbei Shangri-La, Harbin",
       "city": 27,
       "country": "CN",
-      "price": "507,300",
-      "rating": "1.2"
+      "price": "459,000",
+      "rating": "3.4"
     },
     {
-      "id": 89,
-      "name": "Ibis Hotel",
+      "id": 85,
+      "name": "Atour Harbin Museum Hotel",
       "city": 27,
       "country": "CN",
-      "price": "436,400",
-      "rating": "3.3"
+      "price": "360,900",
+      "rating": "2.8"
     },
     {
-      "id": 90,
-      "name": "Holiday Inn Express Harbin Qunli",
+      "id": 86,
+      "name": "Hampton by Hilton Harbin zhongyang Street",
       "city": 27,
       "country": "CN",
-      "price": "247,700",
-      "rating": "4.9"
-    },
-    {
-      "id": 91,
-      "name": "Atour Hotel",
-      "city": 27,
-      "country": "CN",
-      "price": "725,700",
-      "rating": "1.7"
-    },
-    {
-      "id": 92,
-      "name": "Mercure Hotel",
-      "city": 27,
-      "country": "CN",
-      "price": "76,000",
-      "rating": "4.8"
-    },
-    {
-      "id": 93,
-      "name": "Hilton Harbin Exhibition Center",
-      "city": 27,
-      "country": "CN",
-      "price": "144,500",
-      "rating": "1.8"
-    },
-    {
-      "id": 94,
-      "name": "Harbin Ice & Snow World",
-      "city": 27,
-      "country": "CN",
-      "price": "796,800",
-      "rating": "4.0"
-    },
-    {
-      "id": 95,
-      "name": "Harbin International Hotel",
-      "city": 27,
-      "country": "CN",
-      "price": "422,600",
-      "rating": "2.4"
-    },
-    {
-      "id": 96,
-      "name": "比邻中央大街江景公寓 楼下松花江 索道 地铁 防洪纪念塔",
-      "city": 27,
-      "country": "CN",
-      "price": "541,300",
-      "rating": "3.0"
-    },
-    {
-      "id": 97,
-      "name": "Home2 Suite by Hilton Harbin Central Street",
-      "city": 27,
-      "country": "CN",
-      "price": "679,200",
-      "rating": "4.3"
-    },
-    {
-      "id": 98,
-      "name": "The Westin Beijing Chaoyang",
-      "city": 20,
-      "country": "CN",
-      "price": "651,100",
-      "rating": "1.9"
-    },
-    {
-      "id": 99,
-      "name": "Hilton Beijing",
-      "city": 20,
-      "country": "CN",
-      "price": "481,100",
-      "rating": "3.0"
-    },
-    {
-      "id": 100,
-      "name": "Fairmont Beijing Hotel",
-      "city": 20,
-      "country": "CN",
-      "price": "502,200",
-      "rating": "1.3"
-    },
-    {
-      "id": 101,
-      "name": "The Imperial Mansion, Beijing Marriott Executive Apartments",
-      "city": 20,
-      "country": "CN",
-      "price": "723,400",
-      "rating": "4.6"
-    },
-    {
-      "id": 102,
-      "name": "Shangri-La Hotel, Beijing",
-      "city": 20,
-      "country": "CN",
-      "price": "597,700",
-      "rating": "4.6"
-    },
-    {
-      "id": 103,
-      "name": "Hilton Beijing Capital Airport",
-      "city": 20,
-      "country": "CN",
-      "price": "466,900",
-      "rating": "1.5"
-    },
-    {
-      "id": 104,
-      "name": "Novotel Beijing Xin Qiao",
-      "city": 20,
-      "country": "CN",
-      "price": "152,500",
-      "rating": "1.6"
-    },
-    {
-      "id": 105,
-      "name": "Crowne Plaza Beijing Wangfujing",
-      "city": 20,
-      "country": "CN",
-      "price": "246,400",
+      "price": "494,600",
       "rating": "1.1"
     },
     {
-      "id": 106,
-      "name": "Hilton Garden Inn Beijing Daxing International Airport",
-      "city": 20,
+      "id": 87,
+      "name": "哈尔滨万达索菲特大酒店",
+      "city": 27,
       "country": "CN",
-      "price": "745,300",
-      "rating": "5.0"
-    },
-    {
-      "id": 107,
-      "name": "DoubleTree by Hilton Hotel Beijing",
-      "city": 20,
-      "country": "CN",
-      "price": "529,500",
-      "rating": "5.0"
-    },
-    {
-      "id": 108,
-      "name": "The Peninsula Beijing",
-      "city": 20,
-      "country": "CN",
-      "price": "555,700",
+      "price": "243,800",
       "rating": "4.7"
     },
     {
-      "id": 109,
-      "name": "Hilton Beijing Wangfujing",
-      "city": 20,
+      "id": 88,
+      "name": "Hilton Garden Inn Harbin Haxi",
+      "city": 27,
       "country": "CN",
-      "price": "176,700",
-      "rating": "2.0"
-    },
-    {
-      "id": 110,
-      "name": "Sofitel Beijing Central (Opening April 2019)",
-      "city": 20,
-      "country": "CN",
-      "price": "793,200",
-      "rating": "2.0"
-    },
-    {
-      "id": 111,
-      "name": "NUO Hotel Beijing",
-      "city": 20,
-      "country": "CN",
-      "price": "381,200",
-      "rating": "1.9"
-    },
-    {
-      "id": 112,
-      "name": "New World Beijing Hotel",
-      "city": 20,
-      "country": "CN",
-      "price": "315,600",
-      "rating": "1.8"
-    },
-    {
-      "id": 113,
-      "name": "Holiday Inn Express Beijing Temple Of Heaven",
-      "city": 20,
-      "country": "CN",
-      "price": "665,400",
-      "rating": "1.3"
-    },
-    {
-      "id": 114,
-      "name": "Kempinski Hotel Beijing Yansha Center",
-      "city": 20,
-      "country": "CN",
-      "price": "118,500",
-      "rating": "2.4"
-    },
-    {
-      "id": 115,
-      "name": "Grand Millennium Beijing",
-      "city": 20,
-      "country": "CN",
-      "price": "548,200",
-      "rating": "3.5"
-    },
-    {
-      "id": 116,
-      "name": "Simatai No.19 Villa - Villa with Garden View",
-      "city": 20,
-      "country": "CN",
-      "price": "720,600",
-      "rating": "2.7"
-    },
-    {
-      "id": 117,
-      "name": "Yongli International Service Apartment",
-      "city": 20,
-      "country": "CN",
-      "price": "665,900",
-      "rating": "2.1"
-    },
-    {
-      "id": 118,
-      "name": "Hilton Sydney",
-      "city": 32,
-      "country": "AU",
-      "price": "577,600",
-      "rating": "2.4"
-    },
-    {
-      "id": 119,
-      "name": "Sydney Harbour Marriott Hotel at Circular Quay",
-      "city": 32,
-      "country": "AU",
-      "price": "457,800",
+      "price": "195,200",
       "rating": "1.7"
     },
     {
-      "id": 120,
-      "name": "Four Seasons Hotel Sydney",
-      "city": 32,
-      "country": "AU",
-      "price": "331,600",
-      "rating": "4.3"
-    },
-    {
-      "id": 121,
-      "name": "Four Points by Sheraton Sydney, Central Park",
-      "city": 32,
-      "country": "AU",
-      "price": "569,000",
-      "rating": "3.5"
-    },
-    {
-      "id": 122,
-      "name": "Dunkirk Hotel",
-      "city": 32,
-      "country": "AU",
-      "price": "278,000",
-      "rating": "3.2"
-    },
-    {
-      "id": 123,
-      "name": "Sydney Boutique Hotel",
-      "city": 32,
-      "country": "AU",
-      "price": "201,600",
-      "rating": "3.8"
-    },
-    {
-      "id": 124,
-      "name": "The Fullerton Hotel Sydney",
-      "city": 32,
-      "country": "AU",
-      "price": "44,000",
+      "id": 89,
+      "name": "Holiday Inn Express Harbin Qunli",
+      "city": 27,
+      "country": "CN",
+      "price": "352,800",
       "rating": "1.2"
     },
     {
-      "id": 125,
-      "name": "YHA Sydney Harbour - The Rocks",
-      "city": 32,
-      "country": "AU",
-      "price": "223,200",
-      "rating": "2.4"
+      "id": 90,
+      "name": "Sheraton Harbin Xiangfang Hotel",
+      "city": 27,
+      "country": "CN",
+      "price": "70,300",
+      "rating": "4.7"
     },
     {
-      "id": 126,
-      "name": "Capella Sydney",
-      "city": 32,
-      "country": "AU",
-      "price": "644,200",
-      "rating": "1.7"
-    },
-    {
-      "id": 127,
-      "name": "Vulcan Hotel",
-      "city": 32,
-      "country": "AU",
-      "price": "748,600",
+      "id": 91,
+      "name": "Steigenberger Harbin",
+      "city": 27,
+      "country": "CN",
+      "price": "797,500",
       "rating": "3.2"
     },
     {
-      "id": 128,
-      "name": "Paradox Sydney",
-      "city": 32,
-      "country": "AU",
-      "price": "617,600",
+      "id": 92,
+      "name": "Wanda Realm Harbin Hotel",
+      "city": 27,
+      "country": "CN",
+      "price": "744,300",
+      "rating": "2.9"
+    },
+    {
+      "id": 93,
+      "name": "Vienna Hotel Harbin Central Street Branch",
+      "city": 27,
+      "country": "CN",
+      "price": "428,700",
+      "rating": "2.2"
+    },
+    {
+      "id": 94,
+      "name": "Grand Mercure Hotel",
+      "city": 27,
+      "country": "CN",
+      "price": "282,300",
       "rating": "2.7"
     },
     {
-      "id": 129,
-      "name": "Shakespeare Hotel",
+      "id": 95,
+      "name": "Atour X Hotel Harbin West Railway Station",
+      "city": 27,
+      "country": "CN",
+      "price": "119,600",
+      "rating": "5.0"
+    },
+    {
+      "id": 96,
+      "name": "Mercure Harbin Sophia Church",
+      "city": 27,
+      "country": "CN",
+      "price": "785,400",
+      "rating": "1.5"
+    },
+    {
+      "id": 97,
+      "name": "Hampton by Hilton Haerbin University of Commerce",
+      "city": 27,
+      "country": "CN",
+      "price": "237,600",
+      "rating": "4.4"
+    },
+    {
+      "id": 98,
+      "name": "比邻中央大街江景公寓 楼下松花江 索道 地铁 防洪纪念塔",
+      "city": 27,
+      "country": "CN",
+      "price": "237,600",
+      "rating": "4.1"
+    },
+    {
+      "id": 99,
+      "name": "Home2 Suite by Hilton Harbin Central Street",
+      "city": 27,
+      "country": "CN",
+      "price": "186,100",
+      "rating": "1.5"
+    },
+    {
+      "id": 100,
+      "name": "NUO Hotel Beijing",
+      "city": 20,
+      "country": "CN",
+      "price": "716,900",
+      "rating": "3.6"
+    },
+    {
+      "id": 101,
+      "name": "Sofitel Beijing Central (Opening April 2019)",
+      "city": 20,
+      "country": "CN",
+      "price": "436,700",
+      "rating": "1.1"
+    },
+    {
+      "id": 102,
+      "name": "Conrad Beijing",
+      "city": 20,
+      "country": "CN",
+      "price": "104,800",
+      "rating": "3.6"
+    },
+    {
+      "id": 103,
+      "name": "New World Beijing Hotel",
+      "city": 20,
+      "country": "CN",
+      "price": "677,200",
+      "rating": "4.9"
+    },
+    {
+      "id": 104,
+      "name": "DoubleTree by Hilton Hotel Beijing",
+      "city": 20,
+      "country": "CN",
+      "price": "172,300",
+      "rating": "1.3"
+    },
+    {
+      "id": 105,
+      "name": "Novotel Beijing Xin Qiao",
+      "city": 20,
+      "country": "CN",
+      "price": "442,800",
+      "rating": "1.3"
+    },
+    {
+      "id": 106,
+      "name": "East Beijing Hotel",
+      "city": 20,
+      "country": "CN",
+      "price": "335,600",
+      "rating": "4.1"
+    },
+    {
+      "id": 107,
+      "name": "Holiday Inn Express Beijing Temple Of Heaven",
+      "city": 20,
+      "country": "CN",
+      "price": "152,000",
+      "rating": "3.0"
+    },
+    {
+      "id": 108,
+      "name": "Hilton Garden Inn Beijing Daxing International Airport",
+      "city": 20,
+      "country": "CN",
+      "price": "183,800",
+      "rating": "1.9"
+    },
+    {
+      "id": 109,
+      "name": "Shangri-La Hotel, Beijing",
+      "city": 20,
+      "country": "CN",
+      "price": "596,000",
+      "rating": "1.2"
+    },
+    {
+      "id": 110,
+      "name": "Crowne Plaza Beijing Wangfujing",
+      "city": 20,
+      "country": "CN",
+      "price": "617,300",
+      "rating": "3.1"
+    },
+    {
+      "id": 111,
+      "name": "Holiday Inn Express Langfang Yanjiao, an IHG Hotel",
+      "city": 20,
+      "country": "CN",
+      "price": "441,400",
+      "rating": "2.1"
+    },
+    {
+      "id": 112,
+      "name": "Sunworld Dynasty Hotel",
+      "city": 20,
+      "country": "CN",
+      "price": "111,700",
+      "rating": "1.7"
+    },
+    {
+      "id": 113,
+      "name": "Beijing Pudi Hotel",
+      "city": 20,
+      "country": "CN",
+      "price": "361,700",
+      "rating": "2.6"
+    },
+    {
+      "id": 114,
+      "name": "JW Marriott Hotel Beijing Central",
+      "city": 20,
+      "country": "CN",
+      "price": "560,600",
+      "rating": "2.0"
+    },
+    {
+      "id": 115,
+      "name": "Hilton Beijing Wangfujing",
+      "city": 20,
+      "country": "CN",
+      "price": "188,100",
+      "rating": "1.7"
+    },
+    {
+      "id": 116,
+      "name": "Four Seasons Beijing",
+      "city": 20,
+      "country": "CN",
+      "price": "212,900",
+      "rating": "3.8"
+    },
+    {
+      "id": 117,
+      "name": "Kerry Hotel Beijing",
+      "city": 20,
+      "country": "CN",
+      "price": "346,600",
+      "rating": "1.5"
+    },
+    {
+      "id": 118,
+      "name": "Simatai No.19 Villa - Villa with Garden View",
+      "city": 20,
+      "country": "CN",
+      "price": "756,400",
+      "rating": "4.5"
+    },
+    {
+      "id": 119,
+      "name": "Yongli International Service Apartment",
+      "city": 20,
+      "country": "CN",
+      "price": "691,800",
+      "rating": "2.5"
+    },
+    {
+      "id": 120,
+      "name": "Four Points by Sheraton Sydney, Central Park",
       "city": 32,
       "country": "AU",
-      "price": "595,200",
+      "price": "49,300",
+      "rating": "3.8"
+    },
+    {
+      "id": 121,
+      "name": "Sydney Boutique Hotel",
+      "city": 32,
+      "country": "AU",
+      "price": "488,900",
+      "rating": "3.3"
+    },
+    {
+      "id": 122,
+      "name": "Darling Harbour",
+      "city": 32,
+      "country": "AU",
+      "price": "675,900",
+      "rating": "1.6"
+    },
+    {
+      "id": 123,
+      "name": "Tequila Sunrise Hostel Sydney",
+      "city": 32,
+      "country": "AU",
+      "price": "637,600",
+      "rating": "3.2"
+    },
+    {
+      "id": 124,
+      "name": "Hilton Sydney",
+      "city": 32,
+      "country": "AU",
+      "price": "659,900",
+      "rating": "3.2"
+    },
+    {
+      "id": 125,
+      "name": "Dunkirk Hotel",
+      "city": 32,
+      "country": "AU",
+      "price": "145,700",
+      "rating": "3.0"
+    },
+    {
+      "id": 126,
+      "name": "Sydney Harbour Marriott Hotel at Circular Quay",
+      "city": 32,
+      "country": "AU",
+      "price": "703,400",
+      "rating": "3.5"
+    },
+    {
+      "id": 127,
+      "name": "Azzurro Pod Hotel - City Darling Harbour",
+      "city": 32,
+      "country": "AU",
+      "price": "715,200",
+      "rating": "1.5"
+    },
+    {
+      "id": 128,
+      "name": "Four Seasons Hotel Sydney",
+      "city": 32,
+      "country": "AU",
+      "price": "196,800",
+      "rating": "1.1"
+    },
+    {
+      "id": 129,
+      "name": "The Palace Hotel",
+      "city": 32,
+      "country": "AU",
+      "price": "339,500",
       "rating": "3.7"
     },
     {
       "id": 130,
-      "name": "InterContinental Sydney by IHG",
+      "name": "YHA Sydney Harbour - The Rocks",
       "city": 32,
       "country": "AU",
-      "price": "788,600",
-      "rating": "4.6"
+      "price": "362,200",
+      "rating": "1.5"
     },
     {
       "id": 131,
-      "name": "Mercure Sydney",
+      "name": "Palms Hotel",
       "city": 32,
       "country": "AU",
-      "price": "629,300",
+      "price": "510,800",
       "rating": "3.3"
     },
     {
       "id": 132,
-      "name": "Bayswater Boutique Lodge - Potts Point",
+      "name": "London Plane Backpackers",
       "city": 32,
       "country": "AU",
-      "price": "79,200",
-      "rating": "3.2"
+      "price": "413,400",
+      "rating": "2.0"
     },
     {
       "id": 133,
-      "name": "QT Sydney",
+      "name": "Shakespeare Hotel",
       "city": 32,
       "country": "AU",
-      "price": "415,700",
-      "rating": "2.6"
+      "price": "675,900",
+      "rating": "2.4"
     },
     {
       "id": 134,
-      "name": "Pullman Sydney Hyde Park",
+      "name": "Pacific House Hostel",
       "city": 32,
       "country": "AU",
-      "price": "314,300",
-      "rating": "4.9"
+      "price": "536,600",
+      "rating": "1.6"
     },
     {
       "id": 135,
-      "name": "The Strand Hotel",
+      "name": "Tequila Sunrise Potts Point",
       "city": 32,
       "country": "AU",
-      "price": "372,000",
-      "rating": "1.0"
-    },
-    {
-      "id": 136,
-      "name": "Nesuto Woolloomooloo",
-      "city": 32,
-      "country": "AU",
-      "price": "42,300",
-      "rating": "1.6"
-    },
-    {
-      "id": 137,
-      "name": "Adge Hotel and Residences",
-      "city": 32,
-      "country": "AU",
-      "price": "273,400",
-      "rating": "1.6"
-    },
-    {
-      "id": 138,
-      "name": "Hilton Auckland",
-      "city": 33,
-      "country": "NZ",
-      "price": "700,700",
-      "rating": "1.2"
-    },
-    {
-      "id": 139,
-      "name": "SkyCity Auckland",
-      "city": 33,
-      "country": "NZ",
-      "price": "579,100",
-      "rating": "4.6"
-    },
-    {
-      "id": 140,
-      "name": "Ramada Suites By Wyndham Victoria Street West",
-      "city": 33,
-      "country": "NZ",
-      "price": "587,100",
-      "rating": "3.2"
-    },
-    {
-      "id": 141,
-      "name": "Imagine Beach Road",
-      "city": 33,
-      "country": "NZ",
-      "price": "596,600",
-      "rating": "3.4"
-    },
-    {
-      "id": 142,
-      "name": "InterContinental Auckland by IHG",
-      "city": 33,
-      "country": "NZ",
-      "price": "705,500",
-      "rating": "3.5"
-    },
-    {
-      "id": 143,
-      "name": "Four Points by Sheraton Auckland",
-      "city": 33,
-      "country": "NZ",
-      "price": "452,800",
-      "rating": "1.7"
-    },
-    {
-      "id": 144,
-      "name": "Swimming Pool Holiday Villa",
-      "city": 33,
-      "country": "NZ",
-      "price": "37,000",
-      "rating": "3.4"
-    },
-    {
-      "id": 145,
-      "name": "The Grand by SkyCity",
-      "city": 33,
-      "country": "NZ",
-      "price": "790,400",
-      "rating": "1.2"
-    },
-    {
-      "id": 146,
-      "name": "Pullman Auckland Hotel & Apartments",
-      "city": 33,
-      "country": "NZ",
-      "price": "205,300",
-      "rating": "3.1"
-    },
-    {
-      "id": 147,
-      "name": "DoubleTree by Hilton Auckland Karaka",
-      "city": 33,
-      "country": "NZ",
-      "price": "53,100",
-      "rating": "4.1"
-    },
-    {
-      "id": 148,
-      "name": "Abstract Hotel",
-      "city": 33,
-      "country": "NZ",
-      "price": "499,500",
-      "rating": "3.6"
-    },
-    {
-      "id": 149,
-      "name": "Ramada by Wyndham Newmarket Auckland",
-      "city": 33,
-      "country": "NZ",
-      "price": "225,600",
-      "rating": "1.3"
-    },
-    {
-      "id": 150,
-      "name": "Quest on Beaumont",
-      "city": 33,
-      "country": "NZ",
-      "price": "43,600",
-      "rating": "1.8"
-    },
-    {
-      "id": 151,
-      "name": "Quest Ponsonby Serviced Apartments",
-      "city": 33,
-      "country": "NZ",
-      "price": "420,000",
-      "rating": "1.1"
-    },
-    {
-      "id": 152,
-      "name": "ibis budget Auckland Central",
-      "city": 33,
-      "country": "NZ",
-      "price": "73,600",
-      "rating": "4.5"
-    },
-    {
-      "id": 153,
-      "name": "Sudima Auckland City",
-      "city": 33,
-      "country": "NZ",
-      "price": "613,800",
-      "rating": "4.9"
-    },
-    {
-      "id": 154,
-      "name": "Albion Hotel",
-      "city": 33,
-      "country": "NZ",
-      "price": "768,500",
-      "rating": "4.1"
-    },
-    {
-      "id": 155,
-      "name": "No. 9 Hotel",
-      "city": 33,
-      "country": "NZ",
-      "price": "342,200",
-      "rating": "3.8"
-    },
-    {
-      "id": 156,
-      "name": "Auckland City Hotel",
-      "city": 33,
-      "country": "NZ",
-      "price": "226,300",
+      "price": "81,800",
       "rating": "2.5"
     },
     {
-      "id": 157,
-      "name": "Park Hyatt Auckland",
-      "city": 33,
-      "country": "NZ",
-      "price": "157,900",
-      "rating": "4.4"
-    },
-    {
-      "id": 158,
-      "name": "Hilton Guam Resort & Spa",
-      "city": 36,
-      "country": "GU",
-      "price": "591,200",
-      "rating": "3.9"
-    },
-    {
-      "id": 159,
-      "name": "Royal Orchid Guam Hotel",
-      "city": 36,
-      "country": "GU",
-      "price": "403,500",
-      "rating": "3.0"
-    },
-    {
-      "id": 160,
-      "name": "Grand Plaza Hotel",
-      "city": 36,
-      "country": "GU",
-      "price": "55,200",
-      "rating": "1.9"
-    },
-    {
-      "id": 161,
-      "name": "Holiday Resort Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "143,900",
-      "rating": "3.0"
-    },
-    {
-      "id": 162,
-      "name": "RIHGA Royal Laguna Guam Resort",
-      "city": 36,
-      "country": "GU",
-      "price": "291,500",
-      "rating": "4.1"
-    },
-    {
-      "id": 163,
-      "name": "Hotel Nikko Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "661,600",
-      "rating": "4.5"
-    },
-    {
-      "id": 164,
-      "name": "Guam Plaza Resort",
-      "city": 36,
-      "country": "GU",
-      "price": "450,300",
-      "rating": "4.2"
-    },
-    {
-      "id": 165,
-      "name": "Hotel Tano Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "248,300",
-      "rating": "4.4"
-    },
-    {
-      "id": 166,
-      "name": "Garden Villa Hotel",
-      "city": 36,
-      "country": "GU",
-      "price": "448,000",
+      "id": 136,
+      "name": "Little Drifter Glebe",
+      "city": 32,
+      "country": "AU",
+      "price": "268,600",
       "rating": "3.6"
     },
     {
-      "id": 167,
-      "name": "The Westin Resort Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "580,800",
-      "rating": "4.7"
+      "id": 137,
+      "name": "The Lansdowne Hotel",
+      "city": 32,
+      "country": "AU",
+      "price": "149,700",
+      "rating": "1.4"
     },
     {
-      "id": 168,
-      "name": "Bayview Hotel Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "422,400",
+      "id": 138,
+      "name": "Kaban Power 39",
+      "city": 32,
+      "country": "AU",
+      "price": "346,600",
+      "rating": "3.2"
+    },
+    {
+      "id": 139,
+      "name": "Kaban Power 6",
+      "city": 32,
+      "country": "AU",
+      "price": "311,600",
+      "rating": "3.2"
+    },
+    {
+      "id": 140,
+      "name": "ibis budget Auckland Central",
+      "city": 33,
+      "country": "NZ",
+      "price": "417,800",
+      "rating": "2.6"
+    },
+    {
+      "id": 141,
+      "name": "Pullman Auckland Hotel & Apartments",
+      "city": 33,
+      "country": "NZ",
+      "price": "695,400",
+      "rating": "4.1"
+    },
+    {
+      "id": 142,
+      "name": "Sudima Auckland City",
+      "city": 33,
+      "country": "NZ",
+      "price": "49,900",
+      "rating": "3.9"
+    },
+    {
+      "id": 143,
+      "name": "Waipuna Hotel and Conference Centre",
+      "city": 33,
+      "country": "NZ",
+      "price": "137,100",
+      "rating": "2.5"
+    },
+    {
+      "id": 144,
+      "name": "The Grand by SkyCity",
+      "city": 33,
+      "country": "NZ",
+      "price": "717,800",
+      "rating": "3.9"
+    },
+    {
+      "id": 145,
+      "name": "Swimming Pool Holiday Villa",
+      "city": 33,
+      "country": "NZ",
+      "price": "758,500",
+      "rating": "2.4"
+    },
+    {
+      "id": 146,
+      "name": "Hilton Auckland",
+      "city": 33,
+      "country": "NZ",
+      "price": "573,300",
+      "rating": "1.9"
+    },
+    {
+      "id": 147,
+      "name": "InterContinental Auckland by IHG",
+      "city": 33,
+      "country": "NZ",
+      "price": "340,900",
+      "rating": "4.6"
+    },
+    {
+      "id": 148,
+      "name": "DoubleTree by Hilton Auckland Karaka",
+      "city": 33,
+      "country": "NZ",
+      "price": "259,500",
+      "rating": "3.2"
+    },
+    {
+      "id": 149,
+      "name": "SkyCity Auckland",
+      "city": 33,
+      "country": "NZ",
+      "price": "419,500",
+      "rating": "4.0"
+    },
+    {
+      "id": 150,
+      "name": "No. 9 Hotel",
+      "city": 33,
+      "country": "NZ",
+      "price": "98,300",
+      "rating": "4.2"
+    },
+    {
+      "id": 151,
+      "name": "Abstract Hotel",
+      "city": 33,
+      "country": "NZ",
+      "price": "266,000",
+      "rating": "3.8"
+    },
+    {
+      "id": 152,
+      "name": "JW Marriott Auckland",
+      "city": 33,
+      "country": "NZ",
+      "price": "746,800",
+      "rating": "1.4"
+    },
+    {
+      "id": 153,
+      "name": "Adina Apartment Hotel Auckland Britomart",
+      "city": 33,
+      "country": "NZ",
+      "price": "105,100",
+      "rating": "3.4"
+    },
+    {
+      "id": 154,
+      "name": "Quest Ponsonby Serviced Apartments",
+      "city": 33,
+      "country": "NZ",
+      "price": "490,700",
+      "rating": "4.5"
+    },
+    {
+      "id": 155,
+      "name": "Legacy Airedale Hotel Auckland",
+      "city": 33,
+      "country": "NZ",
+      "price": "483,900",
       "rating": "2.9"
     },
     {
-      "id": 169,
-      "name": "Guam Reef Hotel",
-      "city": 36,
-      "country": "GU",
-      "price": "267,100",
-      "rating": "1.9"
-    },
-    {
-      "id": 170,
-      "name": "SureStay by Best Western Guam Airport South",
-      "city": 36,
-      "country": "GU",
-      "price": "121,200",
-      "rating": "1.9"
-    },
-    {
-      "id": 171,
-      "name": "Lotte Hotel Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "576,900",
+      "id": 156,
+      "name": "The Emerald - Takapuna Beach",
+      "city": 33,
+      "country": "NZ",
+      "price": "128,000",
       "rating": "1.6"
     },
     {
-      "id": 172,
-      "name": "Hyatt Regency Guam",
-      "city": 36,
-      "country": "GU",
-      "price": "204,300",
-      "rating": "1.8"
+      "id": 157,
+      "name": "Imagine Beach Road",
+      "city": 33,
+      "country": "NZ",
+      "price": "659,600",
+      "rating": "1.3"
     },
     {
-      "id": 173,
+      "id": 158,
+      "name": "Horizon by SkyCity",
+      "city": 33,
+      "country": "NZ",
+      "price": "699,100",
+      "rating": "1.1"
+    },
+    {
+      "id": 159,
+      "name": "Four Points by Sheraton Auckland",
+      "city": 33,
+      "country": "NZ",
+      "price": "306,100",
+      "rating": "3.6"
+    },
+    {
+      "id": 160,
+      "name": "Hilton Guam Resort & Spa",
+      "city": 36,
+      "country": "GU",
+      "price": "582,800",
+      "rating": "1.7"
+    },
+    {
+      "id": 161,
+      "name": "Royal Orchid Guam Hotel",
+      "city": 36,
+      "country": "GU",
+      "price": "92,400",
+      "rating": "4.3"
+    },
+    {
+      "id": 162,
+      "name": "Grand Plaza Hotel",
+      "city": 36,
+      "country": "GU",
+      "price": "264,700",
+      "rating": "4.0"
+    },
+    {
+      "id": 163,
+      "name": "Holiday Resort Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "681,600",
+      "rating": "4.1"
+    },
+    {
+      "id": 164,
+      "name": "RIHGA Royal Laguna Guam Resort",
+      "city": 36,
+      "country": "GU",
+      "price": "794,900",
+      "rating": "2.4"
+    },
+    {
+      "id": 165,
+      "name": "Guam Plaza Resort",
+      "city": 36,
+      "country": "GU",
+      "price": "630,500",
+      "rating": "2.2"
+    },
+    {
+      "id": 166,
+      "name": "Bayview Hotel Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "222,800",
+      "rating": "2.0"
+    },
+    {
+      "id": 167,
+      "name": "Hotel Tano Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "210,500",
+      "rating": "2.0"
+    },
+    {
+      "id": 168,
+      "name": "The Westin Resort Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "742,500",
+      "rating": "4.2"
+    },
+    {
+      "id": 169,
+      "name": "SureStay by Best Western Guam Airport South",
+      "city": 36,
+      "country": "GU",
+      "price": "796,100",
+      "rating": "3.6"
+    },
+    {
+      "id": 170,
+      "name": "Hotel Nikko Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "312,300",
+      "rating": "3.3"
+    },
+    {
+      "id": 171,
       "name": "Dusit Thani Guam Resort",
       "city": 36,
       "country": "GU",
-      "price": "508,000",
-      "rating": "4.1"
+      "price": "149,400",
+      "rating": "2.4"
+    },
+    {
+      "id": 172,
+      "name": "Lotte Hotel Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "477,500",
+      "rating": "2.4"
+    },
+    {
+      "id": 173,
+      "name": "Hyatt Regency Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "370,900",
+      "rating": "4.8"
     },
     {
       "id": 174,
       "name": "LEOPALACE RESORT GUAM",
       "city": 36,
       "country": "GU",
-      "price": "136,000",
-      "rating": "3.1"
+      "price": "326,900",
+      "rating": "2.7"
     },
     {
       "id": 175,
       "name": "Wyndham Garden Guam",
       "city": 36,
       "country": "GU",
-      "price": "566,500",
-      "rating": "2.2"
-    },
-    {
-      "id": 176,
-      "name": "Kensington Hotel Saipan",
-      "city": 37,
-      "country": "MP",
-      "price": "655,800",
-      "rating": "1.6"
-    },
-    {
-      "id": 177,
-      "name": "Oh My House",
-      "city": 37,
-      "country": "MP",
-      "price": "363,800",
-      "rating": "4.3"
-    },
-    {
-      "id": 178,
-      "name": "Surfrider Resort Hotel",
-      "city": 37,
-      "country": "MP",
-      "price": "679,000",
-      "rating": "1.7"
-    },
-    {
-      "id": 179,
-      "name": "Crowne Plaza Resort Saipan by IHG",
-      "city": 37,
-      "country": "MP",
-      "price": "506,000",
-      "rating": "1.8"
-    },
-    {
-      "id": 180,
-      "name": "Pacific Islands Club Saipan",
-      "city": 37,
-      "country": "MP",
-      "price": "118,600",
-      "rating": "2.4"
-    },
-    {
-      "id": 181,
-      "name": "Coral Ocean Resort",
-      "city": 37,
-      "country": "MP",
-      "price": "176,100",
-      "rating": "2.9"
-    },
-    {
-      "id": 182,
-      "name": "Aqua Resort Club Saipan",
-      "city": 37,
-      "country": "MP",
-      "price": "217,000",
-      "rating": "1.9"
-    },
-    {
-      "id": 183,
-      "name": "Marianas Beach Resort",
-      "city": 37,
-      "country": "MP",
-      "price": "80,500",
-      "rating": "1.5"
-    },
-    {
-      "id": 184,
-      "name": "Saipan IRIS Pool Villa",
-      "city": 37,
-      "country": "MP",
-      "price": "550,000",
-      "rating": "2.9"
-    },
-    {
-      "id": 185,
-      "name": "Iris Pool Villa",
-      "city": 37,
-      "country": "MP",
-      "price": "602,100",
-      "rating": "1.4"
-    },
-    {
-      "id": 186,
-      "name": "Saipan Emerald Villa",
-      "city": 37,
-      "country": "MP",
-      "price": "289,200",
-      "rating": "1.3"
-    },
-    {
-      "id": 187,
-      "name": "Saipan World Resort",
-      "city": 37,
-      "country": "MP",
-      "price": "562,800",
-      "rating": "3.3"
-    },
-    {
-      "id": 188,
-      "name": "Island Cottage Downtown Seaside Studio Type 2",
-      "city": 37,
-      "country": "MP",
-      "price": "462,800",
-      "rating": "2.7"
-    },
-    {
-      "id": 189,
-      "name": "Grandvrio Resort Saipan",
-      "city": 37,
-      "country": "MP",
-      "price": "190,600",
-      "rating": "1.5"
-    },
-    {
-      "id": 190,
-      "name": "NO.1 Angel ocean view swimming pool villa",
-      "city": 37,
-      "country": "MP",
-      "price": "422,600",
-      "rating": "2.4"
-    },
-    {
-      "id": 191,
-      "name": "Saipan Skyline Designers Hotel",
-      "city": 37,
-      "country": "MP",
-      "price": "666,800",
-      "rating": "1.9"
-    },
-    {
-      "id": 192,
-      "name": "Nevy hill Angel ocean view swiming pool villa NO 1",
-      "city": 37,
-      "country": "MP",
-      "price": "648,400",
-      "rating": "3.7"
-    },
-    {
-      "id": 193,
-      "name": "Seabreaze Garden",
-      "city": 37,
-      "country": "MP",
-      "price": "316,600",
+      "price": "745,900",
       "rating": "1.2"
     },
     {
-      "id": 194,
-      "name": "Saipan Beach Hotel",
-      "city": 37,
-      "country": "MP",
-      "price": "474,600",
-      "rating": "3.0"
+      "id": 176,
+      "name": "Garden Villa Hotel",
+      "city": 36,
+      "country": "GU",
+      "price": "744,700",
+      "rating": "4.8"
     },
     {
-      "id": 195,
-      "name": "DISCOVERY SAIPAN HOTEL",
-      "city": 37,
-      "country": "MP",
-      "price": "70,200",
-      "rating": "1.4"
+      "id": 177,
+      "name": "Guam Reef Hotel",
+      "city": 36,
+      "country": "GU",
+      "price": "502,200",
+      "rating": "2.7"
     },
     {
-      "id": 196,
-      "name": "Hilton Hawaiian Village Waikiki Beach Resort",
-      "city": 41,
-      "country": "US",
-      "price": "528,400",
+      "id": 178,
+      "name": "Beachfront Studio - Unit 106 Ocean Villa",
+      "city": 36,
+      "country": "GU",
+      "price": "43,200",
+      "rating": "2.5"
+    },
+    {
+      "id": 179,
+      "name": "Ocean Villa Guam",
+      "city": 36,
+      "country": "GU",
+      "price": "288,500",
+      "rating": "4.6"
+    },
+    {
+      "id": 180,
+      "name": "Kensington Hotel Saipan",
+      "city": 37,
+      "country": "MP",
+      "price": "295,700",
+      "rating": "1.2"
+    },
+    {
+      "id": 181,
+      "name": "Crowne Plaza Resort Saipan by IHG",
+      "city": 37,
+      "country": "MP",
+      "price": "74,700",
+      "rating": "4.3"
+    },
+    {
+      "id": 182,
+      "name": "Oh My House",
+      "city": 37,
+      "country": "MP",
+      "price": "501,400",
+      "rating": "2.7"
+    },
+    {
+      "id": 183,
+      "name": "Surfrider Resort Hotel",
+      "city": 37,
+      "country": "MP",
+      "price": "166,000",
+      "rating": "2.9"
+    },
+    {
+      "id": 184,
+      "name": "Pacific Islands Club Saipan",
+      "city": 37,
+      "country": "MP",
+      "price": "708,100",
+      "rating": "4.8"
+    },
+    {
+      "id": 185,
+      "name": "Marianas Beach Resort",
+      "city": 37,
+      "country": "MP",
+      "price": "149,400",
+      "rating": "1.5"
+    },
+    {
+      "id": 186,
+      "name": "Coral Ocean Resort",
+      "city": 37,
+      "country": "MP",
+      "price": "367,300",
+      "rating": "3.4"
+    },
+    {
+      "id": 187,
+      "name": "Aqua Resort Club Saipan",
+      "city": 37,
+      "country": "MP",
+      "price": "497,900",
+      "rating": "2.5"
+    },
+    {
+      "id": 188,
+      "name": "Saipan IRIS Pool Villa",
+      "city": 37,
+      "country": "MP",
+      "price": "496,000",
+      "rating": "3.6"
+    },
+    {
+      "id": 189,
+      "name": "Saipan Emerald Villa",
+      "city": 37,
+      "country": "MP",
+      "price": "362,300",
+      "rating": "4.5"
+    },
+    {
+      "id": 190,
+      "name": "Iris Pool Villa",
+      "city": 37,
+      "country": "MP",
+      "price": "161,300",
+      "rating": "1.9"
+    },
+    {
+      "id": 191,
+      "name": "Saipan World Resort",
+      "city": 37,
+      "country": "MP",
+      "price": "681,200",
+      "rating": "5.0"
+    },
+    {
+      "id": 192,
+      "name": "Island Cottage Downtown Seaside Studio Type 2",
+      "city": 37,
+      "country": "MP",
+      "price": "63,600",
       "rating": "4.9"
     },
     {
+      "id": 193,
+      "name": "Grandvrio Resort Saipan",
+      "city": 37,
+      "country": "MP",
+      "price": "571,900",
+      "rating": "3.5"
+    },
+    {
+      "id": 194,
+      "name": "Saipan Skyline Designers Hotel",
+      "city": 37,
+      "country": "MP",
+      "price": "477,900",
+      "rating": "1.3"
+    },
+    {
+      "id": 195,
+      "name": "Nevy hill Angel ocean view swiming pool villa NO 1",
+      "city": 37,
+      "country": "MP",
+      "price": "80,100",
+      "rating": "1.9"
+    },
+    {
+      "id": 196,
+      "name": "Hanamitsu Hotel & Spa",
+      "city": 37,
+      "country": "MP",
+      "price": "290,600",
+      "rating": "2.5"
+    },
+    {
       "id": 197,
-      "name": "Honu Waikiki by ALOH",
-      "city": 41,
-      "country": "US",
-      "price": "246,100",
-      "rating": "3.9"
+      "name": "Seabreaze Garden",
+      "city": 37,
+      "country": "MP",
+      "price": "661,600",
+      "rating": "4.1"
     },
     {
       "id": 198,
-      "name": "Kehena Mauka Nui Club LGBTQIA+ Clothing Optional",
-      "city": 41,
-      "country": "US",
-      "price": "713,500",
-      "rating": "1.6"
+      "name": "Saipan Beach Hotel",
+      "city": 37,
+      "country": "MP",
+      "price": "458,300",
+      "rating": "5.0"
     },
     {
       "id": 199,
-      "name": "‘Alohilani Resort Waikiki Beach",
-      "city": 41,
-      "country": "US",
-      "price": "386,000",
-      "rating": "3.8"
-    },
-    {
-      "id": 200,
-      "name": "Aqua Aloha Surf Waikiki Hotel",
-      "city": 41,
-      "country": "US",
-      "price": "503,100",
-      "rating": "4.2"
-    },
-    {
-      "id": 201,
-      "name": "Queen Kapiʻolani Hotel Waikīkī Beach",
-      "city": 41,
-      "country": "US",
-      "price": "53,000",
-      "rating": "3.3"
-    },
-    {
-      "id": 202,
-      "name": "Kaimana Beach Hotel",
-      "city": 41,
-      "country": "US",
-      "price": "654,400",
-      "rating": "2.8"
-    },
-    {
-      "id": 203,
-      "name": "Ohia Waikiki Studio Suites",
-      "city": 41,
-      "country": "US",
-      "price": "50,000",
-      "rating": "1.7"
-    },
-    {
-      "id": 204,
-      "name": "Aqua Palms Waikiki",
-      "city": 41,
-      "country": "US",
-      "price": "492,700",
-      "rating": "3.7"
-    },
-    {
-      "id": 205,
-      "name": "Stay Hotel Waikiki",
-      "city": 41,
-      "country": "US",
-      "price": "101,000",
+      "name": "NO.1 Angel ocean view swimming pool villa",
+      "city": 37,
+      "country": "MP",
+      "price": "563,100",
       "rating": "1.8"
     },
     {
-      "id": 206,
-      "name": "Sensei Lanai, A Four Seasons Resort",
+      "id": 200,
+      "name": "Waipio Glass House",
       "city": 41,
       "country": "US",
-      "price": "659,700",
+      "price": "654,600",
+      "rating": "3.0"
+    },
+    {
+      "id": 201,
+      "name": "Islander on the Beach 137",
+      "city": 41,
+      "country": "US",
+      "price": "73,000",
+      "rating": "3.9"
+    },
+    {
+      "id": 202,
+      "name": "Sweet Lava Retreat w/ Epic Ocean & Volcano Views",
+      "city": 41,
+      "country": "US",
+      "price": "519,000",
+      "rating": "1.3"
+    },
+    {
+      "id": 203,
+      "name": "Hilton Hawaiian Village Waikiki Beach Resort",
+      "city": 41,
+      "country": "US",
+      "price": "609,300",
+      "rating": "4.1"
+    },
+    {
+      "id": 204,
+      "name": "Cozy Volcano Studio w/ Phenomenal Rainforest Views",
+      "city": 41,
+      "country": "US",
+      "price": "771,200",
+      "rating": "3.6"
+    },
+    {
+      "id": 205,
+      "name": "Waikiki Resort Hotel",
+      "city": 41,
+      "country": "US",
+      "price": "438,400",
+      "rating": "3.6"
+    },
+    {
+      "id": 206,
+      "name": "Hilton Garden Inn Waikiki Beach",
+      "city": 41,
+      "country": "US",
+      "price": "162,000",
       "rating": "2.0"
     },
     {
       "id": 207,
-      "name": "Ala Moana Honolulu by Mantra",
-      "city": 41,
-      "country": "US",
-      "price": "678,800",
-      "rating": "4.0"
-    },
-    {
-      "id": 208,
-      "name": "Pagoda Hotel",
-      "city": 41,
-      "country": "US",
-      "price": "601,700",
-      "rating": "2.8"
-    },
-    {
-      "id": 209,
       "name": "Hotel La Croix",
       "city": 41,
       "country": "US",
-      "price": "749,800",
-      "rating": "3.4"
+      "price": "654,900",
+      "rating": "4.8"
+    },
+    {
+      "id": 208,
+      "name": "Queen Kapiʻolani Hotel Waikīkī Beach",
+      "city": 41,
+      "country": "US",
+      "price": "506,100",
+      "rating": "4.2"
+    },
+    {
+      "id": 209,
+      "name": "Courtyard by Marriott Waikiki Beach",
+      "city": 41,
+      "country": "US",
+      "price": "624,500",
+      "rating": "3.8"
     },
     {
       "id": 210,
-      "name": "DoubleTree by Hilton Alana - Waikiki Beach",
+      "name": "Hilton Waikiki Beach Resort & Spa",
       "city": 41,
       "country": "US",
-      "price": "286,700",
-      "rating": "3.5"
+      "price": "510,700",
+      "rating": "2.9"
     },
     {
       "id": 211,
-      "name": "The Beach Waikiki Hostel by ALOH",
+      "name": "Pagoda Hotel",
       "city": 41,
       "country": "US",
-      "price": "136,600",
-      "rating": "2.1"
-    },
-    {
-      "id": 212,
-      "name": "Diamond Head Beach Hotel & Residences",
-      "city": 41,
-      "country": "US",
-      "price": "727,900",
-      "rating": "4.5"
-    },
-    {
-      "id": 213,
-      "name": "Four Seasons Resort Maui at Wailea",
-      "city": 41,
-      "country": "US",
-      "price": "648,800",
+      "price": "70,500",
       "rating": "4.6"
     },
     {
-      "id": 214,
-      "name": "Pet Friendly Comfortable Studio in Peaceful Tropical Forest",
+      "id": 212,
+      "name": "Prince Waikiki",
       "city": 41,
       "country": "US",
-      "price": "373,600",
-      "rating": "2.8"
+      "price": "159,000",
+      "rating": "4.1"
+    },
+    {
+      "id": 213,
+      "name": "DoubleTree by Hilton Alana - Waikiki Beach",
+      "city": 41,
+      "country": "US",
+      "price": "605,000",
+      "rating": "1.9"
+    },
+    {
+      "id": 214,
+      "name": "Little Paradise in Waikiki with Lovely Ocean -15F",
+      "city": 41,
+      "country": "US",
+      "price": "752,700",
+      "rating": "1.3"
     },
     {
       "id": 215,
-      "name": "Waipio Glass House",
+      "name": "‘Alohilani Resort Waikiki Beach",
       "city": 41,
       "country": "US",
-      "price": "661,800",
-      "rating": "1.4"
+      "price": "500,200",
+      "rating": "3.4"
     },
     {
       "id": 216,
-      "name": "Best Western Premier Toronto Airport Carlingview Hotel",
-      "city": 42,
-      "country": "CA",
-      "price": "413,600",
-      "rating": "3.9"
+      "name": "Waikiki Beach Marriott Resort & Spa",
+      "city": 41,
+      "country": "US",
+      "price": "444,000",
+      "rating": "1.4"
     },
     {
       "id": 217,
-      "name": "Spacious 3 Bedroom with stunning city view",
-      "city": 42,
-      "country": "CA",
-      "price": "57,200",
-      "rating": "4.0"
+      "name": "Park Shore Waikiki Hotel",
+      "city": 41,
+      "country": "US",
+      "price": "239,600",
+      "rating": "4.4"
     },
     {
       "id": 218,
-      "name": "Hyatt Regency Toronto",
-      "city": 42,
-      "country": "CA",
-      "price": "489,400",
-      "rating": "2.3"
+      "name": "The Inn at Kulaniapia Falls",
+      "city": 41,
+      "country": "US",
+      "price": "415,900",
+      "rating": "1.5"
     },
     {
       "id": 219,
-      "name": "Pan Pacific Toronto",
-      "city": 42,
-      "country": "CA",
-      "price": "573,200",
-      "rating": "1.2"
+      "name": "Hyatt Regency Waikiki Beach Resort and Spa",
+      "city": 41,
+      "country": "US",
+      "price": "676,900",
+      "rating": "1.1"
     },
     {
       "id": 220,
-      "name": "Chelsea Hotel, Toronto",
+      "name": "Spacious 3 Bedroom with stunning city view",
       "city": 42,
       "country": "CA",
-      "price": "167,300",
-      "rating": "3.9"
+      "price": "291,600",
+      "rating": "2.1"
     },
     {
       "id": 221,
-      "name": "One King West Hotel & Residence",
+      "name": "Chelsea Hotel, Toronto",
       "city": 42,
       "country": "CA",
-      "price": "708,500",
-      "rating": "3.1"
+      "price": "254,600",
+      "rating": "2.1"
     },
     {
       "id": 222,
-      "name": "Park Inn by Radisson Toronto-Markham",
+      "name": "Kimpton Saint George Hotel",
       "city": 42,
       "country": "CA",
-      "price": "237,300",
-      "rating": "4.8"
+      "price": "481,300",
+      "rating": "1.1"
     },
     {
       "id": 223,
       "name": "Radisson Blu Toronto Downtown",
       "city": 42,
       "country": "CA",
-      "price": "82,400",
-      "rating": "2.8"
+      "price": "183,400",
+      "rating": "3.0"
     },
     {
       "id": 224,
-      "name": "Courtyard by Marriott Toronto Northeast/Markham",
+      "name": "1 Hotel Toronto",
       "city": 42,
       "country": "CA",
-      "price": "269,400",
-      "rating": "1.3"
+      "price": "701,500",
+      "rating": "4.5"
     },
     {
       "id": 225,
-      "name": "Sheraton Centre Toronto Hotel",
+      "name": "Holiday Inn Toronto Downtown Centre by IHG",
       "city": 42,
       "country": "CA",
-      "price": "39,400",
-      "rating": "3.5"
+      "price": "213,000",
+      "rating": "1.3"
     },
     {
       "id": 226,
-      "name": "Hilton Garden Inn Toronto Airport",
+      "name": "Hyatt Regency Toronto",
       "city": 42,
       "country": "CA",
-      "price": "629,600",
-      "rating": "4.9"
+      "price": "193,500",
+      "rating": "3.3"
     },
     {
       "id": 227,
-      "name": "Hilton Toronto",
+      "name": "Delta Hotels Toronto",
       "city": 42,
       "country": "CA",
-      "price": "161,900",
-      "rating": "4.7"
+      "price": "567,500",
+      "rating": "2.8"
     },
     {
       "id": 228,
-      "name": "Hotel Riu Plaza Toronto",
+      "name": "Holiday Inn Toronto International Airport by IHG",
       "city": 42,
       "country": "CA",
-      "price": "698,000",
-      "rating": "1.4"
+      "price": "60,000",
+      "rating": "3.5"
     },
     {
       "id": 229,
-      "name": "Hotel at Great Canadian Casino Resort Toronto",
+      "name": "Canopy by Hilton Toronto Yorkville",
       "city": 42,
       "country": "CA",
-      "price": "718,600",
-      "rating": "4.3"
+      "price": "532,600",
+      "rating": "3.2"
     },
     {
       "id": 230,
-      "name": "Crowne Plaza Toronto Airport, an IHG Hotel",
+      "name": "Toronto Downtown Midtown North York Newly Built Modern Bright Room",
       "city": 42,
       "country": "CA",
-      "price": "233,600",
-      "rating": "2.6"
+      "price": "71,700",
+      "rating": "1.3"
     },
     {
       "id": 231,
       "name": "Hotel X Toronto",
       "city": 42,
       "country": "CA",
-      "price": "467,400",
-      "rating": "2.3"
+      "price": "398,000",
+      "rating": "4.1"
     },
     {
       "id": 232,
-      "name": "Holiday Inn Express Toronto Downtown",
+      "name": "Executive Hotel Cosmopolitan Toronto",
       "city": 42,
       "country": "CA",
-      "price": "151,700",
-      "rating": "2.2"
+      "price": "227,300",
+      "rating": "1.3"
     },
     {
       "id": 233,
-      "name": "Panorama Suites Downtown Toronto",
+      "name": "Park Inn by Radisson Toronto-Markham",
       "city": 42,
       "country": "CA",
-      "price": "444,300",
-      "rating": "1.1"
+      "price": "210,400",
+      "rating": "4.4"
     },
     {
       "id": 234,
-      "name": "Sunset Views in Chic Condo by Cn Tower!",
+      "name": "DoubleTree by Hilton Hotel Toronto Downtown",
       "city": 42,
       "country": "CA",
-      "price": "66,900",
-      "rating": "2.1"
+      "price": "494,800",
+      "rating": "4.6"
     },
     {
       "id": 235,
-      "name": "The Omni King Edward Hotel",
+      "name": "Hotel at Great Canadian Casino Resort Toronto",
       "city": 42,
       "country": "CA",
-      "price": "704,500",
-      "rating": "1.5"
+      "price": "294,500",
+      "rating": "2.1"
     },
     {
       "id": 236,
-      "name": "Freehand Los Angeles",
-      "city": 38,
-      "country": "US",
-      "price": "503,700",
-      "rating": "4.2"
+      "name": "Fairmont Royal York",
+      "city": 42,
+      "country": "CA",
+      "price": "629,900",
+      "rating": "1.2"
     },
     {
       "id": 237,
-      "name": "The Biltmore Los Angeles",
-      "city": 38,
-      "country": "US",
-      "price": "316,400",
-      "rating": "1.9"
+      "name": "TOOR Hotel - JDV by Hyatt",
+      "city": 42,
+      "country": "CA",
+      "price": "543,700",
+      "rating": "3.5"
     },
     {
       "id": 238,
-      "name": "Kimpton Everly Hotel",
-      "city": 38,
-      "country": "US",
-      "price": "354,200",
-      "rating": "4.0"
+      "name": "W Toronto",
+      "city": 42,
+      "country": "CA",
+      "price": "112,300",
+      "rating": "1.2"
     },
     {
       "id": 239,
-      "name": "The California - Hollywood",
-      "city": 38,
-      "country": "US",
-      "price": "678,900",
-      "rating": "2.2"
+      "name": "Sheraton Centre Toronto Hotel",
+      "city": 42,
+      "country": "CA",
+      "price": "170,400",
+      "rating": "2.1"
     },
     {
       "id": 240,
-      "name": "The Delphi Downtown LA",
+      "name": "Freehand Los Angeles",
       "city": 38,
       "country": "US",
-      "price": "386,300",
-      "rating": "2.0"
+      "price": "523,700",
+      "rating": "2.7"
     },
     {
       "id": 241,
-      "name": "Hollywood Hotel ®",
+      "name": "Hollywood Inn Suites Hotel",
       "city": 38,
       "country": "US",
-      "price": "326,500",
-      "rating": "5.0"
+      "price": "213,300",
+      "rating": "1.2"
     },
     {
       "id": 242,
-      "name": "The Godfrey Hotel Hollywood",
-      "city": 38,
-      "country": "US",
-      "price": "120,500",
-      "rating": "1.6"
-    },
-    {
-      "id": 243,
-      "name": "Cara Hotel",
-      "city": 38,
-      "country": "US",
-      "price": "173,200",
-      "rating": "1.7"
-    },
-    {
-      "id": 244,
-      "name": "Conrad Los Angeles",
-      "city": 38,
-      "country": "US",
-      "price": "358,200",
-      "rating": "4.9"
-    },
-    {
-      "id": 245,
-      "name": "Sheraton Gateway Los Angeles Hotel",
-      "city": 38,
-      "country": "US",
-      "price": "782,400",
-      "rating": "3.6"
-    },
-    {
-      "id": 246,
       "name": "The Westin Bonaventure Hotel & Suites, Los Angeles",
       "city": 38,
       "country": "US",
-      "price": "467,100",
-      "rating": "3.7"
-    },
-    {
-      "id": 247,
-      "name": "Samesun Hollywood",
-      "city": 38,
-      "country": "US",
-      "price": "686,800",
-      "rating": "2.9"
-    },
-    {
-      "id": 248,
-      "name": "Hotel Royal",
-      "city": 38,
-      "country": "US",
-      "price": "444,300",
-      "rating": "1.1"
-    },
-    {
-      "id": 249,
-      "name": "Level Los Angeles - Downtown South Olive",
-      "city": 38,
-      "country": "US",
-      "price": "691,000",
-      "rating": "4.7"
-    },
-    {
-      "id": 250,
-      "name": "Hilton Long Beach",
-      "city": 38,
-      "country": "US",
-      "price": "325,200",
+      "price": "550,100",
       "rating": "3.8"
     },
     {
-      "id": 251,
-      "name": "The Dixie Hollywood Hotel",
+      "id": 243,
+      "name": "Sonesta Los Angeles Airport LAX",
       "city": 38,
       "country": "US",
-      "price": "250,900",
-      "rating": "3.3"
+      "price": "773,200",
+      "rating": "1.3"
+    },
+    {
+      "id": 244,
+      "name": "The Delphi Downtown LA",
+      "city": 38,
+      "country": "US",
+      "price": "691,000",
+      "rating": "1.8"
+    },
+    {
+      "id": 245,
+      "name": "Kimpton Everly Hotel",
+      "city": 38,
+      "country": "US",
+      "price": "603,500",
+      "rating": "1.8"
+    },
+    {
+      "id": 246,
+      "name": "Stylish Studio with Sweeping City Views in DTLA",
+      "city": 38,
+      "country": "US",
+      "price": "509,100",
+      "rating": "3.6"
+    },
+    {
+      "id": 247,
+      "name": "Conrad Los Angeles",
+      "city": 38,
+      "country": "US",
+      "price": "109,300",
+      "rating": "1.3"
+    },
+    {
+      "id": 248,
+      "name": "Hilton Long Beach",
+      "city": 38,
+      "country": "US",
+      "price": "160,800",
+      "rating": "2.5"
+    },
+    {
+      "id": 249,
+      "name": "Hyatt Regency Los Angeles International Airport",
+      "city": 38,
+      "country": "US",
+      "price": "275,100",
+      "rating": "2.9"
+    },
+    {
+      "id": 250,
+      "name": "Hollywood Hotel ®",
+      "city": 38,
+      "country": "US",
+      "price": "555,400",
+      "rating": "2.4"
+    },
+    {
+      "id": 251,
+      "name": "Cara Hotel",
+      "city": 38,
+      "country": "US",
+      "price": "588,200",
+      "rating": "2.9"
     },
     {
       "id": 252,
-      "name": "Garden Suite Hotel",
+      "name": "Samesun Hollywood",
       "city": 38,
       "country": "US",
-      "price": "163,300",
-      "rating": "4.8"
+      "price": "184,400",
+      "rating": "1.3"
     },
     {
       "id": 253,
-      "name": "Omni Los Angeles Hotel at California Plaza",
+      "name": "City of Angels Studio! Escape near Downtown!",
       "city": 38,
       "country": "US",
-      "price": "38,400",
-      "rating": "1.9"
+      "price": "639,400",
+      "rating": "4.3"
     },
     {
       "id": 254,
       "name": "5 Mi to Coast: Centrally Located Long Beach Home!",
       "city": 38,
       "country": "US",
-      "price": "331,900",
-      "rating": "3.2"
+      "price": "97,900",
+      "rating": "1.3"
     },
     {
       "id": 255,
-      "name": "Separate Private Access Big Master Suite",
+      "name": "Ramada by Wyndham Hawthorne/LA Stadium",
       "city": 38,
       "country": "US",
-      "price": "215,500",
-      "rating": "1.6"
-    },
-    {
-      "id": 256,
-      "name": "City Garden GRAND Hotel Makati",
-      "city": 50,
-      "country": "PH",
-      "price": "304,900",
-      "rating": "3.8"
-    },
-    {
-      "id": 257,
-      "name": "Diamond Hotel Philippines",
-      "city": 50,
-      "country": "PH",
-      "price": "447,800",
-      "rating": "2.4"
-    },
-    {
-      "id": 258,
-      "name": "Pool view studio at The Beacon, Makati",
-      "city": 50,
-      "country": "PH",
-      "price": "266,000",
-      "rating": "3.1"
-    },
-    {
-      "id": 259,
-      "name": "Adria Residences - Sapphire Garden - 2 Bedroom for 4 person",
-      "city": 50,
-      "country": "PH",
-      "price": "264,300",
-      "rating": "3.0"
-    },
-    {
-      "id": 260,
-      "name": "The Manila Hotel",
-      "city": 50,
-      "country": "PH",
-      "price": "649,800",
-      "rating": "1.7"
-    },
-    {
-      "id": 261,
-      "name": "Ramada by Wyndham Manila Central",
-      "city": 50,
-      "country": "PH",
-      "price": "494,500",
-      "rating": "2.9"
-    },
-    {
-      "id": 262,
-      "name": "the Gramercy Residences NEW RELEASE - Deluxe Queen Studio",
-      "city": 50,
-      "country": "PH",
-      "price": "568,800",
-      "rating": "4.2"
-    },
-    {
-      "id": 263,
-      "name": "La Casarita - Condormitel",
-      "city": 50,
-      "country": "PH",
-      "price": "474,800",
-      "rating": "1.0"
-    },
-    {
-      "id": 264,
-      "name": "Hotel H2O",
-      "city": 50,
-      "country": "PH",
-      "price": "57,200",
-      "rating": "2.1"
-    },
-    {
-      "id": 265,
-      "name": "Bayview Park Hotel Manila",
-      "city": 50,
-      "country": "PH",
-      "price": "779,800",
+      "price": "545,600",
       "rating": "3.7"
     },
     {
-      "id": 266,
-      "name": "Sorrel Residences- 2 Bedroom Apartment",
+      "id": 256,
+      "name": "Omni Los Angeles Hotel at California Plaza",
+      "city": 38,
+      "country": "US",
+      "price": "263,800",
+      "rating": "1.2"
+    },
+    {
+      "id": 257,
+      "name": "The Biltmore Los Angeles",
+      "city": 38,
+      "country": "US",
+      "price": "725,800",
+      "rating": "2.0"
+    },
+    {
+      "id": 258,
+      "name": "Marina Del Rey Hotel",
+      "city": 38,
+      "country": "US",
+      "price": "656,400",
+      "rating": "2.7"
+    },
+    {
+      "id": 259,
+      "name": "East Los Angeles Studio - Near Dodger Stadium!",
+      "city": 38,
+      "country": "US",
+      "price": "40,700",
+      "rating": "4.2"
+    },
+    {
+      "id": 260,
+      "name": "City Garden GRAND Hotel Makati",
       "city": 50,
       "country": "PH",
-      "price": "694,300",
+      "price": "111,300",
+      "rating": "1.0"
+    },
+    {
+      "id": 261,
+      "name": "Diamond Hotel Philippines",
+      "city": 50,
+      "country": "PH",
+      "price": "558,600",
+      "rating": "1.1"
+    },
+    {
+      "id": 262,
+      "name": "The Manila Hotel",
+      "city": 50,
+      "country": "PH",
+      "price": "511,900",
+      "rating": "2.4"
+    },
+    {
+      "id": 263,
+      "name": "New Coast Hotel Manila",
+      "city": 50,
+      "country": "PH",
+      "price": "33,800",
+      "rating": "3.9"
+    },
+    {
+      "id": 264,
+      "name": "Pool view studio at The Beacon, Makati",
+      "city": 50,
+      "country": "PH",
+      "price": "576,100",
       "rating": "4.3"
     },
     {
-      "id": 267,
-      "name": "The grand towers manila studio",
+      "id": 265,
+      "name": "Hotel H2O",
       "city": 50,
       "country": "PH",
-      "price": "559,500",
+      "price": "706,300",
+      "rating": "2.8"
+    },
+    {
+      "id": 266,
+      "name": "Adria Residences - Sapphire Garden - 2 Bedroom for 4 person",
+      "city": 50,
+      "country": "PH",
+      "price": "311,800",
+      "rating": "1.6"
+    },
+    {
+      "id": 267,
+      "name": "Arzo Hotel Manila",
+      "city": 50,
+      "country": "PH",
+      "price": "600,500",
       "rating": "2.6"
     },
     {
       "id": 268,
-      "name": "New Coast Hotel Manila",
+      "name": "the Gramercy Residences NEW RELEASE - Deluxe Queen Studio",
       "city": 50,
       "country": "PH",
-      "price": "283,700",
-      "rating": "1.6"
+      "price": "321,700",
+      "rating": "2.3"
     },
     {
       "id": 269,
-      "name": "Berjaya Makati Hotel - Philippines",
+      "name": "Sorrel Residences- 2 Bedroom Apartment",
       "city": 50,
       "country": "PH",
-      "price": "489,800",
-      "rating": "4.0"
+      "price": "314,200",
+      "rating": "3.2"
     },
     {
       "id": 270,
-      "name": "Sheraton Manila Bay",
-      "city": 50,
-      "country": "PH",
-      "price": "723,900",
-      "rating": "1.8"
-    },
-    {
-      "id": 271,
       "name": "City Garden Suites Manila",
       "city": 50,
       "country": "PH",
-      "price": "333,500",
-      "rating": "2.9"
-    },
-    {
-      "id": 272,
-      "name": "Rizal Park Hotel",
-      "city": 50,
-      "country": "PH",
-      "price": "151,900",
-      "rating": "2.3"
-    },
-    {
-      "id": 273,
-      "name": "Swiss-Belhotel Blulane",
-      "city": 50,
-      "country": "PH",
-      "price": "433,800",
-      "rating": "3.4"
-    },
-    {
-      "id": 274,
-      "name": "Red Planet Manila Bay",
-      "city": 50,
-      "country": "PH",
-      "price": "795,800",
-      "rating": "3.0"
-    },
-    {
-      "id": 275,
-      "name": "Airo Suites Makati",
-      "city": 50,
-      "country": "PH",
-      "price": "411,800",
-      "rating": "1.8"
-    },
-    {
-      "id": 276,
-      "name": "Old Quarter View Hanoi Hostel",
-      "city": 51,
-      "country": "VN",
-      "price": "645,700",
-      "rating": "2.1"
-    },
-    {
-      "id": 277,
-      "name": "La Siesta Premium Hang Be Hotel",
-      "city": 51,
-      "country": "VN",
-      "price": "468,800",
-      "rating": "1.3"
-    },
-    {
-      "id": 278,
-      "name": "MoonLight Tay Ho",
-      "city": 51,
-      "country": "VN",
-      "price": "791,300",
-      "rating": "2.3"
-    },
-    {
-      "id": 279,
-      "name": "Hanoi Aria Central Hotel & Spa",
-      "city": 51,
-      "country": "VN",
-      "price": "338,700",
-      "rating": "1.4"
-    },
-    {
-      "id": 280,
-      "name": "Affa Boutique Hotel HaNoi",
-      "city": 51,
-      "country": "VN",
-      "price": "605,100",
-      "rating": "3.5"
-    },
-    {
-      "id": 281,
-      "name": "22housing Residence Suites - Studio Apartment",
-      "city": 51,
-      "country": "VN",
-      "price": "478,600",
-      "rating": "1.8"
-    },
-    {
-      "id": 282,
-      "name": "Mövenpick Hotel Hanoi Centre",
-      "city": 51,
-      "country": "VN",
-      "price": "363,200",
-      "rating": "4.6"
-    },
-    {
-      "id": 283,
-      "name": "Dolce By Wyndham Hanoi Golden Lake",
-      "city": 51,
-      "country": "VN",
-      "price": "41,900",
+      "price": "576,700",
       "rating": "4.7"
     },
     {
-      "id": 284,
-      "name": "Five Star West Lake",
-      "city": 51,
-      "country": "VN",
-      "price": "600,100",
-      "rating": "2.2"
+      "id": 271,
+      "name": "Bayview Park Hotel Manila",
+      "city": 50,
+      "country": "PH",
+      "price": "714,000",
+      "rating": "3.7"
     },
     {
-      "id": 285,
-      "name": "Collection O Le Grand Hanoi hotel - The Sun",
-      "city": 51,
-      "country": "VN",
-      "price": "573,400",
-      "rating": "1.8"
+      "id": 272,
+      "name": "The grand towers manila studio",
+      "city": 50,
+      "country": "PH",
+      "price": "299,700",
+      "rating": "3.0"
     },
     {
-      "id": 286,
-      "name": "Hanoi Buffalo Hostel",
-      "city": 51,
-      "country": "VN",
-      "price": "672,100",
-      "rating": "3.4"
+      "id": 273,
+      "name": "Ramada by Wyndham Manila Central",
+      "city": 50,
+      "country": "PH",
+      "price": "475,700",
+      "rating": "2.0"
     },
     {
-      "id": 287,
-      "name": "La Batisse Hotel",
-      "city": 51,
-      "country": "VN",
-      "price": "735,200",
-      "rating": "3.6"
-    },
-    {
-      "id": 288,
-      "name": "GRAND HOTEL du LAC Hanoi",
-      "city": 51,
-      "country": "VN",
-      "price": "461,700",
-      "rating": "2.4"
-    },
-    {
-      "id": 289,
-      "name": "Pan Pacific Hanoi",
-      "city": 51,
-      "country": "VN",
-      "price": "114,700",
-      "rating": "2.5"
-    },
-    {
-      "id": 290,
-      "name": "Re Hostel, Re Hotel",
-      "city": 51,
-      "country": "VN",
-      "price": "324,000",
-      "rating": "1.7"
-    },
-    {
-      "id": 291,
-      "name": "King's Hotel Trung Yên",
-      "city": 51,
-      "country": "VN",
-      "price": "541,100",
+      "id": 274,
+      "name": "Sheraton Manila Bay",
+      "city": 50,
+      "country": "PH",
+      "price": "148,700",
       "rating": "2.7"
     },
     {
-      "id": 292,
-      "name": "The Lapis Hotel",
-      "city": 51,
-      "country": "VN",
-      "price": "532,200",
-      "rating": "1.4"
+      "id": 275,
+      "name": "Lourdes Suites",
+      "city": 50,
+      "country": "PH",
+      "price": "44,900",
+      "rating": "1.3"
     },
     {
-      "id": 293,
+      "id": 276,
+      "name": "Berjaya Makati Hotel - Philippines",
+      "city": 50,
+      "country": "PH",
+      "price": "199,000",
+      "rating": "2.8"
+    },
+    {
+      "id": 277,
+      "name": "Admiral Hotel Manila - MGallery Collection",
+      "city": 50,
+      "country": "PH",
+      "price": "295,500",
+      "rating": "1.8"
+    },
+    {
+      "id": 278,
+      "name": "The Luneta Hotel Manila",
+      "city": 50,
+      "country": "PH",
+      "price": "160,700",
+      "rating": "1.8"
+    },
+    {
+      "id": 279,
+      "name": "La Casarita - Condormitel",
+      "city": 50,
+      "country": "PH",
+      "price": "614,000",
+      "rating": "1.3"
+    },
+    {
+      "id": 280,
+      "name": "Hanoi Buffalo Hostel",
+      "city": 51,
+      "country": "VN",
+      "price": "797,300",
+      "rating": "1.6"
+    },
+    {
+      "id": 281,
+      "name": "GRAND HOTEL du LAC Hanoi",
+      "city": 51,
+      "country": "VN",
+      "price": "712,000",
+      "rating": "4.2"
+    },
+    {
+      "id": 282,
+      "name": "Old Quarter View Hanoi Hostel",
+      "city": 51,
+      "country": "VN",
+      "price": "343,500",
+      "rating": "2.4"
+    },
+    {
+      "id": 283,
       "name": "Lotte Hotel Hanoi",
       "city": 51,
       "country": "VN",
-      "price": "672,500",
+      "price": "644,400",
+      "rating": "2.3"
+    },
+    {
+      "id": 284,
+      "name": "MoonLight Tay Ho",
+      "city": 51,
+      "country": "VN",
+      "price": "712,500",
+      "rating": "4.1"
+    },
+    {
+      "id": 285,
+      "name": "La Siesta Premium Hang Be Hotel",
+      "city": 51,
+      "country": "VN",
+      "price": "33,900",
+      "rating": "4.7"
+    },
+    {
+      "id": 286,
+      "name": "22housing Residence Suites",
+      "city": 51,
+      "country": "VN",
+      "price": "321,100",
+      "rating": "3.5"
+    },
+    {
+      "id": 287,
+      "name": "La Cascada House & Travel",
+      "city": 51,
+      "country": "VN",
+      "price": "746,300",
+      "rating": "2.3"
+    },
+    {
+      "id": 288,
+      "name": "Pan Pacific Hanoi",
+      "city": 51,
+      "country": "VN",
+      "price": "748,500",
+      "rating": "2.7"
+    },
+    {
+      "id": 289,
+      "name": "Peridot Grand Luxury Boutique Hotel",
+      "city": 51,
+      "country": "VN",
+      "price": "517,800",
+      "rating": "4.6"
+    },
+    {
+      "id": 290,
+      "name": "Bendecir Hotel & Spa",
+      "city": 51,
+      "country": "VN",
+      "price": "114,000",
+      "rating": "3.8"
+    },
+    {
+      "id": 291,
+      "name": "Hanoi La Selva Central Hotel",
+      "city": 51,
+      "country": "VN",
+      "price": "50,200",
+      "rating": "4.8"
+    },
+    {
+      "id": 292,
+      "name": "Dahlia Hotel Hanoi",
+      "city": 51,
+      "country": "VN",
+      "price": "286,100",
+      "rating": "1.1"
+    },
+    {
+      "id": 293,
+      "name": "Veris Hotel",
+      "city": 51,
+      "country": "VN",
+      "price": "750,900",
       "rating": "2.8"
     },
     {
       "id": 294,
-      "name": "Khách sạn Vọng Xưa",
+      "name": "Memory Legends Hotel",
       "city": 51,
       "country": "VN",
-      "price": "731,000",
-      "rating": "1.3"
+      "price": "167,500",
+      "rating": "1.7"
     },
     {
       "id": 295,
-      "name": "Hanoi Hotel",
+      "name": "Hanoi Exclusive Hotel",
       "city": 51,
       "country": "VN",
-      "price": "86,000",
-      "rating": "4.6"
+      "price": "471,400",
+      "rating": "4.5"
     },
     {
       "id": 296,
-      "name": "Village Hotel Changi",
-      "city": 52,
-      "country": "SG",
-      "price": "104,200",
-      "rating": "2.4"
+      "name": "Hanoi Aria Central Hotel & Spa",
+      "city": 51,
+      "country": "VN",
+      "price": "476,000",
+      "rating": "2.0"
     },
     {
       "id": 297,
-      "name": "Siloso Beach Resort - Mastercard Pitstop",
-      "city": 52,
-      "country": "SG",
-      "price": "392,600",
-      "rating": "2.4"
+      "name": "Babylon Premium Hotel & Spa",
+      "city": 51,
+      "country": "VN",
+      "price": "258,200",
+      "rating": "3.8"
     },
     {
       "id": 298,
-      "name": "Heritage Collection on Boat Quay (Quayside Wing)",
-      "city": 52,
-      "country": "SG",
-      "price": "142,800",
-      "rating": "1.1"
+      "name": "Affa Boutique Hotel HaNoi",
+      "city": 51,
+      "country": "VN",
+      "price": "629,500",
+      "rating": "2.4"
     },
     {
       "id": 299,
-      "name": "V Hotel Lavender",
-      "city": 52,
-      "country": "SG",
-      "price": "349,500",
-      "rating": "2.5"
+      "name": "La Batisse Hotel",
+      "city": 51,
+      "country": "VN",
+      "price": "728,100",
+      "rating": "3.4"
     },
     {
       "id": 300,
       "name": "Marina Bay Sands Singapore",
       "city": 52,
       "country": "SG",
-      "price": "472,000",
-      "rating": "2.3"
-    },
-    {
-      "id": 301,
-      "name": "Dao by Dorsett AMTD Singapore",
-      "city": 52,
-      "country": "SG",
-      "price": "609,000",
-      "rating": "4.3"
-    },
-    {
-      "id": 302,
-      "name": "Owen House by Habyt (Previously Hmlet)",
-      "city": 52,
-      "country": "SG",
-      "price": "784,000",
-      "rating": "4.7"
-    },
-    {
-      "id": 303,
-      "name": "Andaz Singapore, by Hyatt",
-      "city": 52,
-      "country": "SG",
-      "price": "719,600",
-      "rating": "4.3"
-    },
-    {
-      "id": 304,
-      "name": "York Hotel Singapore",
-      "city": 52,
-      "country": "SG",
-      "price": "729,000",
-      "rating": "3.8"
-    },
-    {
-      "id": 305,
-      "name": "Courtyard by Marriott Singapore Novena",
-      "city": 52,
-      "country": "SG",
-      "price": "133,100",
-      "rating": "1.1"
-    },
-    {
-      "id": 306,
-      "name": "New Orchid Hotel",
-      "city": 52,
-      "country": "SG",
-      "price": "334,300",
-      "rating": "1.6"
-    },
-    {
-      "id": 307,
-      "name": "Jayleen Clarke Quay Hotel",
-      "city": 52,
-      "country": "SG",
-      "price": "517,600",
-      "rating": "1.1"
-    },
-    {
-      "id": 308,
-      "name": "Hotel Boss",
-      "city": 52,
-      "country": "SG",
-      "price": "281,800",
-      "rating": "1.3"
-    },
-    {
-      "id": 309,
-      "name": "JEN Singapore Orchardgateway by Shangri-La",
-      "city": 52,
-      "country": "SG",
-      "price": "751,800",
-      "rating": "5.0"
-    },
-    {
-      "id": 310,
-      "name": "Potato Boutique Hostel",
-      "city": 52,
-      "country": "SG",
-      "price": "497,400",
-      "rating": "3.5"
-    },
-    {
-      "id": 311,
-      "name": "Hotel Grand Central",
-      "city": 52,
-      "country": "SG",
-      "price": "758,200",
-      "rating": "1.3"
-    },
-    {
-      "id": 312,
-      "name": "Holiday Inn Singapore Little India",
-      "city": 52,
-      "country": "SG",
-      "price": "537,200",
-      "rating": "4.8"
-    },
-    {
-      "id": 313,
-      "name": "hipstercity",
-      "city": 52,
-      "country": "SG",
-      "price": "47,200",
-      "rating": "3.1"
-    },
-    {
-      "id": 314,
-      "name": "Citadines Raffles Place Singapore",
-      "city": 52,
-      "country": "SG",
-      "price": "706,200",
-      "rating": "5.0"
-    },
-    {
-      "id": 315,
-      "name": "POTATO Boutique Capsule @ Little India",
-      "city": 52,
-      "country": "SG",
-      "price": "764,100",
-      "rating": "3.6"
-    },
-    {
-      "id": 316,
-      "name": "Shangri-La Bangkok",
-      "city": 55,
-      "country": "TH",
-      "price": "106,600",
-      "rating": "3.0"
-    },
-    {
-      "id": 317,
-      "name": "Villa Cha Cha Banglamphu Hotel",
-      "city": 55,
-      "country": "TH",
-      "price": "500,700",
-      "rating": "5.0"
-    },
-    {
-      "id": 318,
-      "name": "Wild Orchid Villa",
-      "city": 55,
-      "country": "TH",
-      "price": "379,100",
-      "rating": "1.0"
-    },
-    {
-      "id": 319,
-      "name": "Tim Mansion Bangkok Hotel",
-      "city": 55,
-      "country": "TH",
-      "price": "724,800",
-      "rating": "3.7"
-    },
-    {
-      "id": 320,
-      "name": "Lilit Bang Lumphu Hotel - Bangkok",
-      "city": 55,
-      "country": "TH",
-      "price": "224,900",
-      "rating": "4.2"
-    },
-    {
-      "id": 321,
-      "name": "JC Kevin Sathorn Bangkok Hotel",
-      "city": 55,
-      "country": "TH",
-      "price": "149,300",
-      "rating": "1.4"
-    },
-    {
-      "id": 322,
-      "name": "BB wong sawang Room 5",
-      "city": 55,
-      "country": "TH",
-      "price": "446,800",
-      "rating": "1.8"
-    },
-    {
-      "id": 323,
-      "name": "New Siam Riverside",
-      "city": 55,
-      "country": "TH",
-      "price": "649,000",
-      "rating": "3.5"
-    },
-    {
-      "id": 324,
-      "name": "Prince Palace Hotel Bangkok",
-      "city": 55,
-      "country": "TH",
-      "price": "486,700",
-      "rating": "3.3"
-    },
-    {
-      "id": 325,
-      "name": "Roxx Social Hostel, Cafe & Bistro",
-      "city": 55,
-      "country": "TH",
-      "price": "492,600",
+      "price": "395,200",
       "rating": "4.5"
     },
     {
-      "id": 326,
-      "name": "Fullrich Residence",
+      "id": 301,
+      "name": "Hotel Boss",
+      "city": 52,
+      "country": "SG",
+      "price": "144,200",
+      "rating": "3.5"
+    },
+    {
+      "id": 302,
+      "name": "Andaz Singapore, by Hyatt",
+      "city": 52,
+      "country": "SG",
+      "price": "734,400",
+      "rating": "5.0"
+    },
+    {
+      "id": 303,
+      "name": "Carlton City Hotel Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "425,700",
+      "rating": "3.3"
+    },
+    {
+      "id": 304,
+      "name": "The Ritz-Carlton, Millenia Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "714,500",
+      "rating": "1.1"
+    },
+    {
+      "id": 305,
+      "name": "Heritage Collection on Boat Quay (Quayside Wing)",
+      "city": 52,
+      "country": "SG",
+      "price": "689,800",
+      "rating": "3.8"
+    },
+    {
+      "id": 306,
+      "name": "Shangri-La Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "222,100",
+      "rating": "3.4"
+    },
+    {
+      "id": 307,
+      "name": "Dao by Dorsett AMTD Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "272,800",
+      "rating": "3.9"
+    },
+    {
+      "id": 308,
+      "name": "Siloso Beach Resort - Mastercard Pitstop",
+      "city": 52,
+      "country": "SG",
+      "price": "99,600",
+      "rating": "1.6"
+    },
+    {
+      "id": 309,
+      "name": "York Hotel Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "352,900",
+      "rating": "2.8"
+    },
+    {
+      "id": 310,
+      "name": "Vibe Hotel Singapore Orchard",
+      "city": 52,
+      "country": "SG",
+      "price": "592,400",
+      "rating": "4.3"
+    },
+    {
+      "id": 311,
+      "name": "The Fullerton Hotel Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "583,400",
+      "rating": "3.1"
+    },
+    {
+      "id": 312,
+      "name": "Jayleen Clarke Quay Hotel",
+      "city": 52,
+      "country": "SG",
+      "price": "333,200",
+      "rating": "3.4"
+    },
+    {
+      "id": 313,
+      "name": "Owen House by Habyt (Previously Hmlet)",
+      "city": 52,
+      "country": "SG",
+      "price": "347,800",
+      "rating": "1.3"
+    },
+    {
+      "id": 314,
+      "name": "Oasia Hotel Downtown",
+      "city": 52,
+      "country": "SG",
+      "price": "111,700",
+      "rating": "3.7"
+    },
+    {
+      "id": 315,
+      "name": "Carlton Hotel Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "278,700",
+      "rating": "4.1"
+    },
+    {
+      "id": 316,
+      "name": "Furama RiverFront",
+      "city": 52,
+      "country": "SG",
+      "price": "746,000",
+      "rating": "3.6"
+    },
+    {
+      "id": 317,
+      "name": "V Hotel Lavender",
+      "city": 52,
+      "country": "SG",
+      "price": "504,200",
+      "rating": "4.9"
+    },
+    {
+      "id": 318,
+      "name": "Citadines Raffles Place Singapore",
+      "city": 52,
+      "country": "SG",
+      "price": "615,300",
+      "rating": "2.4"
+    },
+    {
+      "id": 319,
+      "name": "Premium Two-Bedroom Suites 15-minutes walk from Suntec City",
+      "city": 52,
+      "country": "SG",
+      "price": "312,400",
+      "rating": "1.5"
+    },
+    {
+      "id": 320,
+      "name": "JC Kevin Sathorn Bangkok Hotel",
       "city": 55,
       "country": "TH",
-      "price": "329,500",
+      "price": "380,800",
+      "rating": "2.8"
+    },
+    {
+      "id": 321,
+      "name": "Akara Bangkok",
+      "city": 55,
+      "country": "TH",
+      "price": "141,900",
+      "rating": "3.9"
+    },
+    {
+      "id": 322,
+      "name": "Shangri-La Bangkok",
+      "city": 55,
+      "country": "TH",
+      "price": "492,500",
+      "rating": "2.4"
+    },
+    {
+      "id": 323,
+      "name": "LKN Grand - Queen Studio",
+      "city": 55,
+      "country": "TH",
+      "price": "483,600",
+      "rating": "4.7"
+    },
+    {
+      "id": 324,
+      "name": "The Berkeley Hotel Pratunam",
+      "city": 55,
+      "country": "TH",
+      "price": "144,000",
       "rating": "1.2"
+    },
+    {
+      "id": 325,
+      "name": "Prince Palace Hotel Bangkok",
+      "city": 55,
+      "country": "TH",
+      "price": "297,900",
+      "rating": "2.8"
+    },
+    {
+      "id": 326,
+      "name": "Vali Villa Bangkok",
+      "city": 55,
+      "country": "TH",
+      "price": "515,200",
+      "rating": "2.7"
     },
     {
       "id": 327,
       "name": "Mandarin Hotel Bangkok, managed by Centre Point",
       "city": 55,
       "country": "TH",
-      "price": "561,700",
-      "rating": "1.1"
+      "price": "532,900",
+      "rating": "4.0"
     },
     {
       "id": 328,
-      "name": "The Berkeley Hotel Pratunam",
+      "name": "Avani+ Riverside Bangkok Hotel",
       "city": 55,
       "country": "TH",
-      "price": "263,100",
-      "rating": "1.7"
+      "price": "557,300",
+      "rating": "2.1"
     },
     {
       "id": 329,
-      "name": "Villa De Khaosan by Chillax",
+      "name": "The Okura Prestige Bangkok",
       "city": 55,
       "country": "TH",
-      "price": "164,900",
-      "rating": "2.0"
+      "price": "41,600",
+      "rating": "3.6"
     },
     {
       "id": 330,
-      "name": "Vali Villa Bangkok",
+      "name": "The Siam",
       "city": 55,
       "country": "TH",
-      "price": "45,000",
-      "rating": "4.2"
+      "price": "106,700",
+      "rating": "3.0"
     },
     {
       "id": 331,
-      "name": "Kiwi Capsule Hotel Bangkok",
+      "name": "P.K. Garden Home - One-Bedroom Apartment",
       "city": 55,
       "country": "TH",
-      "price": "45,300",
-      "rating": "4.3"
+      "price": "624,700",
+      "rating": "2.3"
     },
     {
       "id": 332,
       "name": "Thai Rong Tower Condominiums",
       "city": 55,
       "country": "TH",
-      "price": "756,300",
-      "rating": "2.5"
+      "price": "542,700",
+      "rating": "3.2"
     },
     {
       "id": 333,
       "name": "Citadines Sukhumvit 11 Bangkok - Studio Executive",
       "city": 55,
       "country": "TH",
-      "price": "699,200",
-      "rating": "4.1"
-    },
-    {
-      "id": 334,
-      "name": "OYO 117 King One Suvarnabhumi",
-      "city": 55,
-      "country": "TH",
-      "price": "488,000",
-      "rating": "4.5"
-    },
-    {
-      "id": 335,
-      "name": "Khaosan Palace",
-      "city": 55,
-      "country": "TH",
-      "price": "621,500",
-      "rating": "3.8"
-    },
-    {
-      "id": 336,
-      "name": "Hilton Garden Inn Hong Kong Mongkok",
-      "city": 57,
-      "country": "HK",
-      "price": "703,900",
-      "rating": "1.9"
-    },
-    {
-      "id": 337,
-      "name": "Royal Plaza Hotel",
-      "city": 57,
-      "country": "HK",
-      "price": "624,300",
-      "rating": "3.5"
-    },
-    {
-      "id": 338,
-      "name": "The Harbourview",
-      "city": 57,
-      "country": "HK",
-      "price": "290,900",
+      "price": "238,000",
       "rating": "4.6"
     },
     {
+      "id": 334,
+      "name": "Siam@Siam Design Hotel Bangkok",
+      "city": 55,
+      "country": "TH",
+      "price": "655,000",
+      "rating": "1.8"
+    },
+    {
+      "id": 335,
+      "name": "Millennium Hilton Bangkok",
+      "city": 55,
+      "country": "TH",
+      "price": "280,100",
+      "rating": "3.0"
+    },
+    {
+      "id": 336,
+      "name": "Eastin Grand Hotel Phayathai",
+      "city": 55,
+      "country": "TH",
+      "price": "262,000",
+      "rating": "4.3"
+    },
+    {
+      "id": 337,
+      "name": "Roompini",
+      "city": 55,
+      "country": "TH",
+      "price": "402,900",
+      "rating": "2.0"
+    },
+    {
+      "id": 338,
+      "name": "LOST INN BKK",
+      "city": 55,
+      "country": "TH",
+      "price": "638,300",
+      "rating": "4.8"
+    },
+    {
       "id": 339,
-      "name": "Hyatt Regency Hong Kong, Sha Tin",
-      "city": 57,
-      "country": "HK",
-      "price": "428,000",
-      "rating": "2.4"
+      "name": "Sindhorn Midtown Hotel Bangkok, Vignette Collection by IHG",
+      "city": 55,
+      "country": "TH",
+      "price": "551,800",
+      "rating": "4.1"
     },
     {
       "id": 340,
-      "name": "Brighton Hotel Hong Kong",
+      "name": "The Harbourview",
       "city": 57,
       "country": "HK",
-      "price": "548,000",
-      "rating": "3.7"
+      "price": "672,900",
+      "rating": "4.6"
     },
     {
       "id": 341,
-      "name": "Hyatt Centric Victoria Harbour Hong Kong",
+      "name": "Travelodge Kowloon",
       "city": 57,
       "country": "HK",
-      "price": "626,800",
-      "rating": "2.9"
+      "price": "59,300",
+      "rating": "1.7"
     },
     {
       "id": 342,
       "name": "Metropark Hotel Mongkok",
       "city": 57,
       "country": "HK",
-      "price": "525,600",
-      "rating": "2.3"
+      "price": "418,600",
+      "rating": "3.0"
     },
     {
       "id": 343,
-      "name": "The BEACON 碧薈",
+      "name": "Hyatt Regency Hong Kong, Sha Tin",
       "city": 57,
       "country": "HK",
-      "price": "358,700",
-      "rating": "2.6"
+      "price": "687,200",
+      "rating": "4.5"
     },
     {
       "id": 344,
-      "name": "InterContinental Grand Stanford Hong Kong by IHG",
+      "name": "Hilton Garden Inn Hong Kong Mongkok",
       "city": 57,
       "country": "HK",
-      "price": "277,300",
-      "rating": "1.7"
+      "price": "342,900",
+      "rating": "3.5"
     },
     {
       "id": 345,
-      "name": "New World Millennium Hong Kong Hotel",
+      "name": "Hyatt Centric Victoria Harbour Hong Kong",
       "city": 57,
       "country": "HK",
-      "price": "506,100",
-      "rating": "2.1"
+      "price": "525,200",
+      "rating": "1.1"
     },
     {
       "id": 346,
-      "name": "Hotel ICON",
-      "city": 57,
-      "country": "HK",
-      "price": "574,400",
-      "rating": "1.1"
-    },
-    {
-      "id": 347,
-      "name": "Park Hotel Hong Kong",
-      "city": 57,
-      "country": "HK",
-      "price": "37,800",
-      "rating": "1.5"
-    },
-    {
-      "id": 348,
-      "name": "Largos Hotel",
-      "city": 57,
-      "country": "HK",
-      "price": "273,900",
-      "rating": "3.8"
-    },
-    {
-      "id": 349,
-      "name": "Harbour Plaza 8 Degrees",
-      "city": 57,
-      "country": "HK",
-      "price": "207,600",
-      "rating": "2.0"
-    },
-    {
-      "id": 350,
-      "name": "The Royal Garden",
-      "city": 57,
-      "country": "HK",
-      "price": "211,500",
-      "rating": "4.5"
-    },
-    {
-      "id": 351,
-      "name": "Mondrian Hong Kong",
-      "city": 57,
-      "country": "HK",
-      "price": "460,400",
-      "rating": "3.0"
-    },
-    {
-      "id": 352,
-      "name": "Cordis, Hong Kong",
-      "city": 57,
-      "country": "HK",
-      "price": "766,200",
-      "rating": "1.1"
-    },
-    {
-      "id": 353,
       "name": "Ramada Hong Kong Harbour View",
       "city": 57,
       "country": "HK",
-      "price": "554,000",
-      "rating": "1.1"
+      "price": "627,500",
+      "rating": "4.0"
     },
     {
-      "id": 354,
-      "name": "Kowloon Harbourfront Hotel",
+      "id": 347,
+      "name": "Page148 - Page Hotels",
       "city": 57,
       "country": "HK",
-      "price": "629,500",
-      "rating": "4.4"
-    },
-    {
-      "id": 355,
-      "name": "Tsim Sha Tsui尖沙咀地铁口  小型双人房  星光大道  中港城码头",
-      "city": 57,
-      "country": "HK",
-      "price": "399,200",
-      "rating": "2.7"
-    },
-    {
-      "id": 356,
-      "name": "Hotel The One",
-      "city": 61,
-      "country": "KR",
-      "price": "128,400",
-      "rating": "1.1"
-    },
-    {
-      "id": 357,
-      "name": "Jeju Raon Hotel & Resort",
-      "city": 61,
-      "country": "KR",
-      "price": "607,800",
-      "rating": "3.8"
-    },
-    {
-      "id": 358,
-      "name": "Grand Hyatt Jeju",
-      "city": 61,
-      "country": "KR",
-      "price": "406,100",
-      "rating": "3.8"
-    },
-    {
-      "id": 359,
-      "name": "Aqua Beautique Poolvilla",
-      "city": 61,
-      "country": "KR",
-      "price": "58,600",
-      "rating": "1.8"
-    },
-    {
-      "id": 360,
-      "name": "Hi Residences",
-      "city": 61,
-      "country": "KR",
-      "price": "341,900",
-      "rating": "1.4"
-    },
-    {
-      "id": 361,
-      "name": "Jeju Resort",
-      "city": 61,
-      "country": "KR",
-      "price": "85,400",
-      "rating": "1.4"
-    },
-    {
-      "id": 362,
-      "name": "Jeju Shinhwa World Marriott Resort",
-      "city": 61,
-      "country": "KR",
-      "price": "122,200",
-      "rating": "4.8"
-    },
-    {
-      "id": 363,
-      "name": "LOTTE City Hotel Jeju",
-      "city": 61,
-      "country": "KR",
-      "price": "493,700",
-      "rating": "1.5"
-    },
-    {
-      "id": 364,
-      "name": "Page1Beach front private condo ,perfect honeymoon",
-      "city": 61,
-      "country": "KR",
-      "price": "579,900",
-      "rating": "4.1"
-    },
-    {
-      "id": 365,
-      "name": "성산 마리나 호텔",
-      "city": 61,
-      "country": "KR",
-      "price": "193,200",
-      "rating": "2.5"
-    },
-    {
-      "id": 366,
-      "name": "Jeju Time-Travel Pension",
-      "city": 61,
-      "country": "KR",
-      "price": "165,500",
-      "rating": "3.8"
-    },
-    {
-      "id": 367,
-      "name": "Jeju Central City Hotel",
-      "city": 61,
-      "country": "KR",
-      "price": "242,200",
-      "rating": "4.4"
-    },
-    {
-      "id": 368,
-      "name": "Around Follie",
-      "city": 61,
-      "country": "KR",
-      "price": "195,100",
-      "rating": "2.5"
-    },
-    {
-      "id": 369,
-      "name": "Lotte Resort Jeju Art Villas",
-      "city": 61,
-      "country": "KR",
-      "price": "376,700",
-      "rating": "3.4"
-    },
-    {
-      "id": 370,
-      "name": "Attirance Hotel & Pool Villa",
-      "city": 61,
-      "country": "KR",
-      "price": "796,800",
-      "rating": "4.1"
-    },
-    {
-      "id": 371,
-      "name": "Nice Hotel",
-      "city": 61,
-      "country": "KR",
-      "price": "96,100",
-      "rating": "2.5"
-    },
-    {
-      "id": 372,
-      "name": "UTOP UBLESS HOTEL",
-      "city": 61,
-      "country": "KR",
-      "price": "556,700",
-      "rating": "1.7"
-    },
-    {
-      "id": 373,
-      "name": "서머셋 제주신화월드 SOMERSET JEJU SHINHWA WORLD",
-      "city": 61,
-      "country": "KR",
-      "price": "729,500",
-      "rating": "1.5"
-    },
-    {
-      "id": 374,
-      "name": "Ramada by Wyndham Jeju City Hall",
-      "city": 61,
-      "country": "KR",
-      "price": "80,900",
-      "rating": "1.3"
-    },
-    {
-      "id": 375,
-      "name": "Water Garden Resort",
-      "city": 61,
-      "country": "KR",
-      "price": "633,300",
-      "rating": "4.9"
-    },
-    {
-      "id": 376,
-      "name": "Imagine Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "250,500",
-      "rating": "4.8"
-    },
-    {
-      "id": 377,
-      "name": "Nandini Jungle by Hanging Gardens",
-      "city": 60,
-      "country": "ID",
-      "price": "260,900",
-      "rating": "4.6"
-    },
-    {
-      "id": 378,
-      "name": "The Ritz-Carlton, Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "666,900",
-      "rating": "2.7"
-    },
-    {
-      "id": 379,
-      "name": "Triyana Resort and Glamping",
-      "city": 60,
-      "country": "ID",
-      "price": "413,900",
-      "rating": "4.5"
-    },
-    {
-      "id": 380,
-      "name": "Dewi Sri Private Villa",
-      "city": 60,
-      "country": "ID",
-      "price": "346,100",
-      "rating": "3.3"
-    },
-    {
-      "id": 381,
-      "name": "THE HAVEN Bali Seminyak",
-      "city": 60,
-      "country": "ID",
-      "price": "195,400",
-      "rating": "2.2"
-    },
-    {
-      "id": 382,
-      "name": "Māua Nusa Penida",
-      "city": 60,
-      "country": "ID",
-      "price": "243,000",
-      "rating": "2.6"
-    },
-    {
-      "id": 383,
-      "name": "Nadi Nature Resort - Adults Only",
-      "city": 60,
-      "country": "ID",
-      "price": "65,900",
-      "rating": "1.7"
-    },
-    {
-      "id": 384,
-      "name": "The Anvaya Beach Resort Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "720,000",
+      "price": "605,300",
       "rating": "4.7"
     },
     {
-      "id": 385,
-      "name": "Novotel Bali Benoa",
-      "city": 60,
-      "country": "ID",
-      "price": "706,600",
-      "rating": "3.3"
-    },
-    {
-      "id": 386,
-      "name": "Bvlgari Resort Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "555,500",
-      "rating": "2.1"
-    },
-    {
-      "id": 387,
-      "name": "Kuta Paradiso Hotel",
-      "city": 60,
-      "country": "ID",
-      "price": "346,800",
-      "rating": "2.3"
-    },
-    {
-      "id": 388,
-      "name": "AYANA Resort Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "526,300",
-      "rating": "1.5"
-    },
-    {
-      "id": 389,
-      "name": "Nusa Sentana Lembongan Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "461,700",
-      "rating": "3.9"
-    },
-    {
-      "id": 390,
-      "name": "Amnaya Resort Nusa Dua",
-      "city": 60,
-      "country": "ID",
-      "price": "512,600",
+      "id": 348,
+      "name": "Regal Hongkong Hotel",
+      "city": 57,
+      "country": "HK",
+      "price": "482,400",
       "rating": "4.2"
     },
     {
-      "id": 391,
-      "name": "Merthayasa Bungalows",
-      "city": 60,
-      "country": "ID",
-      "price": "349,000",
-      "rating": "3.0"
+      "id": 349,
+      "name": "Mondrian Hong Kong",
+      "city": 57,
+      "country": "HK",
+      "price": "98,600",
+      "rating": "1.2"
     },
     {
-      "id": 392,
-      "name": "Eden Hotel Kuta Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "67,800",
+      "id": 350,
+      "name": "We Hotel Kowloon",
+      "city": 57,
+      "country": "HK",
+      "price": "414,200",
+      "rating": "2.8"
+    },
+    {
+      "id": 351,
+      "name": "Tsim Sha Tsui尖沙咀地铁口  小型双人房  星光大道  中港城码头",
+      "city": 57,
+      "country": "HK",
+      "price": "679,900",
+      "rating": "3.4"
+    },
+    {
+      "id": 352,
+      "name": "Imperial Hotel",
+      "city": 57,
+      "country": "HK",
+      "price": "423,800",
+      "rating": "2.6"
+    },
+    {
+      "id": 353,
+      "name": "E Hotel Hong Kong",
+      "city": 57,
+      "country": "HK",
+      "price": "475,800",
+      "rating": "4.2"
+    },
+    {
+      "id": 354,
+      "name": "Hotel COZi ‧ Harbour View",
+      "city": 57,
+      "country": "HK",
+      "price": "520,700",
+      "rating": "4.3"
+    },
+    {
+      "id": 355,
+      "name": "The Royal Garden",
+      "city": 57,
+      "country": "HK",
+      "price": "566,500",
       "rating": "2.4"
     },
     {
-      "id": 393,
-      "name": "The Sankara Resort & Spa",
-      "city": 60,
-      "country": "ID",
-      "price": "622,400",
-      "rating": "1.1"
+      "id": 356,
+      "name": "VVE VVE HOTEL",
+      "city": 57,
+      "country": "HK",
+      "price": "545,400",
+      "rating": "4.5"
     },
     {
-      "id": 394,
-      "name": "The Oberoi Beach Resort, Bali",
-      "city": 60,
-      "country": "ID",
-      "price": "213,700",
+      "id": 357,
+      "name": "Metroplace Boutique",
+      "city": 57,
+      "country": "HK",
+      "price": "601,500",
+      "rating": "4.1"
+    },
+    {
+      "id": 358,
+      "name": "WE HOTEL",
+      "city": 57,
+      "country": "HK",
+      "price": "517,200",
+      "rating": "3.3"
+    },
+    {
+      "id": 359,
+      "name": "7 guest house",
+      "city": 57,
+      "country": "HK",
+      "price": "117,400",
+      "rating": "3.5"
+    },
+    {
+      "id": 360,
+      "name": "Jeju Resort",
+      "city": 61,
+      "country": "KR",
+      "price": "691,600",
+      "rating": "3.7"
+    },
+    {
+      "id": 361,
+      "name": "Jeju Raon Hotel & Resort",
+      "city": 61,
+      "country": "KR",
+      "price": "794,000",
+      "rating": "3.3"
+    },
+    {
+      "id": 362,
+      "name": "LOTTE City Hotel Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "581,000",
+      "rating": "1.6"
+    },
+    {
+      "id": 363,
+      "name": "Page1Beach front private condo ,perfect honeymoon",
+      "city": 61,
+      "country": "KR",
+      "price": "163,000",
+      "rating": "1.6"
+    },
+    {
+      "id": 364,
+      "name": "Aqua Beautique Poolvilla",
+      "city": 61,
+      "country": "KR",
+      "price": "83,400",
+      "rating": "1.9"
+    },
+    {
+      "id": 365,
+      "name": "Hi Residences",
+      "city": 61,
+      "country": "KR",
+      "price": "201,000",
       "rating": "2.0"
     },
     {
-      "id": 395,
-      "name": "Hilton Garden Inn Bali Ngurah Rai Airport",
+      "id": 366,
+      "name": "Lotte Resort Jeju Art Villas",
+      "city": 61,
+      "country": "KR",
+      "price": "728,600",
+      "rating": "2.1"
+    },
+    {
+      "id": 367,
+      "name": "Jeju Shinhwa World Marriott Resort",
+      "city": 61,
+      "country": "KR",
+      "price": "446,700",
+      "rating": "4.9"
+    },
+    {
+      "id": 368,
+      "name": "Private wood house (Jeju)",
+      "city": 61,
+      "country": "KR",
+      "image": "N/A",
+      "price": "782,500",
+      "rating": "5.0"
+    },
+    {
+      "id": 369,
+      "name": "Grand Hyatt Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "553,500",
+      "rating": "1.4"
+    },
+    {
+      "id": 370,
+      "name": "Maison GLAD Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "354,800",
+      "rating": "1.7"
+    },
+    {
+      "id": 371,
+      "name": "Hotel The One",
+      "city": 61,
+      "country": "KR",
+      "price": "421,400",
+      "rating": "2.6"
+    },
+    {
+      "id": 372,
+      "name": "Dyneoceano Hotel",
+      "city": 61,
+      "country": "KR",
+      "price": "552,100",
+      "rating": "2.0"
+    },
+    {
+      "id": 373,
+      "name": "jeju resort",
+      "city": 61,
+      "country": "KR",
+      "price": "80,600",
+      "rating": "1.7"
+    },
+    {
+      "id": 374,
+      "name": "Best Western Hotel Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "401,900",
+      "rating": "1.6"
+    },
+    {
+      "id": 375,
+      "name": "Shalom Hotel Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "418,300",
+      "rating": "2.2"
+    },
+    {
+      "id": 376,
+      "name": "Hotel Four Seasons Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "441,500",
+      "rating": "2.8"
+    },
+    {
+      "id": 377,
+      "name": "Shilla Stay Jeju",
+      "city": 61,
+      "country": "KR",
+      "price": "523,600",
+      "rating": "4.1"
+    },
+    {
+      "id": 378,
+      "name": "Galaxy Hotel",
+      "city": 61,
+      "country": "KR",
+      "price": "199,100",
+      "rating": "4.3"
+    },
+    {
+      "id": 379,
+      "name": "Jeju Oriental Hotel",
+      "city": 61,
+      "country": "KR",
+      "price": "411,100",
+      "rating": "3.9"
+    },
+    {
+      "id": 380,
+      "name": "Imagine Bali",
       "city": 60,
       "country": "ID",
-      "price": "449,000",
-      "rating": "4.4"
+      "price": "210,200",
+      "rating": "4.1"
+    },
+    {
+      "id": 381,
+      "name": "Dewi Sri Private Villa",
+      "city": 60,
+      "country": "ID",
+      "price": "46,100",
+      "rating": "2.3"
+    },
+    {
+      "id": 382,
+      "name": "Triyana Resort and Glamping",
+      "city": 60,
+      "country": "ID",
+      "price": "702,700",
+      "rating": "3.0"
+    },
+    {
+      "id": 383,
+      "name": "Hotel Puri Saron Baruna Beach Cottages",
+      "city": 60,
+      "country": "ID",
+      "price": "235,400",
+      "rating": "1.2"
+    },
+    {
+      "id": 384,
+      "name": "The Ritz-Carlton, Bali",
+      "city": 60,
+      "country": "ID",
+      "price": "763,700",
+      "rating": "3.9"
+    },
+    {
+      "id": 385,
+      "name": "The Anvaya Beach Resort Bali",
+      "city": 60,
+      "country": "ID",
+      "price": "706,500",
+      "rating": "1.6"
+    },
+    {
+      "id": 386,
+      "name": "Merusaka Nusa Dua",
+      "city": 60,
+      "country": "ID",
+      "price": "679,400",
+      "rating": "3.8"
+    },
+    {
+      "id": 387,
+      "name": "Nadi Nature Resort - Adults Only",
+      "city": 60,
+      "country": "ID",
+      "price": "432,100",
+      "rating": "1.3"
+    },
+    {
+      "id": 388,
+      "name": "Ramayana Suites & Resort",
+      "city": 60,
+      "country": "ID",
+      "price": "76,000",
+      "rating": "4.7"
+    },
+    {
+      "id": 389,
+      "name": "The Seminyak Beach Resort & Spa",
+      "city": 60,
+      "country": "ID",
+      "price": "280,700",
+      "rating": "3.4"
+    },
+    {
+      "id": 390,
+      "name": "Bvlgari Resort Bali",
+      "city": 60,
+      "country": "ID",
+      "price": "58,400",
+      "rating": "4.8"
+    },
+    {
+      "id": 391,
+      "name": "Nandini Jungle by Hanging Gardens",
+      "city": 60,
+      "country": "ID",
+      "price": "610,000",
+      "rating": "4.1"
+    },
+    {
+      "id": 392,
+      "name": "THE HAVEN Bali Seminyak",
+      "city": 60,
+      "country": "ID",
+      "price": "343,200",
+      "rating": "1.3"
+    },
+    {
+      "id": 393,
+      "name": "The Kayon Jungle Resort",
+      "city": 60,
+      "country": "ID",
+      "price": "360,700",
+      "rating": "2.2"
+    },
+    {
+      "id": 394,
+      "name": "The Patra Bali Resort & Villas",
+      "city": 60,
+      "country": "ID",
+      "price": "318,600",
+      "rating": "1.2"
+    },
+    {
+      "id": 395,
+      "name": "Merthayasa Bungalows",
+      "city": 60,
+      "country": "ID",
+      "price": "262,200",
+      "rating": "3.0"
+    },
+    {
+      "id": 396,
+      "name": "Anantara Uluwatu Bali Resort",
+      "city": 60,
+      "country": "ID",
+      "price": "264,200",
+      "rating": "1.1"
+    },
+    {
+      "id": 397,
+      "name": "AYANA Resort Bali",
+      "city": 60,
+      "country": "ID",
+      "price": "43,000",
+      "rating": "3.6"
+    },
+    {
+      "id": 398,
+      "name": "Grand Hyatt Bali",
+      "city": 60,
+      "country": "ID",
+      "price": "668,500",
+      "rating": "1.9"
+    },
+    {
+      "id": 399,
+      "name": "The Lokha Ubud Resort, Villas & Spa",
+      "city": 60,
+      "country": "ID",
+      "price": "784,900",
+      "rating": "1.3"
     }
   ]
 }
