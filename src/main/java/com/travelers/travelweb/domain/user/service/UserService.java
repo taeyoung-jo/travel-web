@@ -21,7 +21,8 @@ public class UserService {
 		}
 
 		// 비밀번호 해시 처리
-		user.setPassword(PasswordUtil.hash(user.getPassword()));
+		String hashedPassword = PasswordUtil.hash(user.getPassword());
+		user.setPassword(hashedPassword);
 
 		repository.save(user);
 	}
@@ -43,7 +44,16 @@ public class UserService {
 	}
 
 	public Optional<User> login(String email, String password) {
-		User user = repository.findByEmailAndPassword(email, password);
-		return Optional.ofNullable(user);
+		Optional<User> userOpt = repository.findByEmail(email);
+
+		if (userOpt.isPresent()) {
+			User user = userOpt.get();
+
+			// 비밀번호 검증 (DB 해시 vs 입력 평문)
+			if (PasswordUtil.check(password, user.getPassword())) {
+				return Optional.of(user);
+			}
+		}
+		return Optional.empty();
 	}
 }

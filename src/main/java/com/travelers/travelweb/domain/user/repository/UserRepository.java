@@ -10,6 +10,7 @@ public interface UserRepository {
 	// Create
 	void save(User user);
 
+	// Read
 	Optional<User> findById(Long id);
 
 	Optional<User> findByEmail(String email);
@@ -18,8 +19,4 @@ public interface UserRepository {
 
 	// Delete
 	void deleteById(Long id);
-
-	// 인증 관련 메서드
-	User findByEmailAndPassword(String email, String password);
-
 }

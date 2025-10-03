@@ -87,24 +87,6 @@ public class JdbcUserRepository implements UserRepository {
 		}
 	}
 
-	@Override
-	public User findByEmailAndPassword(String email, String password) {
-		String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
-		try (Connection conn = DBConnection.open();
-			 PreparedStatement ps = conn.prepareStatement(sql)) {
-			ps.setString(1, email);
-			ps.setString(2, password);
-			try (ResultSet rs = ps.executeQuery()) {
-				if (rs.next()) {
-					return mapRow(rs);
-				}
-			}
-		} catch (SQLException e) {
-			throw new RuntimeException("이메일과 비밀번호로 회원 조회에 실패했습니다.", e);
-		}
-		return null;
-	}
-
 	private User mapRow(ResultSet rs) throws SQLException {
 		return User.builder()
 			.id(rs.getLong("id"))
