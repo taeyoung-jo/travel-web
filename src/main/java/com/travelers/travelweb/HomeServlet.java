@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "calendar", urlPatterns = "/calendar")
+@WebServlet(name = "home", urlPatterns = "/home")
 public class HomeServlet extends HttpServlet {
 
 	@Override
@@ -18,4 +18,5 @@ public class HomeServlet extends HttpServlet {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
 		dispatcher.forward(req, resp);
 	}
+
 }
