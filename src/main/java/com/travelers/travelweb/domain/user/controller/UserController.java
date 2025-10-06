@@ -31,7 +31,7 @@ public class UserController extends HttpServlet {
 		String action = req.getParameter("action");
 
 		if(action == null) {
-			action = "loginForm";
+			action = "loginForm";  // 기본 페이지를 로그인 페이지로
 		}
 
 		if (action.equals("loginForm")) {
@@ -54,6 +54,16 @@ public class UserController extends HttpServlet {
 			login(req, resp);
 		} else if (action.equals("update")) {
 			update(req, resp);
+		} else if (action.equals("delete")) {
+			HttpSession session = req.getSession(false);
+			if (session != null) {
+				User loginUser = (User) session.getAttribute("loginUser");
+				if (loginUser != null) {
+					userService.removeById(loginUser.getId());
+					session.invalidate();
+				}
+			}
+			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
 		} else if (action.equals("logout")) {
 			HttpSession session = req.getSession(false);
 			if (session != null) {
@@ -96,7 +106,7 @@ public class UserController extends HttpServlet {
 		String email = req.getParameter("email");
 		String name = req.getParameter("name");
 		String password = req.getParameter("password");
-		int phone = Integer.parseInt(req.getParameter("phone"));
+		String phone = inputPhoneNumber(req.getParameter("phone"));
 
 		User user = User.builder()
 			.email(email)
@@ -141,7 +151,29 @@ public class UserController extends HttpServlet {
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		int phone = Integer.parseInt(req.getParameter("phone"));
+		String phone = inputPhoneNumber(req.getParameter("phone"));
+
+		// name,email,password,phone 중 입력이 비어 있는 칸은 기존 값 유지
+		if (name == null || name.isBlank()) name = oldUser.getName();
+		if (email == null || email.isBlank()) email = oldUser.getEmail();
+		if (password == null || password.isBlank()) password = oldUser.getPassword();
+		if (phone == null || phone.isBlank()) {
+			phone = oldUser.getPhone();
+		} else {
+			phone = inputPhoneNumber(phone);  // 폰번호 형식으로 변환
+		}
+
+		// name,email,password,phone 중 변경이 전혀 없을 경우 (기존 데이터 그대로 유지)
+		boolean noChange =
+			name.equals(oldUser.getName()) &&
+				email.equals(oldUser.getEmail()) &&
+				password.equals(oldUser.getPassword()) &&
+				phone.equals(oldUser.getPhone());
+		if (noChange) {
+			req.setAttribute("message", "변경된 내용이 없습니다.");
+			req.getRequestDispatcher("/user/myInfo.jsp").forward(req, resp);
+			return;
+		}
 
 		User newUser = User.builder()
 			.name(name)
@@ -150,10 +182,31 @@ public class UserController extends HttpServlet {
 			.phone(phone)
 			.build();
 
-		userService.register(newUser);
 		userService.removeById(oldUser.getId());
+		userService.register(newUser);
 
 		session.setAttribute("loginUser", newUser);
-		req.getRequestDispatcher(req.getContextPath() + "/user/myInfo.jsp").forward(req, resp);
+		req.getRequestDispatcher("/user/myInfo.jsp").forward(req, resp);
+	}
+
+	public static String inputPhoneNumber(String PhoneNumber) {
+		// 폰번호 패턴 (010-1234-5678 형태)
+		String phonePattern = "^\\d{3}-\\d{4}-\\d{4}$";
+
+		while (true) {
+			String input = PhoneNumber.trim();
+
+			// 하이픈이 없는 경우 자동으로 하이픈 추가
+			if (input.matches("^\\d{11}$")) {
+				// 예: 01012345678 → 010-1234-5678
+				input = input.substring(0, 3) + "-" + input.substring(3, 7) + "-" + input.substring(7);
+			}
+
+			if (input.matches(phonePattern)) {
+				return input;
+			} else {
+				System.out.println("잘못된 전화번호 형식입니다. 예: 010-1234-5678");
+			}
+		}
 	}
 }

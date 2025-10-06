@@ -10,7 +10,11 @@
 <p>Name: ${loginUser.name}</p>
 <p>Phone: ${loginUser.phone}</p>
 
-<a href="/users?action=updateForm">회원정보 수정</a>
+<hr>
+<form action="/users?action=logout" method="post">
+    <button type="submit">로그아웃</button>
+</form>
+
 <hr>
 <h2>회원정보 수정</h2>
 <form action="/users" method="post">
@@ -21,5 +25,16 @@
     전화번호: <input type="text" name="phone"><br>
     <button type="submit">수정</button>
 </form>
+
+<hr>
+<form action="/users" method="post">
+    <input type="hidden" name="action" value="delete">
+    <button type="submit">회원탈퇴</button>
+</form>
+
+<hr>
+<a href="/user/home.jsp">
+    <button type="button">홈으로</button>
+</a>
 </body>
 </html>

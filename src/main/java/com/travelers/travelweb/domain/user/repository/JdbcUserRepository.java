@@ -21,7 +21,7 @@ public class JdbcUserRepository implements UserRepository {
 			ps.setString(1, user.getEmail());
 			ps.setString(2, user.getName());
 			ps.setString(3, user.getPassword());
-			ps.setInt(4, user.getPhone());
+			ps.setString(4, user.getPhone());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException("회원 저장에 실패했습니다.", e);
@@ -93,7 +93,7 @@ public class JdbcUserRepository implements UserRepository {
 			.email(rs.getString("email"))
 			.name(rs.getString("name"))
 			.password(rs.getString("password"))
-			.phone(rs.getInt("phone"))
+			.phone(rs.getString("phone"))
 			.build();
 	}
 }

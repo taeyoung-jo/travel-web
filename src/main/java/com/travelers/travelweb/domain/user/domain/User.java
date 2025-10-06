@@ -18,7 +18,7 @@ public class User {
 	private String email;
 	private String name;
 	private String password;
-	private int phone;
+	private String phone;
 
 	private LocalDateTime created_at;
 	private LocalDateTime updated_at;

@@ -16,6 +16,8 @@
     전화번호: <input type="text" name="phone"><br>
     <button type="submit">회원가입</button>
 </form>
-<a href="/users?action=loginForm">로그인</a>
+<a href="/users?action=loginForm">
+    <button type="button">로그인</button>
+</a>
 </body>
 </html>

@@ -11,15 +11,8 @@
     <button type="submit">로그아웃</button>
 </form>
 
-<form action="/users" method="get">
-    <input type="hidden" name="action" value="myInfo">
-    <button type="submit">내 정보 조회</button>
-</form>
-
 <a href="/users?action=myInfo">
-    <button type="button">내정보 조회</button>
+    <button type="button">내 정보 조회</button>
 </a>
-
-회원정보 수정
 </body>
 </html>
