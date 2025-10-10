@@ -78,11 +78,40 @@
         justify-content: end;
         width: 150px;
     }
-    .user-menu a { color: #555; }
-    .time-icon>img{width: 24px;}
-    .user-icon>img{width: 27px;}
-    .wish-icon>img{width: 22px}
+    .user-menu>a { color: #555; }
+    .time-icon > img { width: 21px; }
+    .user-icon > img { width: 18px; }
+    .wish-icon > img { width: 22px; }
+
     .search-icon>img{width: 18px}
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    /* 숨겨진 툴팁 텍스트 */
+    .tooltip-text {
+        visibility: hidden;
+        background-color: rgba(223, 223, 223, 0.8);
+        color: #888888;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 8px;
+        position: absolute;
+        top: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        font-size: 13px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    /* 마우스 올렸을 때 보이게 */
+    .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
     .nav-bar{ width: 100%; border-bottom: 1px solid #cfcfcf; }
     .gnb{
         display: flex;
@@ -108,10 +137,12 @@
     </div>
     <div class="header-top">
         <div class="left-group">
+            <a href="index.jsp">
             <div class="logo">
                 <img src="./image/logo_2.png" alt="로고">
                 <span class="main_color">여행</span>가자
             </div>
+            </a>
             <div class="search-box">
                 <input type="text" placeholder="30만원대로 떠나는 가성비 보라카이!">
                 <button class="search-icon"><img src="./image/search.png"></button>
@@ -119,13 +150,13 @@
         </div>
 
         <div class="user-menu">
-            <a href="#" class="user-icon"><img src="./image/user.png"></a>
-            <a href="#" class="time-icon"><img src="./image/time.png"></a>
-            <a href="#" class="wish-icon"><img src="./image/wishlist.png"></a>
+            <a href="#" class="user-icon tooltip"><img src="./image/user.png" alt="마이페이지"> <span class="tooltip-text">마이페이지</span></a>
+            <a href="#" class="time-icon tooltip"><img src="./image/time.png" alt="최근 본 내역"> <span class="tooltip-text">최근 본 내역</span></a>
+            <a href="#" class="wish-icon tooltip"><img src="./image/wishlist.png" alt="찜 한 내역" > <span class="tooltip-text">찜 한 내역</span></a>
         </div>
     </div>
 </div>
-
+ㄴ
 <nav class="nav-bar">
     <ul class="gnb">
         <li class="d1"><a href="#">유럽</a></li>

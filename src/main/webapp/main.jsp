@@ -245,14 +245,15 @@
                 catSlider.scrollLeft = scrollStart - walk;
             });
 
-            const stopDrag = () => {
-                isDragging = false;
-                catSlider.style.userSelect = "";
-                catSlider.style.cursor = "";
-            };
-            catSlider.addEventListener("mouseup", stopDrag);
-            catSlider.addEventListener("mouseleave", stopDrag);
-    });
+    // 드래그 종료
+    function stopDrag() {
+        isDragging = false;
+        // 해제
+        catSlider.style.userSelect = "";
+        catSlider.style.cursor = "";  // 원래 커서로 복귀
+    }
 
+    catSlider.addEventListener("mouseup", stopDrag);
+    catSlider.addEventListener("mouseleave", stopDrag);
 </script>
 
