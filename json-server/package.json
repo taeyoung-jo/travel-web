@@ -8,7 +8,7 @@
     "build-data": "node fetchHotels.js"
   },
   "dependencies": {
-    "axios": "^1.12.2",
+    "axios": "^1.7.2",
     "json-server": "^0.17.4"
   }
 }
