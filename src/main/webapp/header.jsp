@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- ===== 헤더 ===== -->
-<<<<<<< HEAD
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Han+Sans&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     *{margin: 0; padding: 0; box-sizing: border-box;}
@@ -98,9 +97,7 @@
         text-shadow: 1px 0px 0 #ffc40e;
     }
 </style>
-=======
 <link rel="stylesheet" href="css/header.css">
->>>>>>> c208a29aeede4a2e2f76232bc0c2820463863653
 
 <div class="in">
     <div class="sm_top">
