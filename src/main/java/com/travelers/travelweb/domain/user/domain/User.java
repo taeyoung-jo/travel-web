@@ -20,8 +20,8 @@ public class User {
 	private String password;
 	private String phone;
 
-	private LocalDateTime created_at;
-	private LocalDateTime updated_at;
-	private LocalDateTime deleted_at;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
 }
 
