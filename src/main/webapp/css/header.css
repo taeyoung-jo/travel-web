@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Han+Sans&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+img { max-width: none; }
+
+body {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #040404;
+    --main: #FFCC35;
+}
+
+.main_color { color: var(--main); }
+
+.in {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== 헤더 상단 ===== */
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.left-group {
+    display: flex;
+    width: 650px;
+}
+
+/* 로고 */
+.logo {
+    display: flex;
+    font-size: 28px;
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: 400;
+    color: #333;
+    align-items: flex-end;
+    width: 250px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    margin-right: 6px;
+}
+
+/* 로그인, 회원가입, 예약확인 */
+.sm_top {
+    font-size: 12px;
+    display: flex;
+    justify-content: end;
+    margin: 10px 0;
+}
+
+.sm_top > a {
+    margin-left: 10px;
+}
+
+/* 검색창 */
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ffcc00;
+    border-radius: 30px;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 6px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.search-box button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+
+/* 유저 메뉴 */
+.user-menu {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #555;
+    justify-content: end;
+    width: 150px;
+}
+
+.user-menu a { color: #555; }
+
+.time-icon > img { width: 24px; }
+.user-icon > img { width: 20px; }
+.wish-icon > img { width: 22px; }
+.search-icon > img { width: 18px; }
+
+/* ===== 네비게이션 ===== */
+.nav-bar {
+    width: 100%;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.gnb {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    z-index: 3;
+    width: 900px;
+    margin: 20px auto;
+    font-size: 14px;
+}
+
+.d1:hover {
+    color: #ffc40e;
+    text-shadow: 1px 0 0 #ffc40e;
+}
