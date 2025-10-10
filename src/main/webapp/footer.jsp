@@ -18,7 +18,7 @@
 
     <div class="footer-center">
         <div class="info">
-            <h3>노랑풍선 고객센터</h3>
+            <h3>여행가자 고객센터</h3>
             <p>상담시간: 평일 오전 9시 ~ 오후 6시 (토,일요일 및 공휴일 휴무)</p>
             <p>· 해외항공권 변경, 투어&티켓, 렌터카 취소/변경/환불: 평일 오후 5시까지</p>
             <p>· 호텔 취소/변경/환불: 평일 오후 4시까지</p>
@@ -45,6 +45,6 @@
     </div>
 
     <div class="footer-bottom">
-        © 2025 노랑풍선. All Rights Reserved.
+        © 2025 여행가자. All Rights Reserved.
     </div>
 </footer>

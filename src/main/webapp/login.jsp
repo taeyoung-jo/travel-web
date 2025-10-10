@@ -4,8 +4,8 @@
 
 <div class="login-container">
     <div class="logo">
-        <img src="images/logo_yellowballoon.png" alt="노랑풍선 로고">
-        <h1>노랑풍선</h1>
+        <img src="image/logo_2.png" alt="여행가자 로고">
+        <h1>여행가자</h1>
     </div>
 
     <form action="login.do" method="post" class="login-form">
@@ -36,12 +36,12 @@
         </div>
 
         <p class="info-text">
-            노랑풍선 회원으로 가입하시면 포인트적립(일부 상품 제외), 회원전용혜택 제공 등 더 많은 서비스를 이용하실 수 있습니다.
+            여행가자 회원으로 가입하시면 포인트적립(일부 상품 제외), 회원전용혜택 제공 등 더 많은 서비스를 이용하실 수 있습니다.
         </p>
     </form>
 
     <footer class="login-footer">
-        <p>© Yellow Balloon tour. All Rights Reserved.</p>
+        <p>© Let's Go tour. All Rights Reserved.</p>
     </footer>
 </div>
 

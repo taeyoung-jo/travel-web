@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<%--<!-- 상단 탭 -->--%>
-<%--<div class="menu-tabs">--%>
-<%--    <div class="active">해외패키지</div>--%>
-<%--    <div>항공</div>--%>
-<%--    <div>호텔</div>--%>
-<%--</div>--%>
-
+<link rel="stylesheet" href="css/calendar.css">
+<link rel="stylesheet" href="css/main.css">
+<%--<script src="js/calendar.js"></script>--%>
+<%--수정--%>
 <!-- main slide부분 -->
 <div id="main-slide" class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -68,17 +65,17 @@
         <form class="hero-form" action="calendarTest.jsp" method="get">
             <input type="text" placeholder="여행지 입력" >
 
-            <!-- ✅ 달력 팝업으로 연결 -->
-            <div class="calendar-btn" onclick="window.location.href='calendarTest.jsp'">여행일정</div>
+                <!-- ✅ 달력 팝업으로 연결 -->
+                <div class="calendar-btn" onclick="window.location.href='calendarTest.jsp'">여행일정</div>
 
-            <select>
-                <option>1명</option>
-                <option>2명</option>
-                <option>3명</option>
-            </select>
-            <button type="submit">Search</button>
-        </form>
-    </div>
+                <select>
+                    <option>1명</option>
+                    <option>2명</option>
+                    <option>3명</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+        </div>
     </div>
 </section>
 
@@ -86,8 +83,9 @@
 <section class="section">
     <h2>Categories <small style="color:#888;">어디로 떠날까요?</small></h2>
     <div class="categories" id="categorySlider">
-        <% for(int i=0; i<100; i++){ %>
-        <div class="cat"><img src="image/test.jpg"><p>유럽</p></div>
+        <% for (int i = 0; i < 100; i++) { %>
+        <div class="cat"><img src="image/test.jpg">
+            <p>유럽</p></div>
         <% } %>
     </div>
 </section>
@@ -103,7 +101,7 @@
     </h2>
     <p style="color:#666; font-size:14px;">최근 많은 분이 유행한 여행지입니다</p>
     <div class="cards" id="cardSlider">
-        <% for(int i=0; i<8; i++){ %>
+        <% for (int i = 0; i < 8; i++) { %>
         <div class="card">
             <img src="image/test.jpg">
             <div class="info">
@@ -199,77 +197,62 @@
 </style>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    //main-slide
-    window.addEventListener('load', () => {
-        const swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1.5,
-            centeredSlides: true,
-            loop: true,
-            initialSlide: 0,      // 항상 첫 슬라이드부터 시작
-            spaceBetween: 0,
-            loopedSlides: 6,      // 실제 슬라이드 개수와 맞춤
-            loopFillGroupWithBlank: false, // 빈 슬라이드 안 넣음
-            speed: 800,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+    <!-- ===== JS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main_img.js" defer></script>
+    <script src="js/calendar.js" defer></script>
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // ✅ Swiper 슬라이더
+            const swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1.5,
+                centeredSlides: true,
+                loop: true,
+                spaceBetween: 0,
+                speed: 800,
+                autoplay: {delay: 4000, disableOnInteraction: false},
+                pagination: {el: ".swiper-pagination", clickable: true},
+                navigation: {nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev"},
+            });
+
+            // ✅ 카드 버튼 이동
+            window.scrollCards = function (dir) {
+                const slider = document.getElementById("cardSlider");
+                slider.scrollBy({left: dir * 300, behavior: 'smooth'});
+            };
+
+            // ✅ 카테고리 드래그
+            const catSlider = document.getElementById("categorySlider");
+            let isDragging = false, startX = 0, scrollStart = 0;
+
+            catSlider.addEventListener("mousedown", (e) => {
+                if (e.button !== 0) return;
+                isDragging = true;
+                startX = e.pageX - catSlider.offsetLeft;
+                scrollStart = catSlider.scrollLeft;
+                catSlider.style.userSelect = "none";
+                catSlider.style.cursor = "grabbing";
+            });
+
+            catSlider.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - catSlider.offsetLeft;
+                const walk = x - startX;
+                catSlider.scrollLeft = scrollStart - walk;
+            });
+
+            const stopDrag = () => {
+                isDragging = false;
+                catSlider.style.userSelect = "";
+                catSlider.style.cursor = "";
+            };
+            catSlider.addEventListener("mouseup", stopDrag);
+            catSlider.addEventListener("mouseleave", stopDrag);
     });
 
-
-    // 카드 버튼 이동 (기존 그대로)
-    function scrollCards(dir) {
-        const slider = document.getElementById("cardSlider");
-        const scrollAmount = 300;
-        slider.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
-    }
-
-    // 카테고리 드래그 슬라이더 (수정 버전)
-    const catSlider = document.getElementById("categorySlider");
-    let isDragging = false;
-    let startX = 0;
-    let scrollStart = 0;
-
-    catSlider.addEventListener("mousedown", (e) => {
-        // 왼쪽 버튼만 드래그 허용
-        if (e.button !== 0) return;
-
-        isDragging = true;
-        startX = e.pageX - catSlider.offsetLeft;
-        scrollStart = catSlider.scrollLeft;
-
-        // 선택 방지 (텍스트가 선택되는 걸 막기)
-        catSlider.style.userSelect = "none";
-        catSlider.style.cursor = "grabbing";  // (원하면 이 부분 지워도 돼)
-    });
-
-    catSlider.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-
-        const x = e.pageX - catSlider.offsetLeft;
-        const walk = x - startX;
-        catSlider.scrollLeft = scrollStart - walk;
-    });
-
-    // 드래그 종료
-    function stopDrag() {
-        isDragging = false;
-        // 해제
-        catSlider.style.userSelect = "";
-        catSlider.style.cursor = "";  // 원래 커서로 복귀
-    }
-
-    catSlider.addEventListener("mouseup", stopDrag);
-    catSlider.addEventListener("mouseleave", stopDrag);
 </script>
 

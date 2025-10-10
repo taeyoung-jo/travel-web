@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+/* ✅ 검색창에 기준 위치 추가 */
+.search-bar {
+    position: relative; /* 기준점 설정 */
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+input, select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.calendar-btn {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.search-btn {
+    background: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ✅ 달력 팝업 - 검색창 바로 아래 중앙 */
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* 검색창 바로 아래 여백 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: 999;
+    width: auto;
+    min-width: 540px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* ✅ 달력 컨테이너 (2개월 배치) */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* ✅ 달력 테이블 디자인 */
+.calendar {
+    border-collapse: collapse;
+    width: 240px;
+    text-align: center;
+}
+
+.calendar caption {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.calendar th, .calendar td {
+    border: 1px solid #eee;
+    text-align: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.calendar th {
+    background: #fafafa;
+}
+
+.sunday {
+    color: red;
+}
+
+.saturday {
+    color: blue;
+}
+
+.selected {
+    background: #ffcc00;
+    font-weight: bold;
+}
+
+.nav-btn {
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0 10px;
+    user-select: none;
+}
