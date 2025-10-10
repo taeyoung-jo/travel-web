@@ -5,23 +5,23 @@
 <div class="signup-container">
     <!-- 로고 -->
     <div class="logo">
-        <img src="images/logo_yellowballoon.png" alt="노랑풍선 로고">
-        <h1>노랑풍선</h1>
+        <img src="image/logo_2.png" alt="여행가자 로고">
+        <h1>여행가자</h1>
         <p class="subtitle">쉽고 빠르게 회원이 되어보세요!</p>
     </div>
 
     <!-- 혜택 아이콘 -->
     <div class="benefit-box">
         <div class="benefit">
-            <img src="images/icon_point.png" alt="포인트 적립">
-            <h3>노랑풍선 포인트<br>적립 · 사용</h3>
+            <img src="image/test.jpg" alt="포인트 적립">
+            <h3>여행가자 포인트<br>적립 · 사용</h3>
         </div>
         <div class="benefit">
-            <img src="images/icon_coupon.png" alt="쿠폰 제공">
+            <img src="image/test.jpg" alt="쿠폰 제공">
             <h3>다양한 할인 혜택<br>쿠폰 제공</h3>
         </div>
         <div class="benefit">
-            <img src="images/icon_event.png" alt="이벤트 알림">
+            <img src="image/test.jpg" alt="이벤트 알림">
             <h3>특가 · 이벤트<br>정보알림 서비스</h3>
         </div>
     </div>
@@ -41,6 +41,6 @@
     </div>
 
     <footer class="signup-footer">
-        <p>© Yellow Balloon tour. All Rights Reserved.</p>
+        <p>© Let's go tour. All Rights Reserved.</p>
     </footer>
 </div>
