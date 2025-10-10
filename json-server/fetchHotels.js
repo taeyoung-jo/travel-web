@@ -1,3 +1,4 @@
+require('dotenv').config();
 const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
@@ -49,39 +50,47 @@ async function fetchHotels() {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
 
-  for (const city of cities) {
-    try {
-      const response = await axios.get("https://serpapi.com/search", {
-        params: {
-          api_key: "e15e6945f39593ad861b977e8869c7a74582854008a3ad3a51fb6cbabbd88874",
-          engine: "google_hotels",
-          q: `${city.name} hotels`,
-          location: `${city.name}, ${city.country}`,
-          check_in_date: "2025-10-10",
-          check_out_date: "2025-10-12"
-        }
-      });
-
-      const properties = response.data?.properties ?? [];
-
-      const hotels = properties.map((hotel, index) => ({
-        id: allHotels.length + index + 1,
-        name: hotel.name,
-        city: city.id,
-        country: city.country,
-        image: hotel.images ? hotel.images[0].image_url : "N/A",
-        price: getRandomPrice(),
-        rating: getRandomRating()
-      }));
-
-      allHotels.push(...hotels);
-    } catch (err) {
-      console.error(`Error fetching hotels for ${city.name}:`, err.message);
-    }
+  const apiKey = process.env.SERPAPI_KEY;
+  if (!apiKey) {
+    console.error("SERPAPI_KEY 환경 변수가 설정되지 않았습니다.");
+    process.exit(1);
   }
+
+  // e15e6945f39593ad861b977e8869c7a74582854008a3ad3a51fb6cbabbd88874
+  const fetchPromises = cities.map(city =>
+    axios.get("https://serpapi.com/search", {
+      params: {
+        api_key: apiKey,
+        engine: "google_hotels",
+        q: `${city.name} hotels`,
+        location: `${city.name}, ${city.country}`,
+        check_in_date: "2025-10-10",
+        check_out_date: "2025-10-12"
+      }
+    })
+    .then(response => ({city, properties: response.data?.properties ?? []}))
+    .catch(err => {
+      console.error(`Error fetching hotels for ${city.name}:`, err.message);
+      return {city, properties: []};
+    })
+  );
+
+  const results = await Promise.all(fetchPromises);
+
+  let hotelIdCounter = 1;
+  const allHotels = results.flatMap(result => {
+    const {city, properties} = result;
+    return properties.map(hotel => ({
+      id: hotelIdCounter++,
+      name: hotel.name,
+      city: city.id,
+      country: city.country,
+      image: hotel.images ? hotel.images[0].image_url : "N/A",
+      price: getRandomPrice(),
+      rating: getRandomRating()
+    }));
+  });
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify({ hotels: allHotels }, null, 2));
   console.log(`hoteldb.json 생성 완료! (경로: ${OUTPUT_PATH})`);
 }
-
-fetchHotels();

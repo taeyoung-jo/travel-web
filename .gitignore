@@ -39,3 +39,4 @@ build/
 # Node mock server
 node_modules/
 json-server/node_modules/
+.env
