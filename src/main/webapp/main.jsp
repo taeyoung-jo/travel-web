@@ -7,7 +7,6 @@
 <%--    <div>호텔</div>--%>
 <%--</div>--%>
 
-<%--수정--%>
 <!-- main slide부분 -->
 <div id="main-slide" class="swiper mySwiper">
     <div class="swiper-wrapper">
@@ -59,14 +58,15 @@
     <div class="swiper-pagination"></div>
 </div>
 
-
-<%--수정--%>
-
 <!-- 검색 배너 -->
-<section class="hero in">
+<section class="hero">
+    <div class="hero-wrap in">
+    <div class="hero-title">
+        <h4>고객님,<span class="hero-span">어떤 여행을 꿈꾸시나요?</span></h4>
+    </div>
     <div class="hero-text">
         <form class="hero-form" action="calendarTest.jsp" method="get">
-            <input type="text" placeholder="Location" value="일본">
+            <input type="text" placeholder="여행지 입력" >
 
             <!-- ✅ 달력 팝업으로 연결 -->
             <div class="calendar-btn" onclick="window.location.href='calendarTest.jsp'">여행일정</div>
@@ -78,6 +78,7 @@
             </select>
             <button type="submit">Search</button>
         </form>
+    </div>
     </div>
 </section>
 
@@ -127,13 +128,12 @@
     .swiper {
         width: 100%;
         height: 420px;   /* 이미지 원본 세로 크기 */
-        margin: 60px auto; /* 가운데 정렬 */
+        margin: 40px auto; /* 가운데 정렬 */
         position: relative;
         border-radius: 16px;
         overflow: hidden;
     }
 
-    /* 슬라이드 이미지 */
     .swiper-slide img {
         width: 100%;
         height: 100%;
@@ -141,13 +141,11 @@
         border-radius: 16px;
     }
 
-    /* 슬라이드 간격 */
     .swiper-slide {
         transition: transform 0.6s ease;
         margin-right: 20px;
     }
 
-    /* 중앙 슬라이드 강조 */
     .swiper-slide-active {
         transform: scale(1.03);
     }
@@ -164,9 +162,11 @@
         background: #fff;
         opacity: 0.8;
     }
-    /*수정*/
-    .in{max-width: 1200px; margin: 0 auto;}
-    .hero { display:flex; justify-content:space-between; align-items:center;}
+    .in{max-width: 1200px; margin: 0 auto; --main:#FFCC35;}
+    .hero { display:flex; justify-content:space-between; align-items:center;padding: 50px 0; background-color: #fff8ec;}
+    .hero-wrap{}
+    .hero-title>h4{font-weight: 400; font-size: 22px;}
+    .hero-title .hero-span{display: block; font-weight: 700; margin-top: 10px;}
     .hero-text { max-width:50%; }
     .hero-text h1 { font-size:36px; margin:0 0 20px; line-height:1.3; }
     .hero-text h1 span { color:#ff9900; }

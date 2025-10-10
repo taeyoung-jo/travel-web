@@ -27,17 +27,18 @@
         margin-bottom: 10px;
     }
     .left-group{display: flex; width:650px;}
-    .logo {
+    .header-top .logo {
         display: flex;
-        font-size: 28px;
+        font-size: 32px;
         font-family: "Black Han Sans", sans-serif;
         font-weight: 400;
         font-style: normal;
         color: #333;
         align-items: flex-end;
         width: 250px;
+        margin-right: 14px;
     }
-    .logo img { width: 45px; height: 45px; margin-right: 6px; }
+    .header-top .logo img { width: 48px; height: 48px; margin-right: 6px; }
     .sm_top{
         font-size: 12px;
         display: flex;
