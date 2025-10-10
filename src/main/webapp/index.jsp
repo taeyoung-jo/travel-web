@@ -65,7 +65,7 @@
         .menu-tabs div { padding:15px 30px; cursor:pointer; }
         .menu-tabs div:hover, .menu-tabs .active { color:#ffcc00; border-bottom:2px solid #ffcc00; }
 
-        .hero { display:flex; justify-content:space-between; align-items:center; padding:50px 80px; background:#fafafa; }
+        .hero { display:flex; justify-content:space-between; align-items:center;}
         .hero-text { max-width:50%; }
         .hero-text h1 { font-size:36px; margin:0 0 20px; line-height:1.3; }
         .hero-text h1 span { color:#ff9900; }

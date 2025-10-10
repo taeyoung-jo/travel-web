@@ -1,16 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<%--<!-- 상단 탭 -->--%>
+<%--<div class="menu-tabs">--%>
+<%--    <div class="active">해외패키지</div>--%>
+<%--    <div>항공</div>--%>
+<%--    <div>호텔</div>--%>
+<%--</div>--%>
 
-<!-- 상단 탭 -->
-<div class="menu-tabs">
-    <div class="active">해외패키지</div>
-    <div>항공</div>
-    <div>호텔</div>
+<%--수정--%>
+<!-- main slide부분 -->
+<div id="main-slide" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide1.jpg" alt="슬라이드1">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide2.jpg" alt="슬라이드2">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide3.jpg" alt="슬라이드3">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide4.jpg" alt="슬라이드4">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide1.jpg" alt="슬라이드1">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide2.jpg" alt="슬라이드2">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
 </div>
 
+
+<%--수정--%>
+
 <!-- 검색 배너 -->
-<section class="hero">
+<section class="hero in">
     <div class="hero-text">
-        <h1>Visit The Most <br><span>Beautiful Places</span><br>In The World</h1>
         <form class="hero-form" action="calendarTest.jsp" method="get">
             <input type="text" placeholder="Location" value="일본">
 
@@ -24,9 +78,6 @@
             </select>
             <button type="submit">Search</button>
         </form>
-    </div>
-    <div class="hero-img">
-        <img src="image/test.jpg" alt="여행 배너">
     </div>
 </section>
 
@@ -65,14 +116,57 @@
 </section>
 
 <style>
-    .menu-tabs {
-        display:flex; border-bottom:1px solid #ddd; justify-content:center;
-        background:#fff; font-weight:bold;
-    }
-    .menu-tabs div { padding:15px 30px; cursor:pointer; }
-    .menu-tabs div:hover, .menu-tabs .active { color:#ffcc00; border-bottom:2px solid #ffcc00; }
+    /*.menu-tabs {*/
+    /*    display:flex; border-bottom:1px solid #ddd; justify-content:center;*/
+    /*    background:#fff; font-weight:bold;*/
+    /*}*/
+    /*.menu-tabs div { padding:15px 30px; cursor:pointer; }*/
+    /*.menu-tabs div:hover, .menu-tabs .active { color:#ffcc00; border-bottom:2px solid #ffcc00; }*/
 
-    .hero { display:flex; justify-content:space-between; align-items:center; padding:50px 80px; background:#fafafa; }
+    /* 메인 슬라이드 컨테이너 */
+    .swiper {
+        width: 100%;
+        height: 420px;   /* 이미지 원본 세로 크기 */
+        margin: 60px auto; /* 가운데 정렬 */
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    /* 슬라이드 이미지 */
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+
+    /* 슬라이드 간격 */
+    .swiper-slide {
+        transition: transform 0.6s ease;
+        margin-right: 20px;
+    }
+
+    /* 중앙 슬라이드 강조 */
+    .swiper-slide-active {
+        transform: scale(1.03);
+    }
+
+    /* 화살표 위치 */
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #fff;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .swiper-pagination-bullet {
+        background: #fff;
+        opacity: 0.8;
+    }
+    /*수정*/
+    .in{max-width: 1200px; margin: 0 auto;}
+    .hero { display:flex; justify-content:space-between; align-items:center;}
     .hero-text { max-width:50%; }
     .hero-text h1 { font-size:36px; margin:0 0 20px; line-height:1.3; }
     .hero-text h1 span { color:#ff9900; }
@@ -103,8 +197,35 @@
 
     .slide-btn { border:none; background:#ffcc00; padding:6px 12px; margin-left:5px; border-radius:50%; cursor:pointer; font-size:18px; }
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    //main-slide
+    window.addEventListener('load', () => {
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+            loop: true,
+            initialSlide: 0,      // 항상 첫 슬라이드부터 시작
+            spaceBetween: 0,
+            loopedSlides: 6,      // 실제 슬라이드 개수와 맞춤
+            loopFillGroupWithBlank: false, // 빈 슬라이드 안 넣음
+            speed: 800,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    });
+
+
     // 카드 버튼 이동 (기존 그대로)
     function scrollCards(dir) {
         const slider = document.getElementById("cardSlider");

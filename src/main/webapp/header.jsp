@@ -17,7 +17,7 @@
         --main:#FFCC35;
     }
     .main_color{ color: var(--main);}
-    .in{width: 1200px; margin: 0 auto;}
+    .in{max-width: 1200px; margin: 0 auto;}
     .header-top {
         display: flex;
         align-items: center;
@@ -79,7 +79,7 @@
     }
     .user-menu a { color: #555; }
     .time-icon>img{width: 24px;}
-    .user-icon>img{width: 20px;}
+    .user-icon>img{width: 27px;}
     .wish-icon>img{width: 22px}
     .search-icon>img{width: 18px}
     .nav-bar{ width: 100%; border-bottom: 1px solid #cfcfcf; }
