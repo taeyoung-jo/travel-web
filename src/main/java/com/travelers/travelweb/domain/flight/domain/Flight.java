@@ -20,8 +20,4 @@ public class Flight {
 	private LocalDateTime deptTime; // 출발시간
 	private LocalDateTime arrivalTime; // 도착시간
 	private Double price; // 가격
-
-	private LocalDateTime createdAt;
-	private LocalDateTime updatedAt;
-	private LocalDateTime deletedAt;
 }
