@@ -1,11 +1,6 @@
 package com.travelers.travelweb.domain.user.domain;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.travelers.travelweb.global.util.PhoneUtil;
-import com.travelers.travelweb.global.util.auth.PasswordUtil;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
