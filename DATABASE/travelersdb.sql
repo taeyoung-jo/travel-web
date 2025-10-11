@@ -71,6 +71,32 @@ VALUES ('일본', '북해도'),
        ('부산/지방 출발', '청주 출발'),
        ('부산/지방 출발', '카자흐스탄');
 
+-- 임시 테이블에 CSV 로드
+CREATE TABLE flights_temp
+(
+    location_id   BIGINT,
+    flight_number VARCHAR(255) NOT NULL,
+    airline       VARCHAR(255) NOT NULL,
+    dept_time     DATETIME     NOT NULL,
+    arrival_time  DATETIME     NOT NULL,
+    price         BIGINT       NOT NULL,
+    destination   VARCHAR(255)
+);
+
+LOAD DATA LOCAL INFILE './flights_data.csv'
+    INTO TABLE flights_temp
+    FIELDS TERMINATED BY ','
+    ENCLOSED BY '"'
+    LINES TERMINATED BY '\n'
+    IGNORE 1 ROWS
+    (location_id, flight_number, airline, dept_time, arrival_time, price, destination);
+
+-- destination으로 location_id 매핑
+UPDATE flights_temp t
+    JOIN locations l ON t.destination = l.city
+SET t.location_id = l.id;
+
+-- flights 테이블 생성 및 데이터 이동
 CREATE TABLE flights
 (
     id            BIGINT       NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -86,10 +112,10 @@ CREATE TABLE flights
             ON DELETE CASCADE
 );
 
-LOAD DATA LOCAL INFILE './flights_data.csv'
-    INTO TABLE flights
-    FIELDS TERMINATED BY ','
-    ENCLOSED BY '"'
-    LINES TERMINATED BY '\n'
-    IGNORE 1 ROWS
-    (location_id, flight_number, airline, dept_time, arrival_time, price);
+INSERT INTO flights (location_id, flight_number, airline, dept_time, arrival_time, price)
+SELECT location_id, flight_number, airline, dept_time, arrival_time, price
+FROM flights_temp
+WHERE location_id IS NOT NULL;
+
+-- 임시 테이블 제거
+DROP TABLE flights_temp;
