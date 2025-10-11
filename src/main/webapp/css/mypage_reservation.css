@@ -9,6 +9,7 @@ body {
     display: flex;
     gap: 40px;
     margin: 40px auto;
+    align-items: flex-start; /* 추가 */
 }
 
 /* ===============================

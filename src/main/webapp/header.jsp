@@ -156,7 +156,7 @@
         </div>
     </div>
 </div>
-ㄴ
+
 <nav class="nav-bar">
     <ul class="gnb">
         <li class="d1"><a href="#">유럽</a></li>
