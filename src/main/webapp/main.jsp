@@ -94,12 +94,32 @@
 <!-- 인기 여행상품 -->
 <section class="section">
     <h2 style="display:flex; justify-content:space-between; align-items:center;">
-        <span>Popular Destinations</span>
-        <span>
-            <button class="slide-btn" onclick="scrollCards(-1)">&#9664;</button>
-            <button class="slide-btn" onclick="scrollCards(1)">&#9654;</button>
-        </span>
+<%--            <span>Popular Destinations</span>--%>
+<%--            <span>--%>
+<%--                <button class="slide-btn" onclick="scrollCards(-1)">&#9664;</button>--%>
+<%--                <button class="slide-btn" onclick="scrollCards(1)">&#9654;</button>--%>
+<%--            </span>--%>
+    <h2>Popular Destinations</h2>
+        <div class="section-head">
+            <!-- 🔸 버튼을 왼쪽으로 이동 -->
+            <div class="slide-controls">
+                <button class="slide-btn" onclick="scrollCards(-1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="slide-btn" onclick="scrollCards(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </h2>
+
+    <!-- 카드 슬라이더 -->
     <p style="color:#666; font-size:14px;">최근 많은 분이 유행한 여행지입니다</p>
     <div class="cards" id="cardSlider">
         <% for (int i = 0; i < 8; i++) { %>
@@ -163,11 +183,14 @@
                 catSlider.scrollLeft = scrollStart - walk;
             });
 
-            const stopDrag = () => {
+            // 드래그 종료
+            function stopDrag() {
                 isDragging = false;
+                // 해제
                 catSlider.style.userSelect = "";
-                catSlider.style.cursor = "";
-            };
+                catSlider.style.cursor = "";  // 원래 커서로 복귀
+            }
+
             catSlider.addEventListener("mouseup", stopDrag);
             catSlider.addEventListener("mouseleave", stopDrag);
     });

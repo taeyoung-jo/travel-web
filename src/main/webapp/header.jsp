@@ -169,10 +169,12 @@
     </div>
     <div class="header-top">
         <div class="left-group">
-            <div class="logo">
-                <img src="./image/logo_2.png" alt="로고">
-                <span class="main_color">여행</span>가자
-            </div>
+            <a href="index.jsp">
+                <div class="logo">
+                    <img src="./image/logo_2.png" alt="로고">
+                    <span class="main_color">여행</span>가자
+                </div>
+            </a>
             <div class="search-box">
                 <input type="text" placeholder="30만원대로 떠나는 가성비 보라카이!">
                 <button class="search-icon"><img src="./image/search.png"></button>
@@ -180,9 +182,9 @@
         </div>
 
         <div class="user-menu">
-            <a href="#" class="user-icon"><img src="./image/user.png"></a>
-            <a href="#" class="time-icon"><img src="./image/time.png"></a>
-            <a href="#" class="wish-icon"><img src="./image/wishlist.png"></a>
+            <a href="#" class="user-icon tooltip"><img src="./image/user.png" alt="마이페이지"> <span class="tooltip-text">마이페이지</span></a>
+            <a href="#" class="time-icon tooltip"><img src="./image/time.png" alt="최근 본 내역"> <span class="tooltip-text">최근 본 내역</span></a>
+            <a href="#" class="wish-icon tooltip"><img src="./image/wishlist.png" alt="찜 한 내역" > <span class="tooltip-text">찜 한 내역</span></a>
         </div>
     </div>
 </div>

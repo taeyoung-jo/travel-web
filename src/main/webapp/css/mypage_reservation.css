@@ -7,163 +7,329 @@ body {
 /* ✅ header 영역과 겹치지 않도록 여백 확보 */
 .mypage-wrapper {
     display: flex;
-    max-width: 1200px;
-    margin: 160px auto 60px; /* 상단 header 높이만큼 margin-top 추가 */
     gap: 40px;
+    margin: 40px auto;
+    align-items: flex-start; /* 추가 */
 }
 
 /* ===============================
    사이드바
    =============================== */
-.mypage-wrapper .mypage-sidebar {
-    width: 220px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    background: #fafafa;
+.mypage-sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    width: 250px;
+    border: 1px solid #939393;
+    background: #fff; /* 배경 꼭 추가해야 겹침 현상 없음 */
     padding: 20px;
 }
 
-.mypage-wrapper .mypage-sidebar h3 {
-    font-size: 18px;
+.mypage-sidebar h2 {
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 15px;
+    color: #333;
 }
 
-.mypage-wrapper .mypage-sidebar ul {
+.menu {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-.mypage-wrapper .mypage-sidebar ul li {
-    margin: 10px 0;
+.menu-item {
+    margin-bottom: 10px;
 }
 
-.mypage-wrapper .mypage-sidebar ul li a {
-    text-decoration: none;
+.menu-title {
+    font-weight: 500;
     color: #333;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.menu-title:hover {
+    background-color: #e4e4e4;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+    max-height: 200px; /* 서브메뉴 개수에 맞게 충분히 */
+}
+
+.submenu li {
+    margin: 6px 0;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #555;
     font-size: 14px;
+    transition: color 0.2s;
 }
 
-.mypage-wrapper .mypage-sidebar li.active > a {
-    color: #ffb300;
-    font-weight: 600;
+.submenu a:hover {
+    font-weight: 900;
 }
-
-.mypage-wrapper .mypage-sidebar .sub {
-    margin-left: 10px;
-}
-
-.mypage-wrapper .mypage-sidebar .sub li.selected a {
-    font-weight: bold;
-    color: #111;
+.submenu a.active {
+    font-weight: 700;
+    color: #000000;
 }
 
 /* ===============================
    메인 콘텐츠
    =============================== */
-.mypage-wrapper .mypage-content {
+
+/*수정*/
+
+/*수정*/
+/*.mypage-wrapper .mypage-content {*/
+/*    flex: 1;*/
+/*}*/
+
+/*.mypage-wrapper .mypage-content h2 {*/
+/*    font-size: 22px;*/
+/*    border-bottom: 2px solid #111;*/
+/*    padding-bottom: 10px;*/
+/*    margin-bottom: 25px;*/
+/*}*/
+
+/*!* ===============================*/
+/*   탭*/
+/*   =============================== *!*/
+/*.mypage-wrapper .tab-container {*/
+/*    display: flex;*/
+/*    border-bottom: 1px solid #ddd;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.mypage-wrapper .tab {*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    background: none;*/
+/*    cursor: pointer;*/
+/*    font-size: 15px;*/
+/*}*/
+
+/*.mypage-wrapper .tab.active {*/
+/*    border-bottom: 3px solid #111;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*!* ===============================*/
+/*   검색 박스 (이전 header.search-box와 구분)*/
+/*   =============================== *!*/
+/*.mypage-wrapper .search-box-wrap {*/
+/*    border: 1px solid #e5e5e5;*/
+/*    border-radius: 10px;*/
+/*    padding: 20px;*/
+/*    margin-bottom: 20px;*/
+/*    background: #fafafa;*/
+/*}*/
+
+/*.mypage-wrapper .period {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    gap: 10px;*/
+/*    margin-bottom: 8px;*/
+/*}*/
+
+/*.mypage-wrapper .period-btn {*/
+/*    border: 1px solid #ccc;*/
+/*    background: #fff;*/
+/*    border-radius: 4px;*/
+/*    padding: 6px 12px;*/
+/*    cursor: pointer;*/
+/*    font-size: 13px;*/
+/*    transition: all 0.2s;*/
+/*}*/
+
+/*.mypage-wrapper .period-btn.active {*/
+/*    background: #ffb300;*/
+/*    border-color: #ffb300;*/
+/*    color: #fff;*/
+/*}*/
+
+/*.mypage-wrapper .search-btn {*/
+/*    background: #333;*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*    padding: 7px 14px;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.mypage-wrapper .notice {*/
+/*    font-size: 12px;*/
+/*    color: #777;*/
+/*    margin-top: 5px;*/
+/*}*/
+
+/*!* ===============================*/
+/*   테이블*/
+/*   =============================== *!*/
+/*.mypage-wrapper .reservation-table {*/
+/*    width: 100%;*/
+/*    border-collapse: collapse;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.mypage-wrapper .reservation-table th,*/
+/*.mypage-wrapper .reservation-table td {*/
+/*    border-bottom: 1px solid #eee;*/
+/*    text-align: center;*/
+/*    padding: 12px 8px;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.mypage-wrapper .reservation-table th {*/
+/*    background: #f8f8f8;*/
+/*}*/
+
+/*.mypage-wrapper .empty {*/
+/*    color: #888;*/
+/*    padding: 40px 0;*/
+/*}*/
+
+
+/* ----------------- 컨텐츠 영역 ----------------- */
+.mypage-content {
     flex: 1;
 }
 
-.mypage-wrapper .mypage-content h2 {
-    font-size: 22px;
-    border-bottom: 2px solid #111;
+.mypage-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
     padding-bottom: 10px;
-    margin-bottom: 25px;
-}
-
-/* ===============================
-   탭
-   =============================== */
-.mypage-wrapper .tab-container {
-    display: flex;
-    border-bottom: 1px solid #ddd;
     margin-bottom: 20px;
 }
 
-.mypage-wrapper .tab {
-    padding: 10px 20px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 15px;
+/* 상단 탭 */
+.tab-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
-.mypage-wrapper .tab.active {
-    border-bottom: 3px solid #111;
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    width: 50%;
+}
+
+.tab.active {
+    border-bottom: 3px solid #f5c000;
+    font-weight: 700;
+}
+
+/* 하위 탭 */
+.sub-tab-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.sub-tab {
+    padding: 7px 15px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.sub-tab.active {
+    border-bottom: 2px solid #f5c000;
+    font-weight: 700;
+}
+
+/* 검색 박스 */
+.search-box-wrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.period-select, input[type="date"] {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.period-btn, .search-btn {
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.period-btn.active {
+    background: #f5c000;
+    color: #fff;
+    border-color: #f5c000;
+}
+
+.notice {
+    font-size: 12px;
+    color: #999;
+}
+
+/* 포인트 배너 */
+.point-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eef3fc;
+    border: 1px solid #cdd9f0;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+}
+
+.point-banner p {
+    margin: 0;
     font-weight: bold;
 }
 
-/* ===============================
-   검색 박스 (이전 header.search-box와 구분)
-   =============================== */
-.mypage-wrapper .search-box-wrap {
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background: #fafafa;
+.point-banner a {
+    color: #f5c000;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.mypage-wrapper .period {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.mypage-wrapper .period-btn {
-    border: 1px solid #ccc;
-    background: #fff;
-    border-radius: 4px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: all 0.2s;
-}
-
-.mypage-wrapper .period-btn.active {
-    background: #ffb300;
-    border-color: #ffb300;
-    color: #fff;
-}
-
-.mypage-wrapper .search-btn {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 7px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.mypage-wrapper .notice {
-    font-size: 12px;
-    color: #777;
-    margin-top: 5px;
-}
-
-/* ===============================
-   테이블
-   =============================== */
-.mypage-wrapper .reservation-table {
+/* 예약 테이블 */
+.reservation-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    text-align: center;
 }
 
-.mypage-wrapper .reservation-table th,
-.mypage-wrapper .reservation-table td {
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    padding: 12px 8px;
+.reservation-table th, .reservation-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
     font-size: 14px;
 }
 
-.mypage-wrapper .reservation-table th {
-    background: #f8f8f8;
+.reservation-table th {
+    background: #f9f9f9;
 }
 
-.mypage-wrapper .empty {
-    color: #888;
+.reservation-table .empty {
+    text-align: center;
+    color: #999;
     padding: 40px 0;
 }
