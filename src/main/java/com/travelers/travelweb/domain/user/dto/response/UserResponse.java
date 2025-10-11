@@ -1,6 +1,4 @@
-package com.travelers.travelweb.domain.user.domain;
-
-import java.time.LocalDateTime;
+package com.travelers.travelweb.domain.user.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,14 +11,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Builder
-public class User {
+public class UserResponse {
 	private Long id;
 	private String email;
 	private String name;
-	private String password;
 	private String phone;
-
-	private LocalDateTime created_at;
-	private LocalDateTime updated_at;
-	private LocalDateTime deleted_at;
 }
