@@ -9,7 +9,7 @@ npm install
 ```
 
 ## 데이터 재생성
-SERP API를 호출해 `../hoteldb.json` 파일을 갱신합니다.
+SERP API를 호출해 `data/hoteldb.json` 파일을 갱신합니다.
 ```bash
 npm run build-data
 ```
@@ -22,4 +22,4 @@ npm start
 
 ## 참고
 - 생성된 `node_modules` 디렉터리는 `.gitignore`에 추가되어 있습니다.
-- `../hoteldb.json` 파일은 기존 Java 웹 애플리케이션과 목업 API가 함께 사용하는 공유 데이터 파일입니다.
+- `data/hoteldb.json` 파일은 기존 Java 웹 애플리케이션과 목업 API가 함께 사용하는 공유 데이터 파일입니다.

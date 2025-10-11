@@ -3,18 +3,19 @@ package com.travelers.travelweb.domain.hotel.repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.travelers.travelweb.domain.hotel.domain.Hotel;
 
-import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class HotelRepository {
-    private static final String HOTEL_JSON_PATH = "hoteldb.json"; // JSON 파일 경로
+    private static final Path HOTEL_JSON_PATH = Paths.get("json-server", "data", "hoteldb.json"); // JSON 파일 경로
 
     // 전체 호텔 리스트 반환
     public List<Hotel> getAllHotels() {
         ObjectMapper mapper = new ObjectMapper();//JSON ↔ Java 객체 변환을 담당하는 객체 생성
         try {
             // json 파일 읽어서 hotel 리스트로 변환
-            HotelListWrapper wrapper = mapper.readValue(new File(HOTEL_JSON_PATH), HotelListWrapper.class);
+            HotelListWrapper wrapper = mapper.readValue(HOTEL_JSON_PATH.toFile(), HotelListWrapper.class);
             return wrapper.getHotels();
         }catch (Exception e){
             e.printStackTrace();
