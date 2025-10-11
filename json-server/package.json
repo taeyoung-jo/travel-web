@@ -1,0 +1,14 @@
+{
+  "name": "travel-web-json-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mock API server for travel-web using json-server",
+  "scripts": {
+    "start": "json-server --watch ../hoteldb.json --port 4000 --delay 200",
+    "build-data": "node fetchHotels.js"
+  },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "json-server": "^0.17.4"
+  }
+}
