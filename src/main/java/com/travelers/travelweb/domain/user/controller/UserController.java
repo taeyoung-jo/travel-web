@@ -14,6 +14,7 @@ import com.travelers.travelweb.domain.user.domain.User;
 import com.travelers.travelweb.domain.user.dto.response.UserResponse;
 import com.travelers.travelweb.domain.user.repository.JdbcUserRepository;
 import com.travelers.travelweb.domain.user.service.UserService;
+import com.travelers.travelweb.global.util.PhoneUtil;
 
 @WebServlet("/users")
 public class UserController extends HttpServlet {
@@ -35,9 +36,9 @@ public class UserController extends HttpServlet {
 		}
 
 		if (action.equals("loginForm")) {
-			req.getRequestDispatcher(req.getContextPath() + "/user/login.jsp").forward(req, resp);
+			req.getRequestDispatcher("/user/login.jsp").forward(req, resp);
 		} else if (action.equals("registerForm")) {
-			req.getRequestDispatcher(req.getContextPath() + "/user/register.jsp").forward(req, resp);
+			req.getRequestDispatcher("/user/register.jsp").forward(req, resp);
 		} else if (action.equals("myInfo")) {
 			myInfo(req, resp);
 		}
@@ -77,7 +78,7 @@ public class UserController extends HttpServlet {
 		HttpSession session = req.getSession(false);
 		// 로그인 안 됨
 		if (session == null || session.getAttribute("loginUser") == null) {
-			resp.sendRedirect("/users?action=loginForm");
+			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
 			return;
 		}
 		User loginUser = (User) session.getAttribute("loginUser");
@@ -106,7 +107,7 @@ public class UserController extends HttpServlet {
 		String email = req.getParameter("email");
 		String name = req.getParameter("name");
 		String password = req.getParameter("password");
-		String phone = inputPhoneNumber(req.getParameter("phone"));
+		String phone = PhoneUtil.inputPhoneNumber(req.getParameter("phone"));
 
 		User user = User.builder()
 			.email(email)
@@ -119,7 +120,7 @@ public class UserController extends HttpServlet {
 			userService.register(user);
 			resp.sendRedirect("/users?action=loginForm");
 		} catch (RuntimeException e) {
-			resp.getWriter().write("회원가입 실패: " + e.getMessage());
+			resp.getWriter().write("회원가입 실패: 다시 시도해 주세요.");
 		}
 	}
 
@@ -138,75 +139,39 @@ public class UserController extends HttpServlet {
 	}
 
 	private void update(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		// 기존 데이터를 수정하는 방식이 아니라,
-		// 입력받은 수정 정보로 새 데이터를 만들고, 기존 데이터는 삭제.
-		// 새 데이터 계정으로 로그인 된 "내 정보 조회" 화면 출력
 		HttpSession session = req.getSession(false);
 		if (session == null || session.getAttribute("loginUser") == null) {
 			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
 			return;
 		}
-		User oldUser = (User) session.getAttribute("loginUser");
 
-		String name = req.getParameter("name");
+		User loginUser = (User) session.getAttribute("loginUser");
+
 		String email = req.getParameter("email");
+		String name = req.getParameter("name");
 		String password = req.getParameter("password");
-		String phone = inputPhoneNumber(req.getParameter("phone"));
+		String phone = req.getParameter("phone");
 
-		// name,email,password,phone 중 입력이 비어 있는 칸은 기존 값 유지
-		if (name == null || name.isBlank()) name = oldUser.getName();
-		if (email == null || email.isBlank()) email = oldUser.getEmail();
-		if (password == null || password.isBlank()) password = oldUser.getPassword();
-		if (phone == null || phone.isBlank()) {
-			phone = oldUser.getPhone();
-		} else {
-			phone = inputPhoneNumber(phone);  // 폰번호 형식으로 변환
-		}
-
-		// name,email,password,phone 중 변경이 전혀 없을 경우 (기존 데이터 그대로 유지)
-		boolean noChange =
-			name.equals(oldUser.getName()) &&
-				email.equals(oldUser.getEmail()) &&
-				password.equals(oldUser.getPassword()) &&
-				phone.equals(oldUser.getPhone());
-		if (noChange) {
-			req.setAttribute("message", "변경된 내용이 없습니다.");
-			req.getRequestDispatcher("/user/myInfo.jsp").forward(req, resp);
-			return;
-		}
-
-		User newUser = User.builder()
-			.name(name)
+		// 수정할 User 객체 생성 (null 또는 빈 값은 Repository에서 자동 무시)
+		User updatedUser = User.builder()
+			.id(loginUser.getId()) // 로그인된 사용자 기준으로 수정
 			.email(email)
+			.name(name)
 			.password(password)
 			.phone(phone)
 			.build();
 
-		userService.removeById(oldUser.getId());
-		userService.register(newUser);
+		try {
+			userService.update(updatedUser);
 
-		session.setAttribute("loginUser", newUser);
-		req.getRequestDispatcher("/user/myInfo.jsp").forward(req, resp);
-	}
+			// DB에서 최신 정보 다시 가져와 세션 갱신
+			Optional<User> refreshed = userService.getById(loginUser.getId());
+			refreshed.ifPresent(u -> session.setAttribute("loginUser", u));
 
-	public static String inputPhoneNumber(String PhoneNumber) {
-		// 폰번호 패턴 (010-1234-5678 형태)
-		String phonePattern = "^\\d{3}-\\d{4}-\\d{4}$";
-
-		while (true) {
-			String input = PhoneNumber.trim();
-
-			// 하이픈이 없는 경우 자동으로 하이픈 추가
-			if (input.matches("^\\d{11}$")) {
-				// 예: 01012345678 → 010-1234-5678
-				input = input.substring(0, 3) + "-" + input.substring(3, 7) + "-" + input.substring(7);
-			}
-
-			if (input.matches(phonePattern)) {
-				return input;
-			} else {
-				System.out.println("잘못된 전화번호 형식입니다. 예: 010-1234-5678");
-			}
+			resp.sendRedirect(req.getContextPath() + "/users?action=myInfo");
+		} catch (RuntimeException e) {
+			resp.getWriter().write("회원정보 수정 실패: 다시 시도해 주세요.");
+			req.getRequestDispatcher("/user/myInfo.jsp").forward(req, resp);
 		}
 	}
 }

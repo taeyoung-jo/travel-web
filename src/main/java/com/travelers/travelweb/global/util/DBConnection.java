@@ -21,10 +21,10 @@ public class DBConnection {
 				throw new RuntimeException("DB.properties 파일을 찾지 못했습니다.");
 			prop.load(input);
 
-			JDBC_DRIVER = prop.getProperty("db.driver");
-			DB_URL = prop.getProperty("db.url");
-			USER = prop.getProperty("db.user");
-			PASSWORD = prop.getProperty("db.password");
+			JDBC_DRIVER = prop.getProperty("JDBC_DRIVER");
+			DB_URL = prop.getProperty("DB_URL");
+			USER = prop.getProperty("USER");
+			PASSWORD = prop.getProperty("PASSWORD");
 
 			Class.forName(JDBC_DRIVER);
 		} catch (ClassNotFoundException | IOException e) {

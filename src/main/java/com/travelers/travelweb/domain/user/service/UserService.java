@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.travelers.travelweb.domain.user.domain.User;
 import com.travelers.travelweb.domain.user.repository.UserRepository;
+import com.travelers.travelweb.global.util.PhoneUtil;
 import com.travelers.travelweb.global.util.auth.PasswordUtil;
 
 import lombok.RequiredArgsConstructor;
@@ -37,6 +38,28 @@ public class UserService {
 
 	public List<User> findAll() {
 		return repository.findAll();
+	}
+
+	public void update(User user) {
+		// 회원 존재 여부 확인
+		Optional<User> existingUserOpt = repository.findById(user.getId());
+		if (!existingUserOpt.isPresent()) {
+			throw new RuntimeException("해당 회원을 찾을 수 없습니다.");
+		}
+
+		// 비밀번호가 비어있지 않으면 해시 처리
+		if (user.getPassword() != null && !user.getPassword().isEmpty()) {
+			String hashedPassword = PasswordUtil.hash(user.getPassword());
+			user.setPassword(hashedPassword);
+		}
+
+		// 전화번호가 비어있지 않으면 포맷 검증
+		if (user.getPhone() != null && !user.getPhone().isEmpty()) {
+			user.setPhone(PhoneUtil.inputPhoneNumber(user.getPhone()));
+		}
+
+		// DB 업데이트 실행
+		repository.update(user);
 	}
 
 	public void removeById(Long id) {
