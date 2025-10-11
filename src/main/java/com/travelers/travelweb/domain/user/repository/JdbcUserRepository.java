@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -17,13 +18,19 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public void save(User user) {
-		String sql = "INSERT INTO users (email, name, password, phone) VALUES (?, ?, ?, ?)";
+		if (user.getCreatedAt() == null)
+			user.markCreated();
+
+		String sql = "INSERT INTO users (email, name, password, phone, created_at, updated_at, deleted_at) VALUES (?, ?, ?, ?, ?, ?, ?)";
 		try (Connection conn = DBConnection.open();
 			 PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, user.getEmail());
 			ps.setString(2, user.getName());
 			ps.setString(3, user.getPassword());
 			ps.setString(4, user.getPhone());
+			ps.setObject(5, user.getCreatedAt());
+			ps.setObject(6, user.getUpdatedAt());
+			ps.setObject(7, user.getDeletedAt());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException("회원 저장에 실패했습니다.", e);
@@ -32,7 +39,7 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public Optional<User> findById(Long id) {
-		String sql = "SELECT * FROM users WHERE id = ?";
+		String sql = "SELECT * FROM users WHERE id = ? AND deleted_at IS NULL";
 		try (Connection conn = DBConnection.open();
 			 PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setLong(1, id);
@@ -48,7 +55,7 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public Optional<User> findByEmail(String email) {
-		String sql = "SELECT * FROM users WHERE email = ?";
+		String sql = "SELECT * FROM users WHERE email = ? AND deleted_at IS NULL";
 		try (Connection conn = DBConnection.open();
 			 PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, email);
@@ -64,7 +71,7 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public List<User> findAll() {
-		String sql = "SELECT * FROM users";
+		String sql = "SELECT * FROM users WHERE deleted_at IS NULL";
 		List<User> users = new ArrayList<>();
 		try (Connection conn = DBConnection.open();
 			 PreparedStatement ps = conn.prepareStatement(sql);
@@ -113,9 +120,13 @@ public class JdbcUserRepository implements UserRepository {
 			return;
 		}
 
+		user.markUpdated();
+		sql.append("updated_at = ?, ");
+		params.add(user.getUpdatedAt());
+
 		// 마지막 쉼표 제거 후 WHERE 절 추가
 		sql.setLength(sql.length() - 2);
-		sql.append(" WHERE id = ?");
+		sql.append(" WHERE id = ? AND deleted_at IS NULL");
 		params.add(user.getId());
 
 		try (Connection conn = DBConnection.open();
@@ -134,10 +145,15 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public void deleteById(Long id) {
-		String sql = "DELETE FROM users WHERE id = ?";
+		User user = User.builder().id(id).build();
+		user.markDeleted();
+
+		String sql = "UPDATE users SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL";
 		try (Connection conn = DBConnection.open();
 			 PreparedStatement ps = conn.prepareStatement(sql)) {
-			ps.setLong(1, id);
+			ps.setObject(1, user.getDeletedAt());
+			ps.setObject(2, user.getUpdatedAt());
+			ps.setLong(3, id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new RuntimeException("회원 삭제에 실패했습니다.", e);
@@ -151,6 +167,9 @@ public class JdbcUserRepository implements UserRepository {
 			.name(rs.getString("name"))
 			.password(rs.getString("password"))
 			.phone(rs.getString("phone"))
+			.createdAt(rs.getObject("created_at", LocalDateTime.class))
+			.updatedAt(rs.getObject("updated_at", LocalDateTime.class))
+			.deletedAt(rs.getObject("deleted_at", LocalDateTime.class))
 			.build();
 	}
 }
