@@ -72,6 +72,8 @@ VALUES ('일본', '북해도'),
        ('부산/지방 출발', '카자흐스탄');
 
 -- 임시 테이블에 CSV 로드
+DROP TABLE IF EXISTS flights_temp;
+
 CREATE TABLE flights_temp
 (
     location_id   BIGINT,
