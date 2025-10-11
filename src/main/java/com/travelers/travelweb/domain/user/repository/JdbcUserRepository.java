@@ -145,12 +145,14 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public void deleteById(Long id) {
-		LocalDateTime now = LocalDateTime.now();
+		User user = User.builder().id(id).build();
+		user.markDeleted();
+
 		String sql = "UPDATE users SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL";
 		try (Connection conn = DBConnection.open();
 			 PreparedStatement ps = conn.prepareStatement(sql)) {
-			ps.setObject(1, now);
-			ps.setObject(2, now);
+			ps.setObject(1, user.getDeletedAt());
+			ps.setObject(2, user.getUpdatedAt());
 			ps.setLong(3, id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
