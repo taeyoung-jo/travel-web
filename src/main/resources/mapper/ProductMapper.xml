@@ -16,6 +16,27 @@
         SELECT * FROM product
     </select>
 
+    <select id="findByFilter" resultType="Product">
+        SELECT p.* FROM product p
+        <where>
+            <if test="continent != null and city != null">
+                AND p.location_id IN (
+                SELECT id FROM locations
+                WHERE continent = #{continent} AND city = #{city}
+                )
+            </if>
+            <if test="minPrice != null and maxPrice != null">
+                AND p.price BETWEEN #{minPrice} AND #{maxPrice}
+            </if>
+            <if test="deptDate != null">
+                AND DATE(p.dept_flight_time) = #{deptDate}
+            </if>
+            <if test="arriveDate != null">
+                AND DATE(p.arrive_flight_time) = #{arriveDate}
+            </if>
+        </where>
+    </select>
+
     <update id="update" parameterType="Product">
         UPDATE product
         SET dept_flight_id = #{deptFlightId},
