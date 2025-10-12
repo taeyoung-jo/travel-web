@@ -16,6 +16,7 @@ import com.travelers.travelweb.domain.product.repository.JdbcProductRepository;
 import com.travelers.travelweb.domain.product.repository.ProductRepository;
 import com.travelers.travelweb.domain.product.service.ProductService;
 import com.travelers.travelweb.global.config.MyBatisConfig;
+import com.travelers.travelweb.global.util.RequestValidator;
 
 @WebServlet("/products")
 public class ProductServlet extends HttpServlet {
@@ -36,20 +37,28 @@ public class ProductServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		String param = req.getParameter("id");
+
+		// 단건 조회
 		if (param != null) {
-			Long id = Long.valueOf(param);
+			// id 검증
+			Long id = RequestValidator.validateAndParseId(req, res);
+			if (id == null)
+				return;
+
 			Optional<Product> product = productService.getProduct(id);
 			if (product.isPresent()) {
-				product.ifPresent(p -> req.setAttribute("product", p));
+				req.setAttribute("product", product.get());
 				req.getRequestDispatcher("/WEB-INF/views/product/detail.jsp").forward(req, res);
-			} else {
-				res.sendError(HttpServletResponse.SC_NOT_FOUND, "해당 패키지를 찾을 수 없습니다.");
+				return;
 			}
-		} else {
-			List<Product> products = productService.getAllProducts();
-			req.setAttribute("products", products);
-			req.getRequestDispatcher("/WEB-INF/views/product/list.jsp").forward(req, res);
+			res.sendError(HttpServletResponse.SC_NOT_FOUND, "해당 패키지를 찾을 수 없습니다.");
+			return;
 		}
+
+		// 전체 조회
+		List<Product> products = productService.getAllProducts();
+		req.setAttribute("products", products);
+		req.getRequestDispatcher("/WEB-INF/views/product/list.jsp").forward(req, res);
 	}
 
 	/**
@@ -63,6 +72,10 @@ public class ProductServlet extends HttpServlet {
 		String city = req.getParameter("city");
 		String min = req.getParameter("minPrice");
 		String max = req.getParameter("maxPrice");
+
+		// price 검증
+		if (!RequestValidator.validatePriceRange(min, max, res))
+			return;
 
 		BigDecimal minPrice = (min == null || min.isBlank()) ? BigDecimal.ZERO : new BigDecimal(min);
 		BigDecimal maxPrice = (max == null || max.isBlank()) ? BigDecimal.valueOf(Long.MAX_VALUE) : new BigDecimal(max);
@@ -78,9 +91,17 @@ public class ProductServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		Long id = Long.valueOf(req.getParameter("id"));
-		BigDecimal price = new BigDecimal(req.getParameter("price"));
+		// id 검증
+		Long id = RequestValidator.validateAndParseId(req, res);
+		if (id == null)
+			return;
 
+		// price 검증
+		String priceParam = req.getParameter("price");
+		if (!RequestValidator.validateRequiredPrice(priceParam, res))
+			return;
+
+		BigDecimal price = new BigDecimal(priceParam);
 		Product product = Product.builder()
 			.id(id)
 			.price(price)
@@ -97,7 +118,11 @@ public class ProductServlet extends HttpServlet {
 	 */
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse res) throws IOException {
-		Long id = Long.valueOf(req.getParameter("id"));
+		// id 검증
+		Long id = RequestValidator.validateAndParseId(req, res);
+		if (id == null)
+			return;
+
 		productService.deleteProduct(id);
 		res.setStatus(HttpServletResponse.SC_NO_CONTENT);
 	}
