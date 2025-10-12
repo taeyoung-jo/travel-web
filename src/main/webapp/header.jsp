@@ -23,7 +23,7 @@
         </div>
 
         <div class="user-menu">
-            <a href="#" class="user-icon tooltip"><img src="./image/user.png" alt="마이페이지"> <span class="tooltip-text">마이페이지</span></a>
+            <a href="mypage.jsp" class="user-icon tooltip"><img src="./image/user.png" alt="마이페이지"> <span class="tooltip-text">마이페이지</span></a>
             <a href="#" class="time-icon tooltip"><img src="./image/time.png" alt="최근 본 내역"> <span class="tooltip-text">최근 본 내역</span></a>
             <a href="#" class="wish-icon tooltip"><img src="./image/wishlist.png" alt="찜 한 내역" > <span class="tooltip-text">찜 한 내역</span></a>
         </div>

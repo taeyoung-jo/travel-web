@@ -15,6 +15,44 @@
     overflow: hidden;
 }
 
+/*.slide-counter {*/
+/*    position: absolute;*/
+/*    bottom: 20px;*/
+/*    right: 250px;*/
+/*    color: #fff;*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    z-index: 10;*/
+/*    background: rgba(0,0,0,0.3);*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 20px;*/
+/*}*/
+.counter-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+    color: #333;
+}
+.counter-btn:hover {
+    color: #000;
+}
+.slide-counter {
+    position: absolute;     /* 컨테이너 안에서 절대 위치 */
+    bottom: 20px;           /* 아래쪽 20px */
+    left: 50%;              /* 가운데 정렬 */
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.6); /* 살짝 배경 */
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 10;
+}
+
 /* 슬라이드 이미지 */
 .swiper-slide img {
     width: 100%;
@@ -59,10 +97,51 @@
     justify-content: space-between;
     align-items: center;
     padding: 50px 0;
-    background-color: #fff7e5;
+    background-color: #fffcf4;
 }
 
 .hero-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.hero-left {
+    width: 60%;
+}
+
+.hero-right {
+    width: 35%;
+}
+
+/* GNB 박스형, 3줄 3줄 2줄 구조 */
+.gnb-radio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3줄 구조 */
+    gap: 10px;
+    padding: 0;
+}
+
+.gnb-radio li {
+    list-style: none;
+}
+
+.gnb-radio li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border: 2px solid #ffcc00;
+    border-radius: 25px; /* 동그랗게 */
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.gnb-radio li a:hover {
+    background-color: #ffcc00;
+    color: #fff;
 }
 
 .hero-title > h4 {
@@ -102,6 +181,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+    flex: 1;
 }
 
 .hero-form button {

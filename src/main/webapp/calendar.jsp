@@ -18,7 +18,6 @@
     <div class="grid">
         <!-- 왼쪽: 달력 카드 -->
         <section class="card">
-            <header>출발일 선택</header>
             <div class="body cal">
                 <div class="cal-head">
                     <button id="prevMonth" class="nav-btn" type="button">‹</button>
