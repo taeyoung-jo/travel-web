@@ -1,6 +1,6 @@
 package com.travelers.travelweb.domain.user.domain;
 
-import com.travelers.travelweb.global.config.BaseTimeEntity;
+import com.travelers.travelweb.global.BaseTimeEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

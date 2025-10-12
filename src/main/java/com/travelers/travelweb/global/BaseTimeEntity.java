@@ -1,4 +1,4 @@
-package com.travelers.travelweb.global.config;
+package com.travelers.travelweb.global;
 
 import java.time.LocalDateTime;
 
