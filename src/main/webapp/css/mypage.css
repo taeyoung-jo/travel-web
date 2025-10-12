@@ -4,7 +4,7 @@ body {
     color: #222;
 }
 
-/* header 영역과 겹치지 않도록 여백 확보 */
+/* ✅ header 영역과 겹치지 않도록 여백 확보 */
 .mypage-wrapper {
     display: flex;
     gap: 40px;
@@ -100,115 +100,107 @@ body {
 }
 
 .mypage-content h2 {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 600;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin: 20px 0;
+
+}
+.mypage-content h2>span{
+    color: #f5a700;
 }
 
-/* 상단 탭 */
-.tab-container {
-    display: flex;
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-}
-
-.tab {
-    position: relative;
-    padding: 15px 20px;
-    border: none;
-    background: #fff;
-    cursor: pointer;
-    font-weight: 500;
-    width: 50%;
-    font-size: 17px;
-    border-left: 1px solid #9999;
-    border-right: 1px solid #9999;
-    border-top: 1px solid #9999;
-    text-align: center;
-}
-
-
-/* active일 때 밑줄 대신 after로 표시 */
-.tab.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.mypage-iconwrap{
     width: 100%;
-    height: 3px;
-    background-color: #f5c000;
-    border-radius: 2px;
-}
-
-/* 검색 박스 */
-.search-box-wrap {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 20px;
-}
-
-.period-btn, .search-btn {
-    padding: 7px 17px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    background: #fff;
-    cursor: pointer;
-}
-
-.period-btn.active {
-    background: #f5c000;
-    color: #fff;
-    border-color: #f5c000;
-}
-
-.notice {
-    font-size: 12px;
-    color: #999;
-}
-
-/* 포인트 배너 */
-.point-banner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: #eef3fc;
-    border: 1px solid #cdd9f0;
-    padding: 10px 15px;
-    margin-bottom: 20px;
+    padding-top: 30px;
+}
+.bar-wrap{
+    width: 300px;
+}
+.bar-wrap>div{
+    height: 70px;
+}
+.bar-wrap>div>img{
+    display: block;
+    margin: 0 auto;
 }
 
-.point-banner p {
-    margin: 0;
-    font-weight: bold;
+.bar-wrap>a{
+    width: 200px;
+    display: block;
+    border: 1px solid #111;
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto;
+    background: url("/image/arrow.png") 92% no-repeat;
+    background-size: 6px;
 }
 
-.point-banner a {
-    color: #f5c000;
-    font-weight: bold;
-    text-decoration: none;
+.user-bar img{width: 50px;}
+.reserv-bar img{width: 46px;}
+.wish-bar img{width: 56px;}
+
+.bar-wrap:nth-child(n+2) {
+    border-left: 1px solid #e5e5e5;
 }
 
-/* 예약 테이블 */
-.reservation-table {
+/*recently-reserv*/
+.recently-reserv{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.left-reserv h3{
+    font-size: 20px;
+    font-weight: 400;
+}
+.right-reserv>a{
+    border: 1px solid #e5e5e5;
+    padding: 6px 22px;
+    font-size: 14px;
+}
+.right-reserv>a:first-child{
+    background: #555;
+    color: #fff;
+    border: none;
+}
+
+/* ===============================
+   최근 예약내역 테이블
+   =============================== */
+.recently-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
     text-align: center;
 }
 
-.reservation-table th, .reservation-table td {
+.recently-table th,
+.recently-table td {
     border: 1px solid #ddd;
     padding: 10px;
     font-size: 14px;
 }
 
-.reservation-table th {
+.recently-table th {
     background: #f9f9f9;
+    font-weight: 600;
 }
 
-.reservation-table .empty {
+.recently-table .empty {
     text-align: center;
     color: #999;
     padding: 40px 0;
+    font-size: 14px;
 }
+.recently-table>ol{
+    list-style: disc;
+    color: #999;
+    text-align: left;
+    font-size: 12px;
+    padding-top: 30px;
+}
+
+
