@@ -176,7 +176,7 @@
 .card {
     width: 250px;
     flex: 0 0 auto;
-    background: #fff;
+    background: #ffffff;
     border: 1px solid #eee;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -199,12 +199,68 @@
     font-size: 16px;
 }
 
+/* 섹션 헤더 래퍼 */
+.section-head {
+    display: flex;
+    justify-content: space-between; /* ✅ 제목 왼쪽, 버튼 오른쪽 */
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+/* 슬라이드 버튼 컨테이너 */
+/* 버튼 컨테이너: 절대 위치 필요 없음(헤더에서 이미 정렬됨) */
+.slide-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto; /* ✅ 오른쪽 끝으로 밀기 */
+}
+
+/* 공통 버튼 스타일 */
 .slide-btn {
-    border: none;
-    background: #ffcc00;
-    padding: 6px 12px;
-    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
     border-radius: 50%;
+    background: #fff;
     cursor: pointer;
-    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-in-out;
+}
+
+/* 제목 부분 */
+.title-wrap h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.title-wrap .sub {
+    font-size: 13px;
+    color: #777;
+}
+
+/* 버튼 그룹 */
+.slide-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slide-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: #777;
+    transition: stroke 0.25s ease-in-out;
+}
+
+.slide-btn:hover {
+    border-color: #999;
+    background: #f9f9f9;
+}
+
+.slide-btn:hover svg {
+    stroke: #333;
 }

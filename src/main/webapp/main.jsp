@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<!-- ===== CSS ===== -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <link rel="stylesheet" href="css/calendar.css">
 <link rel="stylesheet" href="css/main.css">
@@ -58,12 +60,12 @@
 <!-- 검색 배너 -->
 <section class="hero">
     <div class="hero-wrap in">
-    <div class="hero-title">
-        <h4>고객님,<span class="hero-span">어떤 여행을 꿈꾸시나요?</span></h4>
-    </div>
-    <div class="hero-text">
-        <form class="hero-form" action="calendarTest.jsp" method="get">
-            <input type="text" placeholder="여행지 입력" >
+        <div class="hero-title">
+            <h4>고객님,<span class="hero-span">어떤 여행을 꿈꾸시나요?</span></h4>
+        </div>
+        <div class="hero-text">
+            <form class="hero-form" action="calendarTest.jsp" method="get">
+                <input type="text" placeholder="여행지 입력" >
 
                 <!-- ✅ 달력 팝업으로 연결 -->
                 <div class="calendar-btn" onclick="window.location.href='calendarTest.jsp'">여행일정</div>
@@ -93,12 +95,32 @@
 <!-- 인기 여행상품 -->
 <section class="section">
     <h2 style="display:flex; justify-content:space-between; align-items:center;">
-        <span>Popular Destinations</span>
-        <span>
-            <button class="slide-btn" onclick="scrollCards(-1)">&#9664;</button>
-            <button class="slide-btn" onclick="scrollCards(1)">&#9654;</button>
-        </span>
+<%--            <span>Popular Destinations</span>--%>
+<%--            <span>--%>
+<%--                <button class="slide-btn" onclick="scrollCards(-1)">&#9664;</button>--%>
+<%--                <button class="slide-btn" onclick="scrollCards(1)">&#9654;</button>--%>
+<%--            </span>--%>
+    <h2>Popular Destinations</h2>
+        <div class="section-head">
+            <!-- 🔸 버튼을 왼쪽으로 이동 -->
+            <div class="slide-controls">
+                <button class="slide-btn" onclick="scrollCards(-1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="slide-btn" onclick="scrollCards(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </h2>
+
+    <!-- 카드 슬라이더 -->
     <p style="color:#666; font-size:14px;">최근 많은 분이 유행한 여행지입니다</p>
     <div class="cards" id="cardSlider">
         <% for (int i = 0; i < 8; i++) { %>
@@ -113,89 +135,6 @@
         <% } %>
     </div>
 </section>
-
-<style>
-    /*.menu-tabs {*/
-    /*    display:flex; border-bottom:1px solid #ddd; justify-content:center;*/
-    /*    background:#fff; font-weight:bold;*/
-    /*}*/
-    /*.menu-tabs div { padding:15px 30px; cursor:pointer; }*/
-    /*.menu-tabs div:hover, .menu-tabs .active { color:#ffcc00; border-bottom:2px solid #ffcc00; }*/
-
-    /* 메인 슬라이드 컨테이너 */
-    .swiper {
-        width: 100%;
-        height: 420px;   /* 이미지 원본 세로 크기 */
-        margin: 40px auto; /* 가운데 정렬 */
-        position: relative;
-        border-radius: 16px;
-        overflow: hidden;
-    }
-
-    .swiper-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 16px;
-    }
-
-    .swiper-slide {
-        transition: transform 0.6s ease;
-        margin-right: 20px;
-    }
-
-    .swiper-slide-active {
-        transform: scale(1.03);
-    }
-
-    /* 화살표 위치 */
-    .swiper-button-prev,
-    .swiper-button-next {
-        color: #fff;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .swiper-pagination-bullet {
-        background: #fff;
-        opacity: 0.8;
-    }
-    .in{max-width: 1200px; margin: 0 auto; --main:#FFCC35;}
-    .hero { display:flex; justify-content:space-between; align-items:center;padding: 50px 0; background-color: #fff8ec;}
-    .hero-wrap{}
-    .hero-title>h4{font-weight: 400; font-size: 22px;}
-    .hero-title .hero-span{display: block; font-weight: 700; margin-top: 10px;}
-    .hero-text { max-width:50%; }
-    .hero-text h1 { font-size:36px; margin:0 0 20px; line-height:1.3; }
-    .hero-text h1 span { color:#ff9900; }
-    .hero-form { display:flex; gap:10px; margin-top:20px; align-items:center; }
-    .hero-form input, .hero-form select { padding:12px; border:1px solid #ccc; border-radius:4px; font-size:14px; }
-    .hero-form button { background:#333; color:#fff; border:none; border-radius:4px; padding:12px 20px; cursor:pointer; }
-    .calendar-btn { padding:12px 20px; border:1px solid #ccc; border-radius:4px; background:#fff; cursor:pointer; }
-    .hero-img img { width:350px; border-radius:20px; }
-
-    .section { padding:40px 80px; }
-    .section h2 { margin-bottom:15px; font-size:20px; }
-    .categories {
-        display:flex; gap:20px; overflow-x:auto;
-        scroll-behavior:smooth;
-        -ms-overflow-style:none; scrollbar-width:none;
-    }
-    .categories::-webkit-scrollbar { display:none; }
-    .categories .cat { text-align:center; flex:0 0 auto; }
-    .categories img { width:120px; height:120px; border-radius:60px; object-fit:cover; }
-
-    .cards { display:flex; gap:20px; overflow-x:auto; scroll-behavior:smooth;
-        -ms-overflow-style:none; scrollbar-width:none; }
-    .cards::-webkit-scrollbar { display:none; }
-    .card { width:250px; flex:0 0 auto; background:#fff; border:1px solid #eee; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
-    .card img { width:100%; height:150px; object-fit:cover; }
-    .card .info { padding:15px; font-size:14px; }
-    .card .price { font-weight:bold; margin-top:10px; font-size:16px; }
-
-    .slide-btn { border:none; background:#ffcc00; padding:6px 12px; margin-left:5px; border-radius:50%; cursor:pointer; font-size:18px; }
-</style>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     <!-- ===== JS ===== -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
@@ -245,15 +184,17 @@
                 catSlider.scrollLeft = scrollStart - walk;
             });
 
-    // 드래그 종료
-    function stopDrag() {
-        isDragging = false;
-        // 해제
-        catSlider.style.userSelect = "";
-        catSlider.style.cursor = "";  // 원래 커서로 복귀
-    }
+            // 드래그 종료
+            function stopDrag() {
+                isDragging = false;
+                // 해제
+                catSlider.style.userSelect = "";
+                catSlider.style.cursor = "";  // 원래 커서로 복귀
+            }
 
-    catSlider.addEventListener("mouseup", stopDrag);
-    catSlider.addEventListener("mouseleave", stopDrag);
+            catSlider.addEventListener("mouseup", stopDrag);
+            catSlider.addEventListener("mouseleave", stopDrag);
+    });
+
 </script>
 

@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "calendar", urlPatterns = "/calendar")
-public class CalendarServlet extends HttpServlet {
+@WebServlet(name = "productDetail", urlPatterns = "/product-detail")
+public class ProductDetail extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// JSP로 포워딩 (forward)
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/calendar.jsp");
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/productDetail.jsp");
 		dispatcher.forward(req, resp);
 	}
 
