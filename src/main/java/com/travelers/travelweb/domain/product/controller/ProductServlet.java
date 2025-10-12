@@ -44,7 +44,7 @@ public class ProductServlet extends HttpServlet {
 		} else {
 			List<Product> products = productService.getAllProducts();
 			req.setAttribute("products", products);
-			req.getRequestDispatcher("/WEB-INF/jsp/product/list.jsp").forward(req, res);
+			req.getRequestDispatcher("/WEB-INF/views/product/list.jsp").forward(req, res);
 		}
 	}
 
