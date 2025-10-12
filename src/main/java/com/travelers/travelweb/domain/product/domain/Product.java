@@ -2,7 +2,7 @@ package com.travelers.travelweb.domain.product.domain;
 
 import java.math.BigDecimal;
 
-import com.travelers.travelweb.global.config.BaseTimeEntity;
+import com.travelers.travelweb.global.BaseTimeEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

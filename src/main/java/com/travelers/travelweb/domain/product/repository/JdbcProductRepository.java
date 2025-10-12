@@ -23,7 +23,7 @@ public class JdbcProductRepository implements ProductRepository {
 	@Override
 	public void save(Product product) {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
-			session.insert("com.travelers.travelweb.domain.product.repository.ProductRepository.save", product);
+			session.insert("ProductMapper.save", product);
 		}
 	}
 
@@ -31,7 +31,7 @@ public class JdbcProductRepository implements ProductRepository {
 	public Optional<Product> findById(Long id) {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
 			Product product = session.selectOne(
-				"com.travelers.travelweb.domain.product.repository.ProductRepository.findById", id);
+				"ProductMapper.findById", id);
 			return Optional.ofNullable(product);
 		}
 	}
@@ -39,7 +39,7 @@ public class JdbcProductRepository implements ProductRepository {
 	@Override
 	public List<Product> findAll() {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
-			return session.selectList("com.travelers.travelweb.domain.product.repository.ProductRepository.findAll");
+			return session.selectList("ProductMapper.findAll");
 		}
 	}
 
@@ -55,22 +55,21 @@ public class JdbcProductRepository implements ProductRepository {
 			params.put("maxPrice", maxPrice);
 			params.put("deptDate", deptDate);
 			params.put("arriveDate", arriveDate);
-			return session.selectList(
-				"com.travelers.travelweb.domain.product.repository.ProductRepository.findByFilter", params);
+			return session.selectList("ProductMapper.findByFilter", params);
 		}
 	}
 
 	@Override
 	public void update(Product product) {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
-			session.update("com.travelers.travelweb.domain.product.repository.ProductRepository.update", product);
+			session.update("ProductMapper.update", product);
 		}
 	}
 
 	@Override
 	public void deleteById(Long id) {
 		try (SqlSession session = sqlSessionFactory.openSession(true)) {
-			session.delete("com.travelers.travelweb.domain.product.repository.ProductRepository.deleteById", id);
+			session.delete("ProductMapper.deleteById", id);
 		}
 	}
 }
