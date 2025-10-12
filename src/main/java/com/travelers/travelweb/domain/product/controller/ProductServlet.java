@@ -39,8 +39,12 @@ public class ProductServlet extends HttpServlet {
 		if (param != null) {
 			Long id = Long.valueOf(param);
 			Optional<Product> product = productService.getProduct(id);
-			product.ifPresent(p -> req.setAttribute("product", p));
-			req.getRequestDispatcher("/WEB-INF/views/product/detail.jsp").forward(req, res);
+			if (product.isPresent()) {
+				product.ifPresent(p -> req.setAttribute("product", p));
+				req.getRequestDispatcher("/WEB-INF/views/product/detail.jsp").forward(req, res);
+			} else {
+				res.sendError(HttpServletResponse.SC_NOT_FOUND, "해당 패키지를 찾을 수 없습니다.");
+			}
 		} else {
 			List<Product> products = productService.getAllProducts();
 			req.setAttribute("products", products);
