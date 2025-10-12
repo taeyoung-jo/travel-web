@@ -20,6 +20,8 @@
         SELECT p.*
         FROM products p
         LEFT JOIN locations l ON p.location_id = l.id
+        LEFT JOIN flights df ON p.dept_flight_id = df.id
+        LEFT JOIN flights af ON p.arrive_flight_id = af.id
         <where>
             <if test="continent != null and continent != ''">
                 AND l.continent = #{continent}
@@ -43,7 +45,7 @@
     </select>
 
     <update id="update" parameterType="Product">
-        UPDATE product
+        UPDATE products
         <set>
             <if test="deptFlightId != null">dept_flight_id = #{deptFlightId},</if>
             <if test="arriveFlightId != null">arrive_flight_id = #{arriveFlightId},</if>
@@ -55,6 +57,6 @@
     </update>
 
     <delete id="deleteById" parameterType="long">
-        DELETE FROM product WHERE id = #{id}
+        DELETE FROM products WHERE id = #{id}
     </delete>
 </mapper>
