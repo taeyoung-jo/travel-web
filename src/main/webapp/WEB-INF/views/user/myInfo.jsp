@@ -33,7 +33,7 @@
 </form>
 
 <hr>
-<a href="/user/home.jsp">
+<a href="/WEB-INF/views/user/home.jsp">
     <button type="button">홈으로</button>
 </a>
 </body>
