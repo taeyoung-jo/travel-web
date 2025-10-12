@@ -44,11 +44,13 @@
 
     <update id="update" parameterType="Product">
         UPDATE product
-        SET dept_flight_id = #{deptFlightId},
-        arrive_flight_id = #{arriveFlightId},
-        hotel_id = #{hotelId},
-        location_id = #{locationId},
-        price = #{price}
+        <set>
+            <if test="deptFlightId != null">dept_flight_id = #{deptFlightId},</if>
+            <if test="arriveFlightId != null">arrive_flight_id = #{arriveFlightId},</if>
+            <if test="hotelId != null">hotel_id = #{hotelId},</if>
+            <if test="locationId != null">location_id = #{locationId},</if>
+            <if test="price != null">price = #{price},</if>
+        </set>
         WHERE id = #{id}
     </update>
 
