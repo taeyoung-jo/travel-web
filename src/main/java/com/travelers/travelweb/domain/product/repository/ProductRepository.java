@@ -1,5 +1,7 @@
 package com.travelers.travelweb.domain.product.repository;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +14,15 @@ public interface ProductRepository {
 	Optional<Product> findById(Long id);
 
 	List<Product> findAll();
+
+	List<Product> findByFilter(
+		String continent,
+		String city,
+		BigDecimal minPrice,
+		BigDecimal maxPrice,
+		LocalDate deptDate,
+		LocalDate arriveDate
+	);
 
 	void update(Product product);
 
