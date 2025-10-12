@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Han+Sans&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Noto Sans KR", sans-serif;}
 a { text-decoration: none; color: inherit; }
 ul, ol { list-style: none; }
 img { max-width: none; }
@@ -40,11 +40,14 @@ body {
 .logo {
     display: flex;
     font-size: 28px;
-    font-family: "Black Han Sans", sans-serif;
+    font-family: "Black Han Sans", sans-serif !important;
     font-weight: 400;
     color: #333;
     align-items: flex-end;
     width: 250px;
+}
+.logo>span{
+    font-family: "Black Han Sans", sans-serif !important;
 }
 
 .logo img {
@@ -144,21 +147,51 @@ body {
 
 /* ===== 네비게이션 ===== */
 .nav-bar {
+    position: relative; /* nav-mega 기준 위치 */
+    z-index: 1000;
+}
+
+.gnb { display: flex; justify-content: space-between; width: 900px; margin: auto; }
+.gnb .d1.active a,
+.gnb .d1:hover a {
+    color: #FFCC35; /* 노랑색 */
+    font-weight: 700;
+}
+.nav-mega {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    border-bottom: 1px solid #cfcfcf;
+    background: #fff;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 9999;
+}
+.mega-menu {
+    display: none; /* 기본 숨김 */
+    padding: 40px 0;
 }
 
-.gnb {
+.mega-menu.active {
     display: flex;
-    position: relative;
-    justify-content: space-between;
-    z-index: 3;
     width: 900px;
-    margin: 20px auto;
-    font-size: 14px;
+    gap: 100px;
 }
 
-.d1:hover {
-    color: #ffc40e;
-    text-shadow: 1px 0 0 #ffc40e;
+.menu-column { display:flex; flex-direction:column; gap:5px; }
+.menu-column h4 { font-weight:700; margin-bottom:5px; font-size: 18px;}
+.menu-column a { color:#555; text-decoration:none; }
+.menu-column a:hover { color:#ffc40e; }
+
+.overlay {
+    position: fixed;
+    top: calc(100px + 60px);
+    left: 0;
+    width: 100%;
+    height: calc(100% - 160px);
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 2;
 }
