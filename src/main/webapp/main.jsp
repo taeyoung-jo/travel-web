@@ -5,10 +5,20 @@
 <%
     PackageRepository repo = new PackageRepository();
     List<Package> shortDistancePackages = repo.getAllPackages().subList(0, 7); // 근거리 7개
+    List<Package> bestPackage = repo.getAllPackages().subList(7, 11); // 베스트판매 4개
+    List<Package> populAll = repo.getAllPackages().subList(10, 14); // 인기급상승 4개
+    String[] labels = {"label1.png", "label2.png", "label3.png", "label4.png"};
+    String[][] badges = {{"100% 출발"}, {"담당자 추천", "선착순 특가"}, {"선착순 특가"}, {"100% 출발"}};
+    // 각 배지마다 클래스명 지정 (배지 순서대로)
+    String[][] badgeClasses = {
+            {"badge-start"},
+            {"badge-recommend", "badge-limited"},
+            {"badge-limited"},
+            {"badge-start"}
+    };
 %>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-<link rel="stylesheet" href="css/calendar.css">
 <link rel="stylesheet" href="css/main.css">
 <%--<script src="js/calendar.js"></script>--%>
 
@@ -66,10 +76,52 @@
     </div>
 </div>
 
+
+<!-- 베스트 판매 4 -->
+<section class="section in">
+    <div class="best-pack">
+        <h3>패키지 판매 Best 4</h3>
+        <div class="best-pa">
+            <% for (int idx = 0; idx < bestPackage.size(); idx++) {
+                Package pkg = bestPackage.get(idx);
+                String[] badgeSet = badges[idx % badges.length];
+                String[] badgeCls = badgeClasses[idx % badgeClasses.length];
+            %>
+            <div class="packa">
+                <div class="img-wrap">
+                    <img src="/image/package/<%= labels[idx % labels.length] %>" alt="label-img" class="label-img">
+                    <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>"
+                         alt="<%= pkg.getPackageName() %>" class="pack-img">
+                </div>
+                <div class="info">
+                    <div class="pa-bege">
+                        <% for (int b = 0; b < badgeSet.length; b++) { %>
+                        <span class="badge <%= badgeCls[b] %>"><%= badgeSet[b] %></span>
+                        <% } %>
+                    </div>
+                    <strong><%= pkg.getPackageName() %>
+                    </strong>
+                    <div class="destination">
+                        <%= pkg.getDeparture() %> → <%= pkg.getDestination() %>
+                    </div>
+                    <div class="price">
+                        <%= java.text.NumberFormat.getInstance().format(pkg.getPrice()) %>원
+                    </div>
+                    <div class="pack-arrow">
+                        <button id="packNextBtn" class="slide-btn"></button>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
 <!-- 단거리 여행지 -->
 <section class="section in">
     <div class="short-loc location">
         <h3>가볍게 떠나는 근거리 힐링 여행</h3>
+        <p>짧은 시간 동안 떠나도 충분히 즐길 수 있는 가벼운 근거리 여행을 만나보세요.</p>
 
         <div class="cards" id="shortPackageSlider">
             <% for (Package pkg : shortDistancePackages) { %>
@@ -96,18 +148,30 @@
 
         <!-- 슬라이드 버튼 -->
         <div class="slide-controls">
-            <button id="shortPrevBtn" class="slide-btn">‹</button>
-            <button id="shortNextBtn" class="slide-btn">›</button>
+            <button id="shortPrevBtn" class="slide-btn"></button>
+            <button id="shortNextBtn" class="slide-btn"></button>
         </div>
     </div>
 </section>
-<!-- 장거리 여행지 -->
-<section class="section in">
-    <div class="short-loc location">
 
+<%--인기 급상승--%>
+<section class="section in">
+    <div class="population">
+        <h3>인기 급상승</h3>
+        <h3>New 여행</h3>
+        <div class="popul-all">
+            <% for (Package pkg : populAll) { %>
+            <div class="popul-one">
+                <div class="popul-over"></div>
+                <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>"
+                     alt="<%= pkg.getPackageName() %>">
+                <div class="popul-txt"><%= pkg.getPackageName() %>
+                </div>
+            </div>
+            <% } %>
+        </div>
     </div>
 </section>
-
 
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -189,40 +253,5 @@
             shortSlider.addEventListener("mouseleave", stopDrag);
         }
 
-        // ✅ 카드 버튼 이동
-        window.scrollCards = function (dir) {
-            const slider = document.getElementById("cardSlider");
-            slider.scrollBy({left: dir * 300, behavior: 'smooth'});
-        };
-
-        // ✅ 카테고리 드래그
-        const catSlider = document.getElementById("categorySlider");
-        let isDragging = false, startX = 0, scrollStart = 0;
-
-        catSlider.addEventListener("mousedown", (e) => {
-            if (e.button !== 0) return;
-            isDragging = true;
-            startX = e.pageX - catSlider.offsetLeft;
-            scrollStart = catSlider.scrollLeft;
-            catSlider.style.userSelect = "none";
-            catSlider.style.cursor = "grabbing";
-        });
-
-        catSlider.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - catSlider.offsetLeft;
-            const walk = x - startX;
-            catSlider.scrollLeft = scrollStart - walk;
-        });
-
-        function stopDrag() {
-            isDragging = false;
-            catSlider.style.userSelect = "";
-            catSlider.style.cursor = "";
-        }
-
-        catSlider.addEventListener("mouseup", stopDrag);
-        catSlider.addEventListener("mouseleave", stopDrag);
     });
 </script>
