@@ -22,4 +22,11 @@ public interface UserRepository {
 
 	// Delete
 	void deleteById(Long id);
+
+	// 아이디 찾기, 비밀번호 찾기 기능 구현
+	Optional<User> findByNameAndPhone(String name, String phone);
+
+	Optional<User> findByEmailAndPhone(String email, String phone);
+
+	void updatePasswordById(Long userId, String hashedPassword);
 }

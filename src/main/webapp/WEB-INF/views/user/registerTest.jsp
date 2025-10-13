@@ -8,17 +8,20 @@
     <title>회원가입</title>
 </head>
 <body>
-<form action="/users" method="post">
+
+<form action="${pageContext.request.contextPath}/users" method="post">
     <input type="hidden" name="action" value="register">
-    이메일: <input type="text" name="email"><br>
-    이름: <input type="text" name="name"><br>
-    비밀번호: <input type="password" name="password"><br>
-    전화번호: <input type="text" name="phone"><br>
+    <label>이메일: <input type="text" name="email"></label><br>
+    <label>이름: <input type="text" name="name"></label><br>
+    <label>비밀번호: <input type="password" name="password"></label><br>
+    <label>폰번호: <input type="text" name="phone"></label><br>
     <button type="submit">회원가입</button>
 </form>
+<hr>
 
-<a href="/users?action=loginForm">
+<a href="${pageContext.request.contextPath}/users?action=loginForm">
     <button type="button">로그인</button>
 </a>
+
 </body>
 </html>
