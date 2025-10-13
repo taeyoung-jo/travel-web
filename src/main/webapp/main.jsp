@@ -157,16 +157,18 @@
 <%--인기 급상승--%>
 <section class="section in">
     <div class="population">
-        <h3>인기 급상승</h3>
+        <h3>인기 급상승!</h3>
         <h3>New 여행</h3>
         <div class="popul-all">
             <% for (Package pkg : populAll) { %>
             <div class="popul-one">
-                <div class="popul-over"></div>
-                <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>"
-                     alt="<%= pkg.getPackageName() %>">
-                <div class="popul-txt"><%= pkg.getPackageName() %>
-                </div>
+                <a href="#">
+                    <div class="popul-over"></div>
+                    <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>"
+                         alt="<%= pkg.getPackageName() %>">
+                    <div class="popul-txt"><%= pkg.getPackageName() %>
+                    </div>
+                </a>
             </div>
             <% } %>
         </div>

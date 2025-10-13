@@ -351,7 +351,7 @@
 }
 
 .population h3 {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
 }
 
@@ -361,15 +361,9 @@
     justify-content: space-between;
     bottom: 50px;
     left: 50%;
-    gap: 10px;
+    gap: 15px;
 }
 
-.population .popul-all .popul-one {
-    width: 240px;
-    border-radius: 50%;
-    height: 240px;
-    position: relative; /* 오버레이 기준 */
-}
 
 .population .popul-all .popul-one img {
     width: 100%;
@@ -377,21 +371,49 @@
     height: 100%;
 }
 
+.population .popul-all .popul-one {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+}
+
+/* 오버레이 */
 .population .popul-all .popul-one .popul-over {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2); /* 반투명 오버레이 */
+    background: rgba(0, 0, 0, 0.4); /* 초기 오버레이 색 */
     top: 0;
     left: 0;
-    border-radius: inherit; /* 부모 모서리 따라가기 */
-    opacity: 0; /* 초기에는 안보이게 */
-    transition: opacity 0.3s ease; /* 호버시 자연스럽게 나타나도록 */
+    border-radius: inherit;
+    opacity: 1; /* 기본 보임 */
+    transition: opacity 0.3s ease;
+    z-index: 1;
 }
 
-/* 호버 시 오버레이 보이기 */
-.population .popul-all .popul-one:hover .popul-over {
-    opacity: 1;
+/* 텍스트 */
+.population .popul-all .popul-one .popul-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* 흰색 글씨 */
+    font-weight: 700;
+    text-align: center;
+    opacity: 1; /* 기본 보임 */
+    transition: opacity 0.3s ease;
+    z-index: 2;
+    font-size: 20px;
+    font-weight: 500;
+    word-break: keep-all;
+}
+
+/* 호버 시 오버레이와 텍스트 모두 사라짐 */
+.population .popul-all .popul-one:hover .popul-over,
+.population .popul-all .popul-one:hover .popul-txt {
+    opacity: 0;
 }
 
 
