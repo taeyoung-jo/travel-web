@@ -163,8 +163,8 @@ public class UserService {
 
 	/**
 	 * === 입력값을 체크하는 헬퍼 메서드 ===
-	 * 회원가입에서는 isNew = true,
-	 * 회원정보 수정에서는 isNew = false 로 사용.
+	 * [회원가입]에서는 isNew = true,
+	 * [회원정보 수정]에서는 isNew = false 로 사용.
 	 */
 	private void validateUser(User user, boolean isNew) {
 		if (isNew) {
