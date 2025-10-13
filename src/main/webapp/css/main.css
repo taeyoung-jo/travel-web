@@ -4,12 +4,17 @@
 /*}*/
 /*.menu-tabs div { padding:15px 30px; cursor:pointer; }*/
 /*.menu-tabs div:hover, .menu-tabs .active { color:#ffcc00; border-bottom:2px solid #ffcc00; }*/
+.in {
+    max-width: 1200px;
+    margin: 0 auto;
+    --main: #FFCC35;
+}
 
 /* 메인 슬라이드 컨테이너 */
 .swiper {
     width: 100%;
     height: 420px; /* 이미지 원본 세로 크기 */
-    margin: 60px auto; /* 가운데 정렬 */
+    margin: 60px auto 0;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
@@ -35,13 +40,15 @@
     padding: 0 5px;
     color: #333;
 }
+
 .counter-btn:hover {
     color: #000;
 }
+
 .slide-counter {
-    position: absolute;     /* 컨테이너 안에서 절대 위치 */
-    bottom: 20px;           /* 아래쪽 20px */
-    left: 50%;              /* 가운데 정렬 */
+    position: absolute; /* 컨테이너 안에서 절대 위치 */
+    bottom: 20px; /* 아래쪽 20px */
+    left: 50%; /* 가운데 정렬 */
     transform: translateX(-50%);
     display: flex;
     align-items: center;
@@ -61,18 +68,15 @@
     border-radius: 16px;
 }
 
-/* 슬라이드 간격 */
 .swiper-slide {
     transition: transform 0.6s ease;
     margin-right: 20px;
 }
 
-/* 중앙 슬라이드 강조 */
 .swiper-slide-active {
     transform: scale(1.03);
 }
 
-/* 화살표 위치 */
 .swiper-button-prev,
 .swiper-button-next {
     color: #fff;
@@ -85,161 +89,18 @@
     opacity: 0.8;
 }
 
-/*수정*/
-.in {
-    max-width: 1200px;
-    margin: 0 auto;
-    --main: #FFCC35;
-}
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 0;
-    background-color: #fffcf4;
-}
-
-.hero-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.hero-left {
-    width: 60%;
-}
-
-.hero-right {
-    width: 35%;
-}
-
-/* GNB 박스형, 3줄 3줄 2줄 구조 */
-.gnb-radio {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3줄 구조 */
-    gap: 10px;
-    padding: 0;
-}
-
-.gnb-radio li {
-    list-style: none;
-}
-
-.gnb-radio li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    border: 2px solid #ffcc00;
-    border-radius: 25px; /* 동그랗게 */
-    text-align: center;
-    font-size: 14px;
-    color: #333;
-    transition: all 0.3s;
-}
-
-.gnb-radio li a:hover {
-    background-color: #ffcc00;
-    color: #fff;
-}
-
-.hero-title > h4 {
-    font-weight: 400;
-    font-size: 22px;
-}
-
-.hero-title .hero-span {
-    display: block;
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.hero-text {
-    max-width: 50%;
-}
-
-.hero-text h1 {
-    font-size: 36px;
-    margin: 0 0 20px;
-    line-height: 1.3;
-}
-
-.hero-text h1 span {
-    color: #ff9900;
-}
-
-.hero-form {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    align-items: center;
-}
-
-.hero-form input, .hero-form select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    flex: 1;
-}
-
-.hero-form button {
-    background: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 12px 20px;
-    cursor: pointer;
-}
-
-.calendar-btn {
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #fff;
-    cursor: pointer;
-}
-
-.hero-img img {
-    width: 350px;
-    border-radius: 20px;
-}
-
+/* 단거리 여행지 */
 .section {
-    padding: 40px 80px;
+    padding-top: 50px;
 }
 
-.section h2 {
-    margin-bottom: 15px;
-    font-size: 20px;
+.location > h3 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 30px;
 }
 
-.categories {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.categories::-webkit-scrollbar {
-    display: none;
-}
-
-.categories .cat {
-    text-align: center;
-    flex: 0 0 auto;
-}
-
-.categories img {
-    width: 120px;
-    height: 120px;
-    border-radius: 60px;
-    object-fit: cover;
-}
-
+/* 카드 슬라이더 */
 .cards {
     display: flex;
     gap: 20px;
@@ -247,48 +108,84 @@
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    padding-bottom: 10px; /* 스크롤 영역 여유 */
 }
 
 .cards::-webkit-scrollbar {
     display: none;
 }
 
+/* 카드 */
 .card {
-    width: 250px;
+    width: 270px;
     flex: 0 0 auto;
-    background: #ffffff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    padding: 12px;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 카드 이미지 */
 .card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
+/* 카드 정보 */
 .card .info {
-    padding: 15px;
+    padding: 15px 0;
     font-size: 14px;
+    color: #555;
+
 }
 
-.card .price {
-    font-weight: bold;
-    margin-top: 10px;
+.card .info strong {
+    display: block;
     font-size: 16px;
+    margin-bottom: 8px;
+    color: #111;
+    font-weight: 400;
 }
 
-/* 섹션 헤더 래퍼 */
-.section-head {
+/* 가격 */
+.card .price {
+    font-weight: 700;
+    color: #111;
+    font-size: 18px;
+}
+
+/* 목적지/기간 */
+.card .destination {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.price-btnwrap {
     display: flex;
-    justify-content: space-between; /* ✅ 제목 왼쪽, 버튼 오른쪽 */
-    align-items: flex-end;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    padding-top: 12px;
+}
+
+.price-btn > a {
+    display: block;
+    /* width: 100px; */
+    border-radius: 2px;
+    background-color: #efefef;
+    text-align: center;
+    padding: 14px 30px;
 }
 
 /* 슬라이드 버튼 컨테이너 */
-/* 버튼 컨테이너: 절대 위치 필요 없음(헤더에서 이미 정렬됨) */
 .slide-controls {
     display: flex;
     align-items: center;
