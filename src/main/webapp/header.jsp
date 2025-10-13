@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<link rel="stylesheet" href="css/header.css">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<link rel="stylesheet" href="./css/header.css">
 
 <div class="in">
     <div class="sm_top">
@@ -10,22 +12,32 @@
     </div>
     <div class="header-top">
         <div class="left-group">
-            <a href="index.jsp">
+            <a href="../webapp/index.jsp">
             <div class="logo">
-                <img src="./image/logo_2.png" alt="로고">
+                <img src="../image/logo_2.png" alt="로고">
                 <span class="main_color">여행</span>가자
             </div>
             </a>
             <div class="search-box">
                 <input type="text" placeholder="30만원대로 떠나는 가성비 보라카이!">
-                <button class="search-icon"><img src="./image/search.png"></button>
+                <a href="./search/search_list.jsp">
+                    <button class="search-icon">
+                        <img src="../image/search.png">
+                    </button>
+                </a>
             </div>
         </div>
 
         <div class="user-menu">
-            <a href="mypage.jsp" class="user-icon tooltip"><img src="./image/user.png" alt="마이페이지"> <span class="tooltip-text">마이페이지</span></a>
-            <a href="#" class="time-icon tooltip"><img src="./image/time.png" alt="최근 본 내역"> <span class="tooltip-text">최근 본 내역</span></a>
-            <a href="#" class="wish-icon tooltip"><img src="./image/wishlist.png" alt="찜 한 내역" > <span class="tooltip-text">찜 한 내역</span></a>
+            <a href="<c:url value='/mypage/mypage.jsp'/>" class="user-icon tooltip">
+                <img src="../image/user.png" alt="마이페이지">
+                <span class="tooltip-text">마이페이지</span></a>
+            <a href="#" class="time-icon tooltip">
+                <img src="../image/time.png" alt="최근 본 내역">
+                <span class="tooltip-text">최근 본 내역</span></a>
+            <a href="#" class="wish-icon tooltip">
+                <img src="../image/wishlist.png" alt="찜 한 내역">
+                <span class="tooltip-text">찜 한 내역</span></a>
         </div>
     </div>
 </div>
