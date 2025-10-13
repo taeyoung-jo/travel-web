@@ -11,8 +11,6 @@ import java.util.Optional;
 
 import com.travelers.travelweb.domain.user.domain.User;
 import com.travelers.travelweb.global.util.DBConnection;
-import com.travelers.travelweb.global.util.PhoneUtil;
-import com.travelers.travelweb.global.util.auth.PasswordUtil;
 
 public class JdbcUserRepository implements UserRepository {
 
@@ -33,7 +31,7 @@ public class JdbcUserRepository implements UserRepository {
 			ps.setObject(7, user.getDeletedAt());
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("회원 저장에 실패했습니다.", e);
+			throw new RuntimeException("[JdbcRepository] 회원 저장에 실패했습니다.", e);
 		}
 	}
 
@@ -48,7 +46,7 @@ public class JdbcUserRepository implements UserRepository {
 					return Optional.of(mapRow(rs));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException("회원정보 단건 조회에 실패했습니다.", e);
+			throw new RuntimeException("[JdbcRepository] 회원정보 조회(id)에 실패했습니다.", e);
 		}
 		return Optional.empty();
 	}
@@ -64,7 +62,7 @@ public class JdbcUserRepository implements UserRepository {
 					return Optional.of(mapRow(rs));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException("회원정보 이메일 조회에 실패했습니다.", e);
+			throw new RuntimeException("[JdbcRepository] 회원정보 조회(email)에 실패했습니다.", e);
 		}
 		return Optional.empty();
 	}
@@ -79,7 +77,7 @@ public class JdbcUserRepository implements UserRepository {
 			while (rs.next())
 				users.add(mapRow(rs));
 		} catch (SQLException e) {
-			throw new RuntimeException("회원정보 전체 조회에 실패했습니다.", e);
+			throw new RuntimeException("[JdbcRepository] 회원정보 전체 조회에 실패했습니다.", e);
 		}
 		return users;
 	}
@@ -103,16 +101,14 @@ public class JdbcUserRepository implements UserRepository {
 
 		// 비밀번호가 비어있지 않으면 해시 처리 후 수정
 		if (user.getPassword() != null && !user.getPassword().isEmpty()) {
-			String hashedPassword = PasswordUtil.hash(user.getPassword());
 			sql.append("password = ?, ");
-			params.add(hashedPassword);
+			params.add(user.getPassword());
 		}
 
 		// 전화번호가 비어있지 않으면 형식 검증 후 수정
 		if (user.getPhone() != null && !user.getPhone().isEmpty()) {
-			String formattedPhone = PhoneUtil.inputPhoneNumber(user.getPhone());
 			sql.append("phone = ?, ");
-			params.add(formattedPhone);
+			params.add(user.getPhone());
 		}
 
 		// 수정할 필드가 없으면 종료
@@ -139,7 +135,7 @@ public class JdbcUserRepository implements UserRepository {
 
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("회원정보 수정에 실패했습니다.", e);
+			throw new RuntimeException("[JdbcRepository] 회원정보 수정에 실패했습니다.", e);
 		}
 	}
 
@@ -156,7 +152,54 @@ public class JdbcUserRepository implements UserRepository {
 			ps.setLong(3, id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("회원 삭제에 실패했습니다.", e);
+			throw new RuntimeException("[JdbcRepository] 회원 삭제에 실패했습니다.", e);
+		}
+	}
+
+	@Override
+	public Optional<User> findByNameAndPhone(String name, String phone) {
+		String sql = "SELECT * FROM users WHERE name = ? AND phone = ? AND deleted_at IS NULL";
+		try (Connection conn = DBConnection.open();
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, name);
+			ps.setString(2, phone);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				return Optional.of(mapRow(rs));
+			}
+			return Optional.empty();
+		} catch (SQLException e) {
+			throw new RuntimeException("[JdbcRepository] 아이디 찾기(name/phone)에 실패했습니다.", e);
+		}
+	}
+
+	@Override
+	public Optional<User> findByEmailAndPhone(String email, String phone) {
+		String sql = "SELECT * FROM users WHERE email = ? AND phone = ? AND deleted_at IS NULL";
+		try (Connection conn = DBConnection.open();
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, email);
+			ps.setString(2, phone);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				return Optional.of(mapRow(rs));
+			}
+			return Optional.empty();
+		} catch (SQLException e) {
+			throw new RuntimeException("[JdbcRepository] 아이디 찾기(email/phone)에 실패했습니다.", e);
+		}
+	}
+
+	@Override
+	public void updatePasswordById(Long id, String password) {
+		String sql = "UPDATE users SET password = ? WHERE id = ? AND deleted_at IS NULL";
+		try (Connection conn = DBConnection.open();
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, password);
+			ps.setLong(2, id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException("[JdbcRepository] 비밀번호 수정에 실패했습니다.", e);
 		}
 	}
 

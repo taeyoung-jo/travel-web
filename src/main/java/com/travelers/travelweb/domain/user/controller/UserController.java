@@ -14,7 +14,6 @@ import com.travelers.travelweb.domain.user.domain.User;
 import com.travelers.travelweb.domain.user.dto.response.UserResponse;
 import com.travelers.travelweb.domain.user.repository.JdbcUserRepository;
 import com.travelers.travelweb.domain.user.service.UserService;
-import com.travelers.travelweb.global.util.PhoneUtil;
 
 @WebServlet("/users")
 public class UserController extends HttpServlet {
@@ -28,60 +27,72 @@ public class UserController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
 		String action = req.getParameter("action");
-
-		if(action == null) {
+		if (action == null)
 			action = "loginForm";  // 기본 페이지를 로그인 페이지로
-		}
 
-		if (action.equals("loginForm")) {
-			req.getRequestDispatcher("/user/login.jsp").forward(req, resp);
-		} else if (action.equals("registerForm")) {
-			req.getRequestDispatcher("/user/register.jsp").forward(req, resp);
-		} else if (action.equals("myInfo")) {
-			myInfo(req, resp);
+		switch (action) {
+			case "loginForm":
+				req.getRequestDispatcher("/WEB-INF/views/user/loginTest.jsp").forward(req, resp);
+				break;
+			case "registerForm":
+				req.getRequestDispatcher("/WEB-INF/views/user/registerTest.jsp").forward(req, resp);
+				break;
+			case "myInfo":
+				myInfo(req, resp);
+				break;
+			case "findIdForm":
+				req.getRequestDispatcher("/WEB-INF/views/user/findIdTest.jsp").forward(req, resp);
+				break;
+			case "findPasswordForm":
+				req.getRequestDispatcher("/WEB-INF/views/user/findPasswordTest.jsp").forward(req, resp);
+				break;
+			case "resetPasswordForm":
+				req.getRequestDispatcher("/WEB-INF/views/user/resetPasswordTest.jsp").forward(req, resp);
+				break;
 		}
 	}
 
-@Override
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		req.setCharacterEncoding("utf-8");
 		String action = req.getParameter("action");
 
-		if (action.equals("register")) {
-			register(req, resp);
-		} else if (action.equals("login")) {
-			login(req, resp);
-		} else if (action.equals("update")) {
-			update(req, resp);
-		} else if (action.equals("delete")) {
-			HttpSession session = req.getSession(false);
-			if (session != null) {
-				User loginUser = (User) session.getAttribute("loginUser");
-				if (loginUser != null) {
-					userService.removeById(loginUser.getId());
-					session.invalidate();
-				}
-			}
-			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
-		} else if (action.equals("logout")) {
-			HttpSession session = req.getSession(false);
-			if (session != null) {
-				session.invalidate();
-			}
-			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+		switch (action) {
+			case "register":
+				register(req, resp);
+				break;
+			case "login":
+				login(req, resp);
+				break;
+			case "update":
+				update(req, resp);
+				break;
+			case "delete":
+				deleteUser(req, resp);
+				break;
+			case "logout":
+				logout(req, resp);
+				break;
+			case "findId":
+				findId(req, resp);
+				break;
+			case "findPassword":
+				findPassword(req, resp);
+				break;
+			case "resetPassword":
+				resetPassword(req, resp);
+				break;
 		}
 	}
 
-	private void myInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException ,IOException {
+	private void myInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
 		// 로그인 안 됨
 		if (session == null || session.getAttribute("loginUser") == null) {
 			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
 			return;
 		}
-		User loginUser = (User) session.getAttribute("loginUser");
+		User loginUser = (User)session.getAttribute("loginUser");
 		Long userId = loginUser.getId();
 
 		// DB에서 회원 정보 조회
@@ -100,14 +111,14 @@ public class UserController extends HttpServlet {
 			.build();
 
 		req.setAttribute("loginUser", userResp);
-		req.getRequestDispatcher(req.getContextPath() + "/user/myInfo.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/user/myInfoTest.jsp").forward(req, resp);
 	}
 
 	private void register(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		String email = req.getParameter("email");
 		String name = req.getParameter("name");
 		String password = req.getParameter("password");
-		String phone = PhoneUtil.inputPhoneNumber(req.getParameter("phone"));
+		String phone = req.getParameter("phone");
 
 		User user = User.builder()
 			.email(email)
@@ -118,13 +129,14 @@ public class UserController extends HttpServlet {
 
 		try {
 			userService.register(user);
-			resp.sendRedirect("/users?action=loginForm");
+			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
 		} catch (RuntimeException e) {
+			e.printStackTrace();
 			resp.getWriter().write("회원가입 실패: 다시 시도해 주세요.");
 		}
 	}
 
-	private void login(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	private void login(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 
@@ -132,7 +144,7 @@ public class UserController extends HttpServlet {
 		if (userOpt.isPresent()) {
 			HttpSession session = req.getSession();
 			session.setAttribute("loginUser", userOpt.get());
-			resp.sendRedirect(req.getContextPath() + "/user/home.jsp"); // 로그인 성공 시 홈페이지 이동
+			req.getRequestDispatcher("/WEB-INF/views/user/homeTest.jsp").forward(req, resp);  // 로그인 성공 시 홈페이지 이동
 		} else {
 			resp.getWriter().write("로그인 실패: 이메일 또는 비밀번호를 확인하세요.");
 		}
@@ -145,7 +157,7 @@ public class UserController extends HttpServlet {
 			return;
 		}
 
-		User loginUser = (User) session.getAttribute("loginUser");
+		User loginUser = (User)session.getAttribute("loginUser");
 
 		String email = req.getParameter("email");
 		String name = req.getParameter("name");
@@ -170,8 +182,73 @@ public class UserController extends HttpServlet {
 
 			resp.sendRedirect(req.getContextPath() + "/users?action=myInfo");
 		} catch (RuntimeException e) {
+			e.printStackTrace();
 			resp.getWriter().write("회원정보 수정 실패: 다시 시도해 주세요.");
-			req.getRequestDispatcher("/user/myInfo.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/user/myInfoTest.jsp").forward(req, resp);
+		}
+	}
+
+	private void deleteUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		HttpSession session = req.getSession(false);
+		if (session != null) {
+			User loginUser = (User)session.getAttribute("loginUser");
+			if (loginUser != null) {
+				userService.removeById(loginUser.getId());
+				session.invalidate();
+			}
+		}
+		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+	}
+
+	private void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		HttpSession session = req.getSession(false);
+		if (session != null) {
+			session.invalidate();
+		}
+		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+	}
+
+	private void findId(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		String name = req.getParameter("name");
+		String phone = req.getParameter("phone");
+
+		Optional<User> userOpt = userService.getByNameAndPhone(name, phone);
+		if (userOpt.isPresent()) {
+			req.setAttribute("email", userOpt.get().getEmail());
+			req.getRequestDispatcher("/WEB-INF/views/user/findIdResultTest.jsp").forward(req, resp);
+		} else {
+			resp.getWriter().write("일치하는 사용자가 없습니다.");
+		}
+	}
+
+	private void findPassword(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		// 이메일 + 폰번호 입력 후 새 비밀번호 입력 페이지로 이동
+		String email = req.getParameter("email");
+		String phone = req.getParameter("phone");
+
+		Optional<User> userOpt = userService.getByEmailAndPhone(email, phone);
+		if (userOpt.isPresent()) {
+			// 성공하면 새 비밀번호 입력 폼으로 이동
+			req.setAttribute("email", email);
+			req.setAttribute("phone", phone);
+			req.getRequestDispatcher("/WEB-INF/views/user/resetPasswordTest.jsp").forward(req, resp);
+		} else {
+			resp.getWriter().write("일치하는 사용자가 없습니다.");
+		}
+	}
+
+	private void resetPassword(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		String email = req.getParameter("email");
+		String phone = req.getParameter("phone");
+		String newPassword = req.getParameter("newPassword");
+
+		Optional<User> userOpt = userService.getByEmailAndPhone(email, phone);
+		if (userOpt.isPresent()) {
+			userService.updatePassword(userOpt.get().getId(), newPassword);
+
+			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+		} else {
+			resp.getWriter().write("일치하는 사용자가 없습니다.");
 		}
 	}
 }

@@ -18,12 +18,17 @@ public class UserService {
 	public void register(User user) {
 		// 이메일 중복 체크
 		if (repository.findByEmail(user.getEmail()).isPresent()) {
-			throw new RuntimeException("이미 존재하는 이메일입니다.");
+			throw new RuntimeException("[UserService] 회원가입 실패 : 이미 존재하는 이메일입니다.");
 		}
 
 		// 비밀번호 해시 처리
 		String hashedPassword = PasswordUtil.hash(user.getPassword());
 		user.setPassword(hashedPassword);
+
+		// 폰번호 포맷 처리
+		if (user.getPhone() != null && !user.getPhone().trim().isEmpty()) {
+			user.setPhone(PhoneUtil.inputPhoneNumber(user.getPhone()));
+		}
 
 		repository.save(user);
 	}
@@ -36,7 +41,7 @@ public class UserService {
 		return repository.findByEmail(email);
 	}
 
-	public List<User> findAll() {
+	public List<User> getAll() {
 		return repository.findAll();
 	}
 
@@ -44,7 +49,7 @@ public class UserService {
 		// 회원 존재 여부 확인
 		Optional<User> existingUserOpt = repository.findById(user.getId());
 		if (!existingUserOpt.isPresent()) {
-			throw new RuntimeException("해당 회원을 찾을 수 없습니다.");
+			throw new RuntimeException("[UserService] 회원정보수정 실패 : 해당 회원을 찾을 수 없습니다.");
 		}
 
 		// 비밀번호가 비어있지 않으면 해시 처리
@@ -64,6 +69,21 @@ public class UserService {
 
 	public void removeById(Long id) {
 		repository.deleteById(id);
+	}
+
+	public Optional<User> getByNameAndPhone(String name, String phone) {
+		String formattedPhone = PhoneUtil.inputPhoneNumber(phone);
+		return repository.findByNameAndPhone(name, formattedPhone);
+	}
+
+	public Optional<User> getByEmailAndPhone(String email, String phone) {
+		String formattedPhone = PhoneUtil.inputPhoneNumber(phone);
+		return repository.findByEmailAndPhone(email, formattedPhone);
+	}
+
+	public void updatePassword(Long id, String newPassword) {
+		String hashedPassword = PasswordUtil.hash(newPassword);
+		repository.updatePasswordById(id, hashedPassword);
 	}
 
 	public Optional<User> login(String email, String password) {
