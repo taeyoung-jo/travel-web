@@ -174,6 +174,48 @@
         </div>
     </div>
 </section>
+<%--여행 후기--%>
+<section class="section" id="main-review">
+    <div class="main-review in">
+        <div class="review-info">
+            <h2>여행 후기가 들려주는 <br> 진짜 경험</h2>
+            <p>사진보다 더 진솔한 고객들의 여행 후기를 확인해보세요.</p>
+            <div class="cloude"></div>
+        </div>
+        <div class="review-card">
+            <div class="review-box">
+                <a href="#">
+                    <img src="/image/review-tokyo.jpg">
+                    <div class="review-txt">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p>일정이 알차고 가이드님 설명이 재밌어서 하루하루가 즐거웠어요! 자유시간도 적당히 있어서 쇼핑이랑 맛집투어 둘 다 만족했어요 🍣</p>
+                        <h5>도쿄 벚꽃 여행 3일</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="review-box">
+                <a href="#">
+                    <img src="/image/review-swiss.jpg">
+                    <div class="review-txt">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p>알프스 풍경이 진짜 그림 같았어요… 평생 기억에 남을 여행이에요. 일정이 타이트했지만 효율적으로 짜여 있어서 여러 도시를 다 볼 수 있었어요!</p>
+                        <h5>스위스 알프스 하이킹 6일</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="review-box">
+                <a href="#">
+                    <img src="/image/reveiw-daeman.jpg">
+                    <div class="review-txt">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p>야시장 먹거리들이 최고였어요! 대만식 버블티도 현지에서 먹으니 더 맛있었어요 🧋 날씨도 좋고 사람들도 친절해서 여행 내내 기분이 좋았어요</p>
+                        <h5>타이베이 미식 여행 3일</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

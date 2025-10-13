@@ -131,6 +131,10 @@
     padding: 12px;
 }
 
+.card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
 .card img {
     width: 100%;
     height: 150px;
@@ -348,6 +352,7 @@
     background-color: rgb(87, 120, 187);
     color: #fff;
     padding: 60px 40px 0px;
+    margin-bottom: 100px;
 }
 
 .population h3 {
@@ -416,6 +421,94 @@
     opacity: 0;
 }
 
+/*메인 리뷰*/
+#main-review {
+    background: linear-gradient(to bottom, #ffffff 0%, #e6f3ff 40%, #cce6ff 100%);
+    height: 600px;
+}
+
+.main-review {
+    display: flex;
+    justify-content: space-between;
+}
+
+.review-info h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.review-info .cloude {
+    background: url(/image/cloude.png) no-repeat 50%;
+    background-size: 200px;
+    width: 400px;
+    height: 200px;
+    margin-top: 30px;
+}
+
+.review-info p {
+    font-size: 16px;
+    padding-top: 30px;
+}
+
+.review-card {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.review-box > a {
+    width: 240px;
+    height: 390px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 이미지가 카드 밖으로 안 나가게 */
+}
+
+.review-box > a > img {
+    width: 240px;
+    height: 210px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    transition: transform 0.3s ease; /* 확대 애니메이션 */
+}
+
+.review-box > a > .review-txt {
+    padding: 15px;
+}
+
+.review-box > a > .review-txt > p {
+    font-size: 14px;
+    margin-bottom: 9px;
+}
+
+.review-box > a > .review-txt > h5 {
+    font-weight: 500;
+    color: #797979;
+    border-top: 1px solid #dfe4ea;
+    padding-top: 7px;
+}
+
+/* 기본 위치 조절 */
+.review-box:nth-child(1) > a,
+.review-box:nth-child(3) > a {
+    transform: translateY(25px); /* 살짝 가라앉음 */
+}
+
+.review-box:nth-child(2) > a {
+    transform: translateY(-5px); /* 살짝 뜸 */
+}
+
+/* 호버 시 공평하게 10px 위로 띄움 */
+.review-box > a:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 호버 시 이미지 확대 */
+.review-box > a:hover > img {
+    transform: scale(1.1); /* 10% 확대 */
+}
 
 /* 공통 버튼 스타일 */
 .slide-btn {
