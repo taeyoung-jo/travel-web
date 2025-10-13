@@ -1,37 +1,37 @@
 package pack;
 
 public class Package {
-	private int packageId;
+	private int id;
 	private String packageName;
 	private String departure;
 	private String destination;
-	private String departureDate;
-	private int days;
+	private String country;
 	private double price;
-	private String imageUrl; // ✅ 이미지 경로 추가
+	private double rating; // 별점 필드 추가
+	private String imageUrl;
 
 	public Package() {
 	}
 
-	public Package(int packageId, String packageName, String departure, String destination,
-		String departureDate, int days, double price, String imageUrl) {
-		this.packageId = packageId;
+	public Package(int id, String packageName, String departure, String destination, String country, double price,
+		double rating, String imageUrl) {
+		this.id = id;
 		this.packageName = packageName;
 		this.departure = departure;
 		this.destination = destination;
-		this.departureDate = departureDate;
-		this.days = days;
+		this.country = country;
 		this.price = price;
+		this.rating = rating;
 		this.imageUrl = imageUrl;
 	}
 
-	// Getter & Setter
-	public int getPackageId() {
-		return packageId;
+	// getter & setter
+	public int getId() {
+		return id;
 	}
 
-	public void setPackageId(int packageId) {
-		this.packageId = packageId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getPackageName() {
@@ -58,20 +58,12 @@ public class Package {
 		this.destination = destination;
 	}
 
-	public String getDepartureDate() {
-		return departureDate;
+	public String getCountry() {
+		return country;
 	}
 
-	public void setDepartureDate(String departureDate) {
-		this.departureDate = departureDate;
-	}
-
-	public int getDays() {
-		return days;
-	}
-
-	public void setDays(int days) {
-		this.days = days;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public double getPrice() {
@@ -82,25 +74,19 @@ public class Package {
 		this.price = price;
 	}
 
+	public double getRating() {
+		return rating;
+	}
+
+	public void setRating(double rating) {
+		this.rating = rating;
+	}
+
 	public String getImageUrl() {
 		return imageUrl;
 	}
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
-	}
-
-	@Override
-	public String toString() {
-		return "PackageDTO{" +
-			"packageId=" + packageId +
-			", packageName='" + packageName + '\'' +
-			", departure='" + departure + '\'' +
-			", destination='" + destination + '\'' +
-			", departureDate='" + departureDate + '\'' +
-			", days=" + days +
-			", price=" + price +
-			", imageUrl='" + imageUrl + '\'' +
-			'}';
 	}
 }

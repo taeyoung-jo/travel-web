@@ -8,8 +8,8 @@
         <li class="menu-item">
             <div class="menu-title">예약 / 취소내역 <img src="../../image/arrow-bottom.png" alt="arrow"></div>
             <ul class="submenu open">
-                <li><a href="mypage_reservation.jsp">예약/ 취소내역</a></li>
-                <li><a href="mypage_find-reserv.jsp">예약번호로 찾기</a></li>
+                <li><a href="../mypage_reservation.jsp">예약/ 취소내역</a></li>
+                <li><a href="../mypage_find-reserv.jsp">예약번호로 찾기</a></li>
             </ul>
         </li>
         <li class="menu-item">

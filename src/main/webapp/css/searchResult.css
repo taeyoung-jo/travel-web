@@ -1,83 +1,158 @@
 body {
     font-family: "Noto Sans KR", sans-serif;
-    background: #fafafa;
     margin: 0;
     color: #333;
 }
 
-/* 상단 배너 */
-.result-hero {
-    position: relative;
-    height: 280px;
-    overflow: hidden;
+/*검색결과 세션*/
+.searchTop-wrap {
+    display: flex;
+    justify-content: space-between;
 }
-.result-hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%);
+
+.searchTop {
+    padding-top: 50px;
+    display: flex;
+    gap: 20px;
 }
-.result-hero-text {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    text-align: center;
+
+.searchTop h3 {
+    font-size: 30px;
+    font-weight: 500;
 }
-.result-hero-text h1 {
-    font-size: 48px;
-    font-weight: 700;
+
+.searchTop h5 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #f5c000;
+}
+
+.searchTop p {
+    margin-top: 13px;
+}
+
+.searchTop span {
+    color: #f5c000;
+    font-weight: 900;
+}
+
+.sort-options {
+    text-align: right;
+    padding-top: 100px;
+}
+
+.sort-options a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #6a6a6a;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.sort-options a.active {
+    color: #111;
 }
 
 /* 메인 레이아웃 */
 .result-container {
     display: flex;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 20px auto 100px;
     gap: 30px;
+    align-items: flex-start; /* 혹은 stretch */
 }
 
-/* 왼쪽 필터 */
+/* 사이드바 필터 */
 .filter {
-    flex: 0 0 220px;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
+    width: 260px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
     padding: 20px;
-    height: fit-content;
+    background: #fff;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
 }
 
 .filter h3 {
     font-size: 18px;
-    margin-bottom: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 8px;
+    color: #333;
 }
 
 .filter-section {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .filter-btn {
+    width: 100%;
     background: none;
     border: none;
-    font-weight: 600;
-    font-size: 15px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    position: relative;
+    padding: 10px 0;
+    transition: color 0.2s;
+}
+
+.filter-btn::after {
+    content: "▼";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #888;
+    transition: transform 0.3s;
+}
+
+.filter-btn.active::after {
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .filter-list {
     list-style: none;
-    margin: 10px 0 0;
-    padding: 0;
-    font-size: 14px;
+    margin: 0;
+    padding: 6px 0 10px 4px;
+    display: none;
 }
 
-.filter-list li {
-    margin: 6px 0;
+.filter-list.show {
+    display: block;
+    animation: fadeIn 0.25s ease;
+}
+
+.filter-list label {
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-list input[type="checkbox"] {
+    accent-color: #0078ff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 상품 리스트 */
@@ -94,21 +169,46 @@ body {
     justify-content: space-between;
     background: #fff;
     border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    height: 180px;
 }
 
 .product-thumb img {
-    width: 120px;
-    height: 120px;
-    border-radius: 6px;
+    width: 240px;
+    height: 100%;
     object-fit: cover;
 }
 
 .product-info {
     flex: 1;
-    margin-left: 20px;
+    margin: 20px 40px;
+}
+
+.product-info .product-rating span {
+    color: #ff5c46;
+}
+
+.product-info .product-rating {
+    font-size: 14px;
+}
+
+/*태그*/
+.pakage-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-info .tag_rect {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 4px;
+    height: 24px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    background: #5778bb;
+    margin-bottom: 3px;
 }
 
 .product-path {
@@ -118,9 +218,9 @@ body {
 }
 
 .product-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 6px;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 6px 0 6px;
 }
 
 .product-sub {
@@ -131,25 +231,40 @@ body {
 .product-price {
     text-align: right;
     min-width: 180px;
+    display: flex;
+    justify-content: end;
 }
 
 .price {
     color: #e60012;
     font-weight: 700;
     font-size: 18px;
+    margin-top: 17px;
 }
 
 .detail-btn {
-    border: 1px solid #0094ff;
-    background: none;
-    color: #0094ff;
-    border-radius: 5px;
-    padding: 6px 10px;
-    margin-top: 10px;
+    border: 1px solid #d9d9d9;
     cursor: pointer;
     font-size: 13px;
+    margin-left: 20px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px 32px;
+    color: #111;
+    background: #fff;
 }
+
 .detail-btn:hover {
-    background: #0094ff;
-    color: #fff;
+    border: 1px solid #f5c000;
+}
+
+.no-search {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 70px 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #222222;
 }
