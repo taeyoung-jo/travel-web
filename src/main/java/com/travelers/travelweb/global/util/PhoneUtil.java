@@ -3,7 +3,7 @@ package com.travelers.travelweb.global.util;
 public class PhoneUtil {
 	public static String inputPhoneNumber(String phoneNumber) {
 		if (phoneNumber == null || phoneNumber.trim().isEmpty()) {
-			throw new IllegalArgumentException("전화번호가 비어 있거나 null입니다.");
+			throw new IllegalArgumentException("전화번호가 입력되지 않았습니다.");
 		}
 
 		String input = phoneNumber.trim();
