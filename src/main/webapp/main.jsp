@@ -70,6 +70,7 @@
 <section class="section in">
     <div class="short-loc location">
         <h3>가볍게 떠나는 근거리 힐링 여행</h3>
+        <p>짧은 시간 동안 떠나도 충분히 즐길 수 있는 가벼운 근거리 여행을 만나보세요.</p>
 
         <div class="cards" id="shortPackageSlider">
             <% for (Package pkg : shortDistancePackages) { %>
@@ -96,8 +97,8 @@
 
         <!-- 슬라이드 버튼 -->
         <div class="slide-controls">
-            <button id="shortPrevBtn" class="slide-btn">‹</button>
-            <button id="shortNextBtn" class="slide-btn">›</button>
+            <button id="shortPrevBtn" class="slide-btn"></button>
+            <button id="shortNextBtn" class="slide-btn"></button>
         </div>
     </div>
 </section>
@@ -189,40 +190,5 @@
             shortSlider.addEventListener("mouseleave", stopDrag);
         }
 
-        // ✅ 카드 버튼 이동
-        window.scrollCards = function (dir) {
-            const slider = document.getElementById("cardSlider");
-            slider.scrollBy({left: dir * 300, behavior: 'smooth'});
-        };
-
-        // ✅ 카테고리 드래그
-        const catSlider = document.getElementById("categorySlider");
-        let isDragging = false, startX = 0, scrollStart = 0;
-
-        catSlider.addEventListener("mousedown", (e) => {
-            if (e.button !== 0) return;
-            isDragging = true;
-            startX = e.pageX - catSlider.offsetLeft;
-            scrollStart = catSlider.scrollLeft;
-            catSlider.style.userSelect = "none";
-            catSlider.style.cursor = "grabbing";
-        });
-
-        catSlider.addEventListener("mousemove", (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - catSlider.offsetLeft;
-            const walk = x - startX;
-            catSlider.scrollLeft = scrollStart - walk;
-        });
-
-        function stopDrag() {
-            isDragging = false;
-            catSlider.style.userSelect = "";
-            catSlider.style.cursor = "";
-        }
-
-        catSlider.addEventListener("mouseup", stopDrag);
-        catSlider.addEventListener("mouseleave", stopDrag);
     });
 </script>

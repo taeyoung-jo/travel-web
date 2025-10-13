@@ -91,16 +91,21 @@
 
 /* 단거리 여행지 */
 .section {
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 .location > h3 {
     font-size: 26px;
     font-weight: 500;
-    margin-bottom: 30px;
+    padding-bottom: 6px;
 }
 
-/* 카드 슬라이더 */
+.location > p {
+    font-size: 14px;
+    color: #5e5e5e;
+    padding-bottom: 30px;
+}
+
 .cards {
     display: flex;
     gap: 20px;
@@ -115,7 +120,6 @@
     display: none;
 }
 
-/* 카드 */
 .card {
     width: 270px;
     flex: 0 0 auto;
@@ -127,12 +131,6 @@
     padding: 12px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* 카드 이미지 */
 .card img {
     width: 100%;
     height: 150px;
@@ -140,7 +138,6 @@
     border-radius: 12px;
 }
 
-/* 카드 정보 */
 .card .info {
     padding: 15px 0;
     font-size: 14px;
@@ -156,14 +153,13 @@
     font-weight: 400;
 }
 
-/* 가격 */
 .card .price {
     font-weight: 700;
     color: #111;
     font-size: 18px;
+    padding-top: 16px;
 }
 
-/* 목적지/기간 */
 .card .destination {
     font-size: 12px;
     color: #777;
@@ -179,22 +175,46 @@
 .price-btn > a {
     display: block;
     /* width: 100px; */
-    border-radius: 2px;
-    background-color: #efefef;
+    border-radius: 8px;
+    background-color: #f5c000;
     text-align: center;
-    padding: 14px 30px;
+    padding: 12px 30px;
+    color: #111;
 }
+
+/*슬라이드 화살표 버튼*/
+.short-loc {
+    position: relative
+}
+
+#shortPrevBtn {
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    background: url("/image/arrow-next.png") 50% no-repeat;
+    background-size: 7px;
+}
+
+#shortNextBtn {
+    position: absolute;
+    top: 50%;
+    right: -60px;
+    background: url("/image/arrow.png") 50% no-repeat;
+    background-size: 7px;
+}
+
 
 /* 슬라이드 버튼 컨테이너 */
 .slide-controls {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-left: auto; /* ✅ 오른쪽 끝으로 밀기 */
+    margin-left: auto;
 }
 
 /* 공통 버튼 스타일 */
 .slide-btn {
+    font-size: 32px; /* 화살표 크기 키우기 */
     width: 40px;
     height: 40px;
     border: 1px solid #d9d9d9;
@@ -226,18 +246,8 @@
     gap: 8px;
 }
 
-.slide-btn svg {
-    width: 16px;
-    height: 16px;
-    stroke: #777;
-    transition: stroke 0.25s ease-in-out;
-}
-
 .slide-btn:hover {
     border-color: #999;
     background: #f9f9f9;
-}
-
-.slide-btn:hover svg {
-    stroke: #333;
+    border: 1px solid #f5c000;
 }
