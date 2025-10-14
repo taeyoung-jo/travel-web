@@ -38,8 +38,8 @@ public class UserController extends HttpServlet {
 			case "registerForm":
 				req.getRequestDispatcher("/WEB-INF/views/user/registerTest.jsp").forward(req, resp);
 				break;
-			case "myInfo":
-				myInfo(req, resp);
+			case "showMyInfo":
+				showMyInfo(req, resp);
 				break;
 			case "findIdForm":
 				req.getRequestDispatcher("/WEB-INF/views/user/findIdTest.jsp").forward(req, resp);
@@ -64,10 +64,10 @@ public class UserController extends HttpServlet {
 			case "login":
 				login(req, resp);
 				break;
-			case "update":
-				update(req, resp);
+			case "updateUser":
+				updateUser(req, resp);
 				break;
-			case "delete":
+			case "deleteUser":
 				deleteUser(req, resp);
 				break;
 			case "logout":
@@ -85,7 +85,7 @@ public class UserController extends HttpServlet {
 		}
 	}
 
-	private void myInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	private void showMyInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
 		// 로그인 안 됨
 		if (session == null || session.getAttribute("loginUser") == null) {
@@ -111,7 +111,7 @@ public class UserController extends HttpServlet {
 			.build();
 
 		req.setAttribute("loginUser", userResp);
-		req.getRequestDispatcher("/WEB-INF/views/user/myInfoTest.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/user/showMyInfoTest.jsp").forward(req, resp);
 	}
 
 	private void register(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -144,13 +144,13 @@ public class UserController extends HttpServlet {
 		if (userOpt.isPresent()) {
 			HttpSession session = req.getSession();
 			session.setAttribute("loginUser", userOpt.get());
-			req.getRequestDispatcher("/WEB-INF/views/user/homeTest.jsp").forward(req, resp);  // 로그인 성공 시 홈페이지 이동
+			req.getRequestDispatcher("/WEB-INF/views/user/homeTest.jsp").forward(req, resp);  // 로그인 성공 시 홈으로 이동
 		} else {
 			resp.getWriter().write("로그인 실패: 이메일 또는 비밀번호를 확인하세요.");
 		}
 	}
 
-	private void update(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+	private void updateUser(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		HttpSession session = req.getSession(false);
 		if (session == null || session.getAttribute("loginUser") == null) {
 			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
@@ -166,7 +166,7 @@ public class UserController extends HttpServlet {
 
 		// 수정할 User 객체 생성 (null 또는 빈 값은 Repository에서 자동 무시)
 		User updatedUser = User.builder()
-			.id(loginUser.getId()) // 로그인된 사용자 기준으로 수정
+			.id(loginUser.getId()) // id는 로그인된 사용자 기준으로 수정
 			.email(email)
 			.name(name)
 			.password(password)
@@ -184,7 +184,7 @@ public class UserController extends HttpServlet {
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 			resp.getWriter().write("회원정보 수정 실패: 다시 시도해 주세요.");
-			req.getRequestDispatcher("/WEB-INF/views/user/myInfoTest.jsp").forward(req, resp);
+			req.getRequestDispatcher("/WEB-INF/views/user/showMyInfoTest.jsp").forward(req, resp);
 		}
 	}
 

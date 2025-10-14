@@ -14,7 +14,7 @@
 </form>
 <hr>
 
-<a href="${pageContext.request.contextPath}/users?action=myInfo">
+<a href="${pageContext.request.contextPath}/users?action=showMyInfo">
     <button type="button">내 정보 조회</button>
 </a>
 
