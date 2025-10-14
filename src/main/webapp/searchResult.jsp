@@ -142,7 +142,6 @@
         </form>
     </aside>
 
-
     <!-- 오른쪽 상품 리스트 -->
     <section class="result-list">
 

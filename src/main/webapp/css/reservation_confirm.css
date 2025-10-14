@@ -1,0 +1,351 @@
+/* ======================================
+   예약하기 레이아웃 (최종 안정 버전)
+   ====================================== */
+
+.reservation-page {
+    width: 1200px;
+    margin: 80px auto 60px;
+}
+
+/* 제목 라인 */
+.reservation-page h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.reservation-page h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #111;
+    margin-top: 6px;
+}
+
+/* ✅ 핵심: 본문+요약 2열 정렬 (flex로 전환) */
+.reservation-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+/* 왼쪽 본문 */
+.main-col {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 안내문 */
+.info-box {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+.info-box p {
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* 상품/예약자 정보 */
+.product-info {
+    margin-bottom: 10px;   /* 🔼 기존 20~25px → 40px으로 여유 있게 띄움 */
+}
+.product-info h3 {
+    font-size: 18px;
+    margin: 20px 0 14px;
+}
+.product-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.product-info th,
+.product-info td {
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    font-size: 14px;
+    text-align: left;
+}
+.product-info th {
+    background: #fafafa;
+    width: 20%;
+}
+
+/* ===============================
+   예약 요약 박스 디자인 (최종)
+   =============================== */
+.right-summary {
+    flex: 0 0 320px;
+    background: #fff;
+    border: 1px solid #222;  /* 얇은 선 강조 */
+    border-radius: 0;        /* 둥근 모서리 제거 */
+    padding: 0;
+    font-size: 14px;
+    box-shadow: none;        /* 그림자 제거 */
+}
+
+.right-summary table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.right-summary tr {
+    border-bottom: 1px solid #e5e5e5;  /* 섹션 구분선 */
+}
+
+.right-summary td {
+    padding: 10px 14px;
+    vertical-align: middle;
+}
+
+.right-summary td:first-child {
+    color: #333;
+}
+
+.right-summary td:last-child {
+    text-align: right;
+    font-weight: 500;
+}
+
+/* 항공사 아이콘 위치 */
+.right-summary img {
+    width: 20px;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+
+/* ===============================
+   총금액 강조
+   =============================== */
+.total-section {
+    text-align: center;
+    padding: 24px 0 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.total-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #e53935; /* 🔴 붉은색 포인트 */
+    margin-bottom: 4px;
+}
+
+.total-price small {
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 2px;
+    color: #555;
+}
+
+.point-info {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    padding: 12px 0 8px;
+    line-height: 1.4;
+}
+
+.point-info a {
+    color: #111;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* ===============================
+   버튼
+   =============================== */
+.btn-primary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #ffc40e; /* 노랑 포인트 */
+    color: #111;
+    border: none;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #ffb800;
+}
+
+/* 반응형 */
+@media (max-width: 992px) {
+    .reservation-layout {
+        display: block;
+    }
+    .right-summary {
+        position: static;
+        width: 100%;
+        margin-top: 24px;
+    }
+}
+
+/* =========================
+   좌측 본문 2열 너비 정렬
+   ========================= */
+
+/* 메인 영역과 요약 박스(320px) 사이 간격 유지 */
+.reservation-layout{
+    display:flex;
+    align-items:flex-start;
+    gap:32px;                 /* 좌/우 간격 */
+}
+
+/* 왼쪽 본문을 2열 그리드로: 큰 표 + 작은 표 */
+.main-col{
+    flex:1;
+    min-width:0;
+    display:grid;
+    grid-template-columns: 1fr 420px;  /* ← 너비 고정: 오른쪽 표 420px */
+    gap:24px;                           /* 두 표 사이 간격 */
+}
+
+/* 안내 박스는 전체 너비로 */
+.main-col .info-box{
+    grid-column: 1 / -1;
+    margin-bottom: 12px;     /* 표와 간격 */
+}
+
+/* 첫 번째 .product-info = "상품 정보" (왼쪽 큰 칸) */
+.main-col .product-info:nth-of-type(1){
+    grid-column: 1 / 2;
+}
+
+/* 두 번째 .product-info = "예약자 정보" (오른쪽 420px 칸) */
+.main-col .product-info:nth-of-type(2){
+    grid-column: 2 / 3;
+}
+
+/* 표 자체는 각 칸의 가로에 딱 맞게 */
+.product-info table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+/* 오른쪽 요약 박스 고정 너비 + sticky */
+.right-summary{
+    flex:0 0 320px;
+    position:sticky;
+    top:120px;
+    margin:0;
+}
+
+/* 반응형: 모바일에선 세로로 쌓기 */
+@media (max-width: 992px){
+    .reservation-layout{ display:block; }
+    .main-col{
+        display:block;
+    }
+    .right-summary{
+        position:static;
+        width:100%;
+        margin-top:24px;
+    }
+}
+
+/* ====== 예약자 정보 폼 정리 ====== */
+
+/* 테이블 레이아웃 안정화 */
+.resv-form table { width:100%; border-collapse:collapse; }
+.resv-form th, .resv-form td {
+    border:1px solid #e5e5e5;
+    padding:12px 14px;
+    font-size:14px;
+    vertical-align:middle;
+}
+.resv-form th {
+    background:#fafafa;
+    width:20%;
+    font-weight:600;
+    text-align:left;
+}
+
+/* 입력창 공통 – 높이/패딩/테두리 통일 */
+.resv-form input[type="text"],
+.resv-form input[type="tel"],
+.resv-form input[type="date"]{
+    width:100%;
+    height:42px;
+    padding:0 12px;
+    border:1px solid #cfcfcf;
+    border-radius:6px;
+    font-size:14px;
+    line-height:42px;
+    background:#fff;
+    color:#111;
+    box-sizing:border-box;
+
+    /* 브라우저 기본 UI 제거(초록 화살표 등) */
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance:textfield;
+    background-image:none;
+}
+
+/* Edge/IE select expand 제거 대응 (혹시 있을 경우) */
+.resv-form select::-ms-expand{ display:none; }
+
+/* number 타입 스핀버튼 제거(미래 확장 대비) */
+.resv-form input[type="number"]::-webkit-outer-spin-button,
+.resv-form input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none; margin:0;
+}
+
+/* 포커스 스타일 */
+.resv-form input:focus{
+    outline:none;
+    border-color:#f5a700;
+    box-shadow:0 0 0 2px rgba(245,167,0,.15);
+}
+
+/* placeholder 색 */
+.resv-form ::placeholder{ color:#bbb; }
+
+/* 라디오 정렬 & 간격 */
+.gender-cell{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    padding-left:10px;
+}
+.gender-cell label{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+}
+.gender-cell input[type="radio"]{
+    width:16px; height:16px;
+}
+
+/* 필수표기 * 색상 통일 */
+.resv-form .req{ color:#e53935; }
+
+/* 폼 안내문 여백 */
+.form-notice{ padding:10px 0 0 18px; color:#666; }
+
+/* 폼 하단 버튼 – 가로 꽉 차게 */
+.resv-form .btn-primary{
+    width:100%;
+    height:52px;
+    margin-top:16px;
+    border-radius:8px;
+    font-size:18px;
+}
+
+/* 데스크톱에선 오른쪽 요약 박스 버튼만 보이게(중복 버튼 제거),
+   모바일에서는 폼 하단 버튼만 보이게 */
+.resv-form .btn-primary{ display:none; }
+
+@media (max-width: 992px){
+    .right-summary .btn-primary{ display:none; }
+    .resv-form .btn-primary{ display:block; }
+}

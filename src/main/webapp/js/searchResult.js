@@ -236,3 +236,25 @@ function initCalendar(pkgId, pkgName) {
         renderList();
     });
 }
+
+// 필터 버튼 열고 닫기
+document.querySelectorAll(".filter-section").forEach(section => {
+    const btn = section.querySelector(".filter-btn");
+    const list = section.querySelector(".filter-list");
+
+    btn.addEventListener("click", () => {
+        list.classList.toggle("show"); // show 클래스 토글
+        btn.classList.toggle("active"); // 버튼 active 토글 (원하면 색 바뀜)
+    });
+
+    // 체크박스 클릭시 active 토글 (선택 강조)
+    list.querySelectorAll("input[type='checkbox']").forEach(chk => {
+        chk.addEventListener("change", () => {
+            if (chk.checked) {
+                chk.parentElement.classList.add("checked");
+            } else {
+                chk.parentElement.classList.remove("checked");
+            }
+        });
+    });
+});
