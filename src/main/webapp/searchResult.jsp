@@ -154,9 +154,7 @@
         } else {
             for (Package pkg : searchResults) {
         %>
-        <div class="product-card"
-             data-pkg-id="<%= pkg.getId() %>"
-             data-pkg-name="<%= pkg.getPackageName() %>">
+        <div class="product-card" data-pkg-id="<%= pkg.getId() %>" data-pkg-name="<%= pkg.getPackageName() %>">
             <div class="product-thumb">
                 <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>" alt="<%= pkg.getPackageName() %>">
             </div>
@@ -185,6 +183,7 @@
         %>
     </section>
 </div>
+
 <div id="modalOverlay" class="modal-overlay"></div>
 
 <div id="calendarModal" class="calendar-modal">
@@ -267,5 +266,5 @@
 </body>
 </html>
 
-<%@ include file="footer.jsp" %>
+<jsp:include page="footer.jsp"/>
 <script src="js/searchResult.js"></script>

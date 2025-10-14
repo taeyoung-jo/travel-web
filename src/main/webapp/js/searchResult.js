@@ -12,6 +12,7 @@ document.querySelectorAll('.product-card').forEach(card => {
     card.addEventListener('click', () => {
         const pkgId = card.dataset.pkgId;
         location.href = `detailPackage.jsp?pkg=${encodeURIComponent(pkgId)}`;
+
     });
 });
 

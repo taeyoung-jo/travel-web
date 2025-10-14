@@ -266,4 +266,3 @@ function renderScheduleItem(it) {
 
     return div;
 }
-

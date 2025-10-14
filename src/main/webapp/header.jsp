@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="<c:url value='/css/header.css'/>">
 
 <div class="in">
     <div class="sm_top">
         <a href="login.jsp">로그인</a>
         <a href="signup.jsp">회원가입</a>
-        <a href="mypage_reservation.jsp">예약확인/결제</a>
+        <a href="<c:url value='/mypage_reservation.jsp'/>">예약확인/결제</a>
     </div>
     <div class="header-top">
         <div class="left-group">
@@ -30,7 +29,7 @@
         </div>
 
         <div class="user-menu">
-            <a href="<c:url value='mypage.jsp'/>" class="user-icon tooltip">
+            <a href="<c:url value='/mypage/mypage.jsp'/>" class="user-icon tooltip">
                 <img src="../image/user.png" alt="마이페이지">
                 <span class="tooltip-text">마이페이지</span></a>
             <a href="#" class="time-icon tooltip">
