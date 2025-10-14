@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.travelers.travelweb.domain.user.domain.User;
+import com.travelers.travelweb.global.exception.CustomException;
 import com.travelers.travelweb.global.util.DBConnection;
 
 public class JdbcUserRepository implements UserRepository {
@@ -31,7 +32,11 @@ public class JdbcUserRepository implements UserRepository {
 			ps.setObject(7, user.getDeletedAt());
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 회원 저장에 실패했습니다.", e);
+			throw new CustomException(
+				"회원가입 처리 중 오류가 발생했습니다.",
+				"[DB Error] save 실패: " + e.getMessage(),
+				500
+			);
 		}
 	}
 
@@ -46,7 +51,11 @@ public class JdbcUserRepository implements UserRepository {
 					return Optional.of(mapRow(rs));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 회원정보 조회(id)에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 조회(id) 중 오류가 발생했습니다.",
+				"[DB Error] findById 실패: " + e.getMessage(),
+				500
+			);
 		}
 		return Optional.empty();
 	}
@@ -62,7 +71,11 @@ public class JdbcUserRepository implements UserRepository {
 					return Optional.of(mapRow(rs));
 			}
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 회원정보 조회(email)에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 조회(email) 중 오류가 발생했습니다.",
+				"[DB Error] findByEmail 실패: " + e.getMessage(),
+				500
+			);
 		}
 		return Optional.empty();
 	}
@@ -77,7 +90,11 @@ public class JdbcUserRepository implements UserRepository {
 			while (rs.next())
 				users.add(mapRow(rs));
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 회원정보 전체 조회에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 전체 조회 중 오류가 발생했습니다.",
+				"[DB Error] findAll 실패: " + e.getMessage(),
+				500
+			);
 		}
 		return users;
 	}
@@ -135,7 +152,11 @@ public class JdbcUserRepository implements UserRepository {
 
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 회원정보 수정에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 정보 수정 중 오류가 발생했습니다.",
+				"[DB Error] update  실패: " + e.getMessage(),
+				500
+			);
 		}
 	}
 
@@ -152,7 +173,11 @@ public class JdbcUserRepository implements UserRepository {
 			ps.setLong(3, id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 회원 삭제에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 삭제 처리 중 오류가 발생했습니다.",
+				"[DB Error] deleteById 실패: " + e.getMessage(),
+				500
+			);
 		}
 	}
 
@@ -169,7 +194,11 @@ public class JdbcUserRepository implements UserRepository {
 			}
 			return Optional.empty();
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 아이디 찾기(name/phone)에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 조회(name, phone) 중 오류가 발생했습니다.",
+				"[DB Error] findByNameAndPhone 실패: " + e.getMessage(),
+				500
+			);
 		}
 	}
 
@@ -186,7 +215,11 @@ public class JdbcUserRepository implements UserRepository {
 			}
 			return Optional.empty();
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 아이디 찾기(email/phone)에 실패했습니다.", e);
+			throw new CustomException(
+				"회원 조회(email, phone) 중 오류가 발생했습니다.",
+				"[DB Error] findByEmailAndPhone 실패: " + e.getMessage(),
+				500
+			);
 		}
 	}
 
@@ -199,7 +232,11 @@ public class JdbcUserRepository implements UserRepository {
 			ps.setLong(2, id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException("[JdbcRepository] 비밀번호 수정에 실패했습니다.", e);
+			throw new CustomException(
+				"비밀번호 수정 중 오류가 발생했습니다.",
+				"[DB Error] updatePasswordById 실패: " + e.getMessage(),
+				500
+			);
 		}
 	}
 

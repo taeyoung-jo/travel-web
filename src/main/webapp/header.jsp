@@ -1,23 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!-- ===== 헤더 ===== -->
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Black+Han+Sans&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-    *{margin: 0; padding: 0; box-sizing: border-box;}
-    a{text-decoration: none; color: inherit;}
-    ul, ol{list-style: none;}
-    img{max-width: none;}
 
-    body{
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul, ol {
+        list-style: none;
+    }
+
+    img {
+        max-width: none;
+    }
+
+    body {
         font-family: "Noto Sans", sans-serif;
         font-optical-sizing: auto;
-        font-weight:400;
+        font-weight: 400;
         font-style: normal;
         color: #040404;
-        --main:#FFCC35;
+        --main: #FFCC35;
     }
-    .main_color{ color: var(--main);}
-    .in{width: 1200px; margin: 0 auto;}
+
+    .main_color {
+        color: var(--main);
+    }
+
+    .in {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
     .header-top {
         display: flex;
         align-items: center;
@@ -26,7 +49,12 @@
         background: #fff;
         margin-bottom: 10px;
     }
-    .left-group{display: flex; width:650px;}
+
+    .left-group {
+        display: flex;
+        width: 650px;
+    }
+
     .logo {
         display: flex;
         font-size: 28px;
@@ -37,14 +65,24 @@
         align-items: flex-end;
         width: 250px;
     }
-    .logo img { width: 45px; height: 45px; margin-right: 6px; }
-    .sm_top{
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+        margin-right: 6px;
+    }
+
+    .sm_top {
         font-size: 12px;
         display: flex;
         justify-content: end;
         margin: 10px 0;
     }
-    .sm_top>a{margin-left: 10px;}
+
+    .sm_top > a {
+        margin-left: 10px;
+    }
+
     .search-box {
         display: flex;
         align-items: center;
@@ -53,6 +91,7 @@
         padding: 5px 15px;
         width: 100%;
     }
+
     .search-box input {
         border: none;
         outline: none;
@@ -61,6 +100,7 @@
         font-size: 14px;
         width: 100%;
     }
+
     .search-box button {
         background: none;
         border: none;
@@ -68,6 +108,7 @@
         font-size: 18px;
         color: #555;
     }
+
     .user-menu {
         font-size: 13px;
         display: flex;
@@ -77,13 +118,33 @@
         justify-content: end;
         width: 150px;
     }
-    .user-menu a { color: #555; }
-    .time-icon>img{width: 24px;}
-    .user-icon>img{width: 20px;}
-    .wish-icon>img{width: 22px}
-    .search-icon>img{width: 18px}
-    .nav-bar{ width: 100%; border-bottom: 1px solid #cfcfcf; }
-    .gnb{
+
+    .user-menu a {
+        color: #555;
+    }
+
+    .time-icon > img {
+        width: 24px;
+    }
+
+    .user-icon > img {
+        width: 20px;
+    }
+
+    .wish-icon > img {
+        width: 22px
+    }
+
+    .search-icon > img {
+        width: 18px
+    }
+
+    .nav-bar {
+        width: 100%;
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    .gnb {
         display: flex;
         position: relative;
         justify-content: space-between;
@@ -92,7 +153,8 @@
         margin: 20px auto;
         font-size: 14px;
     }
-    .d1:hover{
+
+    .d1:hover {
         color: #ffc40e;
         text-shadow: 1px 0px 0 #ffc40e;
     }
@@ -100,9 +162,11 @@
 
 <div class="in">
     <div class="sm_top">
-        <a href="#">로그인</a>
+        <%--        <a href="#">로그인</a>--%>
+        <a href="${pageContext.request.contextPath}/users?action=loginForm">로그인</a>
         <a href="#">회원가입</a>
-        <a href="#">예약확인/결제</a>
+        <%--        <a href="#">예약확인/결제</a>--%>
+        <a href="${pageContext.request.contextPath}/users?action=showMyInfo">예약확인/결제</a>
     </div>
     <div class="header-top">
         <div class="left-group">

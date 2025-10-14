@@ -4,6 +4,8 @@
     <title>myInfo</title>
 </head>
 <body>
+<h3>${loginUser.name}님, 반갑습니다.</h3>
+<hr>
 
 <h2>내 정보 조회</h2>
 <p>DB_ID: ${loginUser.id}</p>

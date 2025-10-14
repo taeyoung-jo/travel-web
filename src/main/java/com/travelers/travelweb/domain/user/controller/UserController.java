@@ -1,7 +1,6 @@
 package com.travelers.travelweb.domain.user.controller;
 
 import java.io.IOException;
-import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -87,7 +86,8 @@ public class UserController extends HttpServlet {
 
 	private void showMyInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		HttpSession session = req.getSession(false);
-		// 로그인 안 됨
+
+		// 로그인 상태 확인
 		if (session == null || session.getAttribute("loginUser") == null) {
 			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
 			return;
@@ -95,13 +95,8 @@ public class UserController extends HttpServlet {
 		User loginUser = (User)session.getAttribute("loginUser");
 		Long userId = loginUser.getId();
 
-		// DB에서 회원 정보 조회
-		Optional<User> userOpt = userService.getById(userId);
-		if (!userOpt.isPresent()) {
-			resp.sendError(HttpServletResponse.SC_NOT_FOUND, "사용자를 찾을 수 없습니다.");
-			return;
-		}
-		User user = userOpt.get();
+		// DB에서 회원 정보 조회 (CustomException 발생 시 Filter에서 처리)
+		User user = userService.getById(userId).orElseThrow();
 
 		UserResponse userResp = UserResponse.builder()
 			.id(user.getId())
@@ -114,40 +109,27 @@ public class UserController extends HttpServlet {
 		req.getRequestDispatcher("/WEB-INF/views/user/showMyInfoTest.jsp").forward(req, resp);
 	}
 
-	private void register(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String email = req.getParameter("email");
-		String name = req.getParameter("name");
-		String password = req.getParameter("password");
-		String phone = req.getParameter("phone");
-
+	private void register(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		User user = User.builder()
-			.email(email)
-			.name(name)
-			.password(password)
-			.phone(phone)
+			.email(req.getParameter("email"))
+			.name(req.getParameter("name"))
+			.password(req.getParameter("password"))
+			.phone(req.getParameter("phone"))
 			.build();
 
-		try {
-			userService.register(user);
-			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-			resp.getWriter().write("회원가입 실패: 다시 시도해 주세요.");
-		}
+		userService.register(user); // CustomException 발생 시 Filter에서 처리
+		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+
 	}
 
 	private void login(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 
-		Optional<User> userOpt = userService.login(email, password);
-		if (userOpt.isPresent()) {
-			HttpSession session = req.getSession();
-			session.setAttribute("loginUser", userOpt.get());
-			req.getRequestDispatcher("/WEB-INF/views/user/homeTest.jsp").forward(req, resp);  // 로그인 성공 시 홈으로 이동
-		} else {
-			resp.getWriter().write("로그인 실패: 이메일 또는 비밀번호를 확인하세요.");
-		}
+		User user = userService.login(email, password).orElseThrow(); // CustomException → Filter 처리
+		HttpSession session = req.getSession();
+		session.setAttribute("loginUser", user);
+		resp.sendRedirect(req.getContextPath() + "/home");  // 로그인 성공 시 홈으로 이동
 	}
 
 	private void updateUser(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
@@ -159,96 +141,74 @@ public class UserController extends HttpServlet {
 
 		User loginUser = (User)session.getAttribute("loginUser");
 
-		String email = req.getParameter("email");
-		String name = req.getParameter("name");
-		String password = req.getParameter("password");
-		String phone = req.getParameter("phone");
-
-		// 수정할 User 객체 생성 (null 또는 빈 값은 Repository에서 자동 무시)
 		User updatedUser = User.builder()
-			.id(loginUser.getId()) // id는 로그인된 사용자 기준으로 수정
-			.email(email)
-			.name(name)
-			.password(password)
-			.phone(phone)
+			.id(loginUser.getId())
+			.email(req.getParameter("email"))
+			.name(req.getParameter("name"))
+			.password(req.getParameter("password"))
+			.phone(req.getParameter("phone"))
 			.build();
 
-		try {
-			userService.update(updatedUser);
-
-			// DB에서 최신 정보 다시 가져와 세션 갱신
-			Optional<User> refreshed = userService.getById(loginUser.getId());
-			refreshed.ifPresent(u -> session.setAttribute("loginUser", u));
-
-			resp.sendRedirect(req.getContextPath() + "/users?action=myInfo");
-		} catch (RuntimeException e) {
-			e.printStackTrace();
-			resp.getWriter().write("회원정보 수정 실패: 다시 시도해 주세요.");
-			req.getRequestDispatcher("/WEB-INF/views/user/showMyInfoTest.jsp").forward(req, resp);
-		}
+		userService.update(updatedUser);  // CustomException → Filter 처리
+		resp.sendRedirect(req.getContextPath() + "/users?action=showMyInfo");  // 성공 시 내 정보 페이지로 이동
 	}
 
-	private void deleteUser(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	private void deleteUser(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		HttpSession session = req.getSession(false);
-		if (session != null) {
-			User loginUser = (User)session.getAttribute("loginUser");
-			if (loginUser != null) {
-				userService.removeById(loginUser.getId());
-				session.invalidate();
-			}
+
+		// 로그인 상태 확인
+		if (session == null || session.getAttribute("loginUser") == null) {
+			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+			return;
 		}
-		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+		User loginUser = (User)session.getAttribute("loginUser");
+		userService.removeById(loginUser.getId()); // DB에서 사용자 삭제 & CustomException → Filter 처리
+		session.invalidate();  // 세션 무효화
+		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");  // 삭제되면 로그인 페이지로
 	}
 
-	private void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	private void logout(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		HttpSession session = req.getSession(false);
+
 		if (session != null) {
-			session.invalidate();
+			session.invalidate();  // 세션이 존재하면 무효화(로그아웃)
 		}
-		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
+		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm"); // 로그아웃 후 로그인 페이지로 이동
 	}
 
 	private void findId(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String name = req.getParameter("name");
 		String phone = req.getParameter("phone");
 
-		Optional<User> userOpt = userService.getByNameAndPhone(name, phone);
-		if (userOpt.isPresent()) {
-			req.setAttribute("email", userOpt.get().getEmail());
-			req.getRequestDispatcher("/WEB-INF/views/user/findIdResultTest.jsp").forward(req, resp);
-		} else {
-			resp.getWriter().write("일치하는 사용자가 없습니다.");
-		}
+		User user = userService.getByNameAndPhone(name, phone).orElseThrow(); // CustomException → Filter 처리
+		req.setAttribute("email", user.getEmail());
+		req.getRequestDispatcher("/WEB-INF/views/user/findIdResultTest.jsp").forward(req, resp);
 	}
 
+	/**
+	 * 비밀번호 찾기 기능
+	 * 사용자에게 이메일 폰번호를 입력 받고,
+	 * DB에 해당 데이터가 있으면, 새 비밀번호 설정 페이지로 이동
+	 */
 	private void findPassword(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		// 이메일 + 폰번호 입력 후 새 비밀번호 입력 페이지로 이동
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
 
-		Optional<User> userOpt = userService.getByEmailAndPhone(email, phone);
-		if (userOpt.isPresent()) {
-			// 성공하면 새 비밀번호 입력 폼으로 이동
-			req.setAttribute("email", email);
-			req.setAttribute("phone", phone);
-			req.getRequestDispatcher("/WEB-INF/views/user/resetPasswordTest.jsp").forward(req, resp);
-		} else {
-			resp.getWriter().write("일치하는 사용자가 없습니다.");
-		}
+		User user = userService.getByEmailAndPhone(email, phone).orElseThrow(); // CustomException → Filter 처리
+
+		req.setAttribute("email", email);  // 성공 시: 새 비밀번호 입력 폼으로 이동
+		req.setAttribute("phone", phone);
+		req.getRequestDispatcher("/WEB-INF/views/user/resetPasswordTest.jsp").forward(req, resp);
 	}
 
-	private void resetPassword(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+	private void resetPassword(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
 		String newPassword = req.getParameter("newPassword");
 
-		Optional<User> userOpt = userService.getByEmailAndPhone(email, phone);
-		if (userOpt.isPresent()) {
-			userService.updatePassword(userOpt.get().getId(), newPassword);
+		User user = userService.getByEmailAndPhone(email, phone).orElseThrow(); // CustomException → Filter 처리
+		userService.updatePassword(user.getId(), newPassword); // 새 비밀번호 업데이트 & CustomException → Filter 처리
+		resp.sendRedirect(req.getContextPath() + "/users?action=loginForm"); // 새비밀번호 설정 후 로그인 페이지로
 
-			resp.sendRedirect(req.getContextPath() + "/users?action=loginForm");
-		} else {
-			resp.getWriter().write("일치하는 사용자가 없습니다.");
-		}
 	}
 }
