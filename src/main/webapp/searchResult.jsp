@@ -136,7 +136,7 @@
             </div>
 
             <button type="submit" class="btn-primary"
-                    style="margin-top:10px;width:100%;background:#0078ff;color:#fff;border:none;border-radius:6px;padding:8px 0;cursor:pointer;">
+                    style="margin-top:10px;width:100%;background:#f5c000;color:#111;border:none;border-radius:6px;padding:8px 0;cursor:pointer;">
                 적용
             </button>
         </form>

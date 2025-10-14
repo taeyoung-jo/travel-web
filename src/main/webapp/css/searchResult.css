@@ -136,7 +136,7 @@ body {
 }
 
 .filter-list input[type="checkbox"] {
-    accent-color: #0078ff;
+    accent-color: #f5c000;
     width: 17px;
     height: 17px;
 }
