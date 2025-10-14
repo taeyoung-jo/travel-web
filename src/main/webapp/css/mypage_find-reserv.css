@@ -1,0 +1,196 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #fff;
+    color: #222;
+}
+
+/* ✅ header 영역과 겹치지 않도록 여백 확보 */
+.mypage-wrapper {
+    display: flex;
+    gap: 40px;
+    margin: 40px auto;
+    align-items: flex-start;
+    min-height: 100vh; /* 부모 높이 확보해서 sticky적용되게 함*/
+}
+
+/* ===============================
+   사이드바
+   =============================== */
+.mypage-sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    width: 250px;
+    border: 1px solid #939393;
+    background: #fff; /* 배경 꼭 추가해야 겹침 현상 없음 */
+    padding: 20px;
+}
+
+.mypage-sidebar h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.menu-title>img{
+    width: 10px;
+}
+
+.menu-title:hover {
+    background-color: #e4e4e4;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+    max-height: 200px; /* 서브메뉴 개수에 맞게 충분히 */
+}
+
+.submenu li {
+    margin: 6px 0;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.submenu a:hover {
+    font-weight: 900;
+}
+.submenu a.active {
+    font-weight: 700;
+    color: #000000;
+}
+
+/* ----------------- 컨텐츠 영역 ----------------- */
+.mypage-content {
+    flex: 1;
+}
+
+.mypage-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   예약번호로 찾기 테이블
+   =============================== */
+
+
+.reservation-search-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reservation-search-table th,
+.reservation-search-table td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+.reservation-search-table th {
+    background: #f9f9f9;
+    font-weight: 600;
+}
+.reservation-search-table tr td:first-child{
+    background: #f9f9f9;
+}
+.reservation-search-table td {
+    background: #fff;
+}
+
+.reservation-search-table input[type="text"] {
+    width: 90%;
+    padding: 9px 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.reservation-search-table .empty {
+    text-align: center;
+    color: #999;
+    padding: 20px 0;
+}
+
+.find-btn {
+    background-color: #f5c000;
+    width: 180px;
+    font-size: 17px;
+    padding: 13px;
+    font-family: 'Noto Sans KR',sans-serif;
+    border: none;
+    margin: 30px auto;
+    display: block;
+    color: #232323;
+}
+
+/*검색 결과 테이블*/
+.reservation-search-result-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reservation-search-result-table th,
+.reservation-search-result-table td {
+    border: 1px solid #ddd;
+    padding: 12px 10px;
+    font-size: 14px;
+}
+
+.reservation-search-result-table th {
+    background: #f9f9f9;
+    font-weight: 600;
+}
+
+.reservation-search-result-table td {
+    background: #fff;
+}
+
+/* 검색 결과 없을 때 글씨 빨간색 */
+.reservation-search-result-table .empty,
+.reservation-search-table .empty {
+    color: #fa2929;
+    text-align: center;
+    padding: 20px 0;
+}

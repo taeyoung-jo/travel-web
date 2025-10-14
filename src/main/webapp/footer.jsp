@@ -1,49 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<!-- ===== 푸터 ===== -->
-<style>
-    .footer-menu {
-        background: #f8f8f8;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        padding: 12px 40px;
-        display: flex;
-        gap: 20px;
-        font-size: 14px;
-    }
-    .footer-menu a { text-decoration: none; color: #333; }
-    .footer-menu a:hover { color: #ffcc00; }
-    .footer-center {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 40px;
-        border-bottom: 1px solid #eee;
-    }
-    .footer-center .info { max-width: 500px; }
-    .footer-center .info h3 { font-size: 18px; margin-bottom: 10px; }
-    .footer-center .info p { font-size: 14px; color: #555; margin: 4px 0; }
-    .footer-center .contacts { display: flex; gap: 60px; }
-    .footer-center .contact-item { text-align: center; }
-    .footer-center .contact-item i { font-size: 24px; display: block; margin-bottom: 8px; }
-    .footer-center .contact-item strong { display: block; font-size: 20px; margin-top: 5px; }
-    .footer-center .contact-item span { font-size: 13px; color: #555; }
-    .footer-center button {
-        margin-top: 10px;
-        padding: 6px 14px;
-        border: 1px solid #333;
-        background: #fff;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-    .footer-bottom {
-        text-align: center;
-        padding: 15px;
-        font-size: 13px;
-        color: #777;
-        background: #f8f8f8;
-    }
-</style>
+<!-- ===== 헤더 ===== -->
+<link rel="stylesheet" href="css/footer.css">
 
 <footer>
     <div class="footer-menu">
@@ -60,7 +18,7 @@
 
     <div class="footer-center">
         <div class="info">
-            <h3>노랑풍선 고객센터</h3>
+            <h3>여행가자 고객센터</h3>
             <p>상담시간: 평일 오전 9시 ~ 오후 6시 (토,일요일 및 공휴일 휴무)</p>
             <p>· 해외항공권 변경, 투어&티켓, 렌터카 취소/변경/환불: 평일 오후 5시까지</p>
             <p>· 호텔 취소/변경/환불: 평일 오후 4시까지</p>
@@ -87,6 +45,6 @@
     </div>
 
     <div class="footer-bottom">
-        © 2025 노랑풍선. All Rights Reserved.
+        © 2025 여행가자. All Rights Reserved.
     </div>
 </footer>

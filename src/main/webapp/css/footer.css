@@ -1,0 +1,84 @@
+.footer-menu {
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 40px;
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-menu a:hover {
+    color: #ffcc00;
+}
+
+.footer-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.footer-center .info {
+    max-width: 500px;
+}
+
+.footer-center .info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-center .info p {
+    font-size: 14px;
+    color: #555;
+    margin: 4px 0;
+}
+
+.footer-center .contacts {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-center .contact-item {
+    text-align: center;
+}
+
+.footer-center .contact-item i {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-center .contact-item strong {
+    display: block;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.footer-center .contact-item span {
+    font-size: 13px;
+    color: #555;
+}
+
+.footer-center button {
+    margin-top: 10px;
+    padding: 6px 14px;
+    border: 1px solid #333;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    color: #777;
+    background: #ffffff;
+}

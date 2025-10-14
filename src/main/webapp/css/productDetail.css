@@ -1,0 +1,160 @@
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background: #fff;
+    color: #333;
+    margin: 0;
+}
+
+/* 상단 상품 정보 */
+.product-header {
+    max-width: 1200px;
+    margin: 40px auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+}
+.breadcrumb {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+.product-main {
+    display: flex;
+    gap: 40px;
+}
+.product-image img {
+    width: 480px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.product-summary h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.tags {
+    color: #777;
+    font-size: 14px;
+}
+.price-box {
+    margin-top: 20px;
+}
+.price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #e60012;
+}
+.sub {
+    font-size: 13px;
+    color: #777;
+}
+.point {
+    font-size: 14px;
+    color: #0094ff;
+}
+.book-btn {
+    background: #ffb300;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* 옵션 선택 */
+.product-options {
+    max-width: 1200px;
+    margin: 30px auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+}
+.option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+}
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.counter button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+.counter input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.option-price {
+    color: #e60012;
+    font-weight: bold;
+}
+.option-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.option-total strong {
+    font-size: 18px;
+    color: #000;
+}
+
+/* 탭 */
+.product-tabs {
+    max-width: 1200px;
+    margin: 40px auto;
+}
+.tab-menu {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.tab {
+    padding: 12px 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+.tab.active {
+    border-bottom: 3px solid #000;
+    font-weight: 600;
+}
+.tab-content {
+    display: none;
+    padding: 20px 0;
+}
+.tab-content.active {
+    display: block;
+}
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.schedule-table th {
+    width: 140px;
+    background: #fafafa;
+    text-align: left;
+    padding: 10px;
+}
+.schedule-table td {
+    padding: 10px;
+}
+.review {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+.review .user {
+    font-weight: 600;
+}

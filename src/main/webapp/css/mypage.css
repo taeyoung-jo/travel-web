@@ -1,0 +1,318 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #fff;
+    color: #222;
+}
+
+/* ✅ header 영역과 겹치지 않도록 여백 확보 */
+.mypage-wrapper {
+    display: flex;
+    gap: 40px;
+    margin: 40px auto;
+    align-items: flex-start;
+    min-height: 100vh; /* 부모 높이 확보해서 sticky적용되게 함*/
+}
+
+/* ===============================
+   사이드바
+   =============================== */
+.mypage-sidebar {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    width: 250px;
+    border: 1px solid #939393;
+    background: #fff; /* 배경 꼭 추가해야 겹침 현상 없음 */
+    padding: 20px;
+}
+
+.mypage-sidebar h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.menu-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.menu-title>img{
+    width: 10px;
+}
+
+.menu-title:hover {
+    background-color: #e4e4e4;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+    max-height: 200px; /* 서브메뉴 개수에 맞게 충분히 */
+}
+
+.submenu li {
+    margin: 6px 0;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.submenu a:hover {
+    font-weight: 900;
+}
+.submenu a.active {
+    font-weight: 700;
+    color: #000000;
+}
+
+/* ----------------- 컨텐츠 영역 ----------------- */
+.mypage-content {
+    flex: 1;
+}
+
+.mypage-content h2 {
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin: 20px 0;
+
+}
+.mypage-content h2>span{
+    color: #f5a700;
+}
+
+.mypage-iconwrap{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.bar-wrap{
+    width: 300px;
+}
+.bar-wrap>div{
+    height: 70px;
+}
+.bar-wrap>div>img{
+    display: block;
+    margin: 0 auto;
+}
+
+.bar-wrap>a{
+    width: 200px;
+    display: block;
+    border: 1px solid #111;
+    padding: 10px;
+    text-align: center;
+    margin: 20px auto;
+    background: url("/image/arrow.png") 92% no-repeat;
+    background-size: 6px;
+}
+
+.user-bar img{width: 50px;}
+.reserv-bar img{width: 46px;}
+.wish-bar img{width: 56px;}
+
+.bar-wrap:nth-child(n+2) {
+    border-left: 1px solid #e5e5e5;
+}
+
+/*recently-reserv*/
+.recently-reserv{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+.left-reserv h3{
+    font-size: 20px;
+    font-weight: 400;
+}
+.right-reserv>a{
+    border: 1px solid #e5e5e5;
+    padding: 6px 22px;
+    font-size: 14px;
+}
+.right-reserv>a:first-child{
+    background: #555;
+    color: #fff;
+    border: none;
+}
+
+/* ===============================
+   최근 예약내역 테이블
+   =============================== */
+.recently-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.recently-table th,
+.recently-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.recently-table th {
+    background: #f9f9f9;
+    font-weight: 600;
+}
+
+.recently-table .empty {
+    text-align: center;
+    color: #999;
+    padding: 40px 0;
+    font-size: 14px;
+}
+.recently-table>ol{
+    list-style: disc;
+    color: #999;
+    text-align: left;
+    font-size: 12px;
+    padding-top: 30px;
+}
+
+/* ===============================
+   비밀번호 변경 화면 (추가분)
+   =============================== */
+
+/* wrapper 폭은 JSP 내 inline 또는 여기서도 가능 */
+/* .mypage-wrapper.in { max-width: 1200px; margin: 40px auto; padding: 0 16px; } */
+
+.content-head { border-bottom: 3px solid #111; margin-bottom: 24px; }
+.content-head h2 { font-size: 28px; font-weight: 700; margin: 0 0 16px; }
+
+.card { background:#fff; border:1px solid #e5e5e5; border-radius: 8px; }
+.card.outlined { border-color:#e5e5e5; }
+.pw-card { padding: 28px; }
+
+.grid2 { display:grid; grid-template-columns: 220px 1fr; gap: 16px 20px; align-items: center; }
+
+.pw-form .row > label { font-size:15px; color:#222; }
+
+.input-group { display:flex; align-items:center; gap:10px; }
+.input-group input[type="password"],
+.input-group input[type="text"]{
+    width:100%; height:40px; padding:0 12px;
+    border:1px solid #d9d9d9; border-radius:6px; font-size:14px;
+}
+.input-group input:focus{ outline:none; border-color:#111; }
+
+.right-actions { display:flex; gap:6px; }
+.link-toggle{
+    height:40px; padding:0 12px; border:1px solid #d9d9d9;
+    background:#f8f8f8; border-radius:6px; font-size:13px; cursor:pointer;
+}
+
+.hint-rules { grid-column: 2 / 3; color:#e53935; line-height:1.6; font-size:13px; margin-top:4px; }
+
+.actions { grid-column: 2 / 3; margin-top:10px; }
+.btn-primary{
+    display:inline-block; min-width:180px; height:48px; padding:0 24px;
+    border:none; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer;
+    background:#f5a700; color:#111;
+}
+.btn-primary:disabled{ opacity:.5; cursor:not-allowed; }
+
+@media (max-width: 900px){
+    .grid2 { grid-template-columns: 1fr; }
+    .hint-rules, .actions { grid-column: 1 / -1; }
+}
+
+/* ===============================
+   예약완료 페이지
+   =============================== */
+.reservation-complete {
+    padding: 40px 50px; /* 🔼 여백 확대해서 중앙 정돈 */
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* 🔼 부드러운 그림자 */
+    margin-top: 20px; /* 🔼 header와 간격 확보 */
+}
+
+.reservation-complete h3 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+.reservation-complete h3 strong {
+    font-weight: 700;
+}
+
+.print-btn {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.print-btn button {
+    padding: 8px 18px;
+    background: #ffbf1f;
+    color:#111;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.print-btn button:hover {
+    background: #f5a700;
+}
+
+/*.recently-table th {*/
+/*    width: 20%;*/
+/*}*/
+
+.recently-table td {
+    text-align: left;
+}
+
+.schedule p {
+    margin: 4px 0;
+}
+
+.contact-info {
+    margin-top: 30px;
+    text-align: right;
+    color: #444;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #111;
+    text-decoration: underline;
+}

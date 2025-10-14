@@ -1,154 +1,301 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.List" %>
+<%@ page import="pack.PackageRepository" %>
+<%@ page import="pack.Package" %>
+<%
+    PackageRepository repo = new PackageRepository();
+    List<Package> shortDistancePackages = repo.getAllPackages().subList(0, 7); // 근거리 7개
+    List<Package> bestPackage = repo.getAllPackages().subList(7, 11); // 베스트판매 4개
+    List<Package> populAll = repo.getAllPackages().subList(10, 14); // 인기급상승 4개
+    String[] labels = {"label1.png", "label2.png", "label3.png", "label4.png"};
+    String[][] badges = {{"100% 출발"}, {"담당자 추천", "선착순 특가"}, {"선착순 특가"}, {"100% 출발"}};
+    // 각 배지마다 클래스명 지정 (배지 순서대로)
+    String[][] badgeClasses = {
+            {"badge-start"},
+            {"badge-recommend", "badge-limited"},
+            {"badge-limited"},
+            {"badge-start"}
+    };
+%>
 
-<!-- 상단 탭 -->
-<div class="menu-tabs">
-    <div class="active">해외패키지</div>
-    <div>항공</div>
-    <div>호텔</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/main.css">
+<%--<script src="js/calendar.js"></script>--%>
+
+<!-- main slide부분 -->
+<div id="main-slide" class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide1.jpg" alt="슬라이드1">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide2.jpg" alt="슬라이드2">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide3.jpg" alt="슬라이드3">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide4.jpg" alt="슬라이드4">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide1.jpg" alt="슬라이드1">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <a href="#">
+                <img src="/image/main_slide2.jpg" alt="슬라이드2">
+                <div class="visual_img"></div>
+                <div class="visual_txt"></div>
+            </a>
+        </div>
+    </div>
+
+    <div class="slide-counter">
+        <button id="prevSlide" class="counter-btn">&lt;</button>
+        <span id="currentSlide">1</span> | <span id="totalSlides">6</span>
+        <button id="nextSlide" class="counter-btn">&gt;</button>
+    </div>
 </div>
 
-<!-- 검색 배너 -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>Visit The Most <br><span>Beautiful Places</span><br>In The World</h1>
-        <form class="hero-form" action="calendarTest.jsp" method="get">
-            <input type="text" placeholder="Location" value="일본">
 
-            <!-- ✅ 달력 팝업으로 연결 -->
-            <div class="calendar-btn" onclick="window.location.href='calendarTest.jsp'">여행일정</div>
-
-            <select>
-                <option>1명</option>
-                <option>2명</option>
-                <option>3명</option>
-            </select>
-            <button type="submit">Search</button>
-        </form>
-    </div>
-    <div class="hero-img">
-        <img src="image/test.jpg" alt="여행 배너">
+<!-- 베스트 판매 4 -->
+<section class="section in">
+    <div class="best-pack">
+        <h3>패키지 판매 Best 4</h3>
+        <div class="best-pa">
+            <% for (int idx = 0; idx < bestPackage.size(); idx++) {
+                Package pkg = bestPackage.get(idx);
+                String[] badgeSet = badges[idx % badges.length];
+                String[] badgeCls = badgeClasses[idx % badgeClasses.length];
+            %>
+            <div class="packa">
+                <div class="img-wrap">
+                    <img src="/image/package/<%= labels[idx % labels.length] %>" alt="label-img" class="label-img">
+                    <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>"
+                         alt="<%= pkg.getPackageName() %>" class="pack-img">
+                </div>
+                <div class="info">
+                    <div class="pa-bege">
+                        <% for (int b = 0; b < badgeSet.length; b++) { %>
+                        <span class="badge <%= badgeCls[b] %>"><%= badgeSet[b] %></span>
+                        <% } %>
+                    </div>
+                    <strong><%= pkg.getPackageName() %>
+                    </strong>
+                    <div class="destination">
+                        <%= pkg.getDeparture() %> → <%= pkg.getDestination() %>
+                    </div>
+                    <div class="price">
+                        <%= java.text.NumberFormat.getInstance().format(pkg.getPrice()) %>원
+                    </div>
+                    <div class="pack-arrow">
+                        <button id="packNextBtn" class="slide-btn"></button>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
     </div>
 </section>
 
-<!-- 카테고리 -->
-<section class="section">
-    <h2>Categories <small style="color:#888;">어디로 떠날까요?</small></h2>
-    <div class="categories" id="categorySlider">
-        <% for(int i=0; i<100; i++){ %>
-        <div class="cat"><img src="image/test.jpg"><p>유럽</p></div>
-        <% } %>
+<!-- 단거리 여행지 -->
+<section class="section in">
+    <div class="short-loc location">
+        <h3>가볍게 떠나는 근거리 힐링 여행</h3>
+        <p>짧은 시간 동안 떠나도 충분히 즐길 수 있는 가벼운 근거리 여행을 만나보세요.</p>
+
+        <div class="cards" id="shortPackageSlider">
+            <% for (Package pkg : shortDistancePackages) { %>
+            <div class="card">
+                <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>" alt="<%= pkg.getPackageName() %>">
+                <div class="info">
+                    <strong><%= pkg.getPackageName() %>
+                    </strong>
+                    <div class="destination">
+                        <%= pkg.getDeparture() %> → <%= pkg.getDestination() %>
+                    </div>
+                    <div class="price-btnwrap">
+                        <div class="price">
+                            <%= java.text.NumberFormat.getInstance().format(pkg.getPrice()) %>원
+                        </div>
+                        <div class="price-btn">
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+
+        <!-- 슬라이드 버튼 -->
+        <div class="slide-controls">
+            <button id="shortPrevBtn" class="slide-btn"></button>
+            <button id="shortNextBtn" class="slide-btn"></button>
+        </div>
     </div>
 </section>
 
-<!-- 인기 여행상품 -->
-<section class="section">
-    <h2 style="display:flex; justify-content:space-between; align-items:center;">
-        <span>Popular Destinations</span>
-        <span>
-            <button class="slide-btn" onclick="scrollCards(-1)">&#9664;</button>
-            <button class="slide-btn" onclick="scrollCards(1)">&#9654;</button>
-        </span>
-    </h2>
-    <p style="color:#666; font-size:14px;">최근 많은 분이 유행한 여행지입니다</p>
-    <div class="cards" id="cardSlider">
-        <% for(int i=0; i<8; i++){ %>
-        <div class="card">
-            <img src="image/test.jpg">
-            <div class="info">
-                <strong>[신혼특가]</strong>
-                이집트 일주 10일 #피라미드 #쿠푸왕
-                <div class="price">3,199,000원~</div>
+<%--인기 급상승--%>
+<section class="section in">
+    <div class="population">
+        <h3>인기 급상승!</h3>
+        <h3>New 여행</h3>
+        <div class="popul-all">
+            <% for (Package pkg : populAll) { %>
+            <div class="popul-one">
+                <a href="#">
+                    <div class="popul-over"></div>
+                    <img src="<%= request.getContextPath() + "/" + pkg.getImageUrl() %>"
+                         alt="<%= pkg.getPackageName() %>">
+                    <div class="popul-txt"><%= pkg.getPackageName() %>
+                    </div>
+                </a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+<%--여행 후기--%>
+<section class="section" id="main-review">
+    <div class="main-review in">
+        <div class="review-info">
+            <h2>여행 후기가 들려주는 <br> 진짜 경험</h2>
+            <p>사진보다 더 진솔한 고객들의 여행 후기를 확인해보세요.</p>
+            <div class="cloude"></div>
+        </div>
+        <div class="review-card">
+            <div class="review-box">
+                <a href="#">
+                    <img src="/image/review-tokyo.jpg">
+                    <div class="review-txt">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p>일정이 알차고 가이드님 설명이 재밌어서 하루하루가 즐거웠어요! 자유시간도 적당히 있어서 쇼핑이랑 맛집투어 둘 다 만족했어요 🍣</p>
+                        <h5>도쿄 벚꽃 여행 3일</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="review-box">
+                <a href="#">
+                    <img src="/image/review-swiss.jpg">
+                    <div class="review-txt">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p>알프스 풍경이 진짜 그림 같았어요… 평생 기억에 남을 여행이에요. 일정이 타이트했지만 효율적으로 짜여 있어서 여러 도시를 다 볼 수 있었어요!</p>
+                        <h5>스위스 알프스 하이킹 6일</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="review-box">
+                <a href="#">
+                    <img src="/image/reveiw-daeman.jpg">
+                    <div class="review-txt">
+                        <p>⭐⭐⭐⭐⭐</p>
+                        <p>야시장 먹거리들이 최고였어요! 대만식 버블티도 현지에서 먹으니 더 맛있었어요 🧋 날씨도 좋고 사람들도 친절해서 여행 내내 기분이 좋았어요</p>
+                        <h5>타이베이 미식 여행 3일</h5>
+                    </div>
+                </a>
             </div>
         </div>
-        <% } %>
     </div>
 </section>
 
-<style>
-    .menu-tabs {
-        display:flex; border-bottom:1px solid #ddd; justify-content:center;
-        background:#fff; font-weight:bold;
-    }
-    .menu-tabs div { padding:15px 30px; cursor:pointer; }
-    .menu-tabs div:hover, .menu-tabs .active { color:#ffcc00; border-bottom:2px solid #ffcc00; }
-
-    .hero { display:flex; justify-content:space-between; align-items:center; padding:50px 80px; background:#fafafa; }
-    .hero-text { max-width:50%; }
-    .hero-text h1 { font-size:36px; margin:0 0 20px; line-height:1.3; }
-    .hero-text h1 span { color:#ff9900; }
-    .hero-form { display:flex; gap:10px; margin-top:20px; align-items:center; }
-    .hero-form input, .hero-form select { padding:12px; border:1px solid #ccc; border-radius:4px; font-size:14px; }
-    .hero-form button { background:#333; color:#fff; border:none; border-radius:4px; padding:12px 20px; cursor:pointer; }
-    .calendar-btn { padding:12px 20px; border:1px solid #ccc; border-radius:4px; background:#fff; cursor:pointer; }
-    .hero-img img { width:350px; border-radius:20px; }
-
-    .section { padding:40px 80px; }
-    .section h2 { margin-bottom:15px; font-size:20px; }
-    .categories {
-        display:flex; gap:20px; overflow-x:auto;
-        scroll-behavior:smooth;
-        -ms-overflow-style:none; scrollbar-width:none;
-    }
-    .categories::-webkit-scrollbar { display:none; }
-    .categories .cat { text-align:center; flex:0 0 auto; }
-    .categories img { width:120px; height:120px; border-radius:60px; object-fit:cover; }
-
-    .cards { display:flex; gap:20px; overflow-x:auto; scroll-behavior:smooth;
-        -ms-overflow-style:none; scrollbar-width:none; }
-    .cards::-webkit-scrollbar { display:none; }
-    .card { width:250px; flex:0 0 auto; background:#fff; border:1px solid #eee; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
-    .card img { width:100%; height:150px; object-fit:cover; }
-    .card .info { padding:15px; font-size:14px; }
-    .card .price { font-weight:bold; margin-top:10px; font-size:16px; }
-
-    .slide-btn { border:none; background:#ffcc00; padding:6px 12px; margin-left:5px; border-radius:50%; cursor:pointer; font-size:18px; }
-</style>
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main_img.js"></script>
+<script src="js/calendar.js"></script>
 
 <script>
-    // 카드 버튼 이동 (기존 그대로)
-    function scrollCards(dir) {
-        const slider = document.getElementById("cardSlider");
-        const scrollAmount = 300;
-        slider.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+        // 메인 Swiper 슬라이더
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.5,
+            centeredSlides: true,
+            loop: true,
+            spaceBetween: 0,
+            speed: 800,
+            autoplay: {delay: 4000, disableOnInteraction: false},
 
-    // 카테고리 드래그 슬라이더 (수정 버전)
-    const catSlider = document.getElementById("categorySlider");
-    let isDragging = false;
-    let startX = 0;
-    let scrollStart = 0;
+            on: {
+                init: function () {
+                    const realCount = document.querySelectorAll('.swiper-wrapper > .swiper-slide:not(.swiper-slide-duplicate)').length;
+                    document.getElementById('totalSlides').textContent = realCount;
+                    document.getElementById('currentSlide').textContent = 1; // 초기값
+                },
+                slideChange: function () {
+                    const realCount = document.querySelectorAll('.swiper-wrapper > .swiper-slide:not(.swiper-slide-duplicate)').length;
+                    let index = this.realIndex + 1;
 
-    catSlider.addEventListener("mousedown", (e) => {
-        // 왼쪽 버튼만 드래그 허용
-        if (e.button !== 0) return;
+                    // loop 때문에 realIndex가 클론 슬라이드 인덱스를 포함할 수 있어서 보정
+                    if (index > realCount) index = index - realCount;
+                    if (index < 1) index = realCount + index;
 
-        isDragging = true;
-        startX = e.pageX - catSlider.offsetLeft;
-        scrollStart = catSlider.scrollLeft;
+                    document.getElementById('currentSlide').textContent = index;
+                }
+            }
+        });
 
-        // 선택 방지 (텍스트가 선택되는 걸 막기)
-        catSlider.style.userSelect = "none";
-        catSlider.style.cursor = "grabbing";  // (원하면 이 부분 지워도 돼)
+        // 버튼
+        document.getElementById("prevSlide").addEventListener("click", () => {
+            swiper.slidePrev();
+        });
+        document.getElementById("nextSlide").addEventListener("click", () => {
+            swiper.slideNext();
+        });
+
+        // 단거리 여행지
+        const shortSlider = document.getElementById("shortPackageSlider");
+        const btnPrev = document.getElementById("shortPrevBtn");
+        const btnNext = document.getElementById("shortNextBtn");
+
+        if (shortSlider && btnPrev && btnNext) {
+            btnPrev.addEventListener("click", () => shortSlider.scrollBy({left: -300, behavior: 'smooth'}));
+            btnNext.addEventListener("click", () => shortSlider.scrollBy({left: 300, behavior: 'smooth'}));
+
+            let isDragging = false;
+            let startX = 0;
+            let scrollStart = 0;
+
+            shortSlider.addEventListener("mousedown", (e) => {
+                isDragging = true;
+                startX = e.pageX - shortSlider.offsetLeft;
+                scrollStart = shortSlider.scrollLeft;
+                shortSlider.style.cursor = "grabbing";
+                shortSlider.style.userSelect = "none";
+            });
+
+            shortSlider.addEventListener("mousemove", (e) => {
+                if (!isDragging) return;
+                const x = e.pageX - shortSlider.offsetLeft;
+                shortSlider.scrollLeft = scrollStart - (x - startX);
+            });
+
+            const stopDrag = () => {
+                isDragging = false;
+                shortSlider.style.cursor = "";
+                shortSlider.style.userSelect = "";
+            };
+
+            shortSlider.addEventListener("mouseup", stopDrag);
+            shortSlider.addEventListener("mouseleave", stopDrag);
+        }
+
     });
-
-    catSlider.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-
-        const x = e.pageX - catSlider.offsetLeft;
-        const walk = x - startX;
-        catSlider.scrollLeft = scrollStart - walk;
-    });
-
-    // 드래그 종료
-    function stopDrag() {
-        isDragging = false;
-        // 해제
-        catSlider.style.userSelect = "";
-        catSlider.style.cursor = "";  // 원래 커서로 복귀
-    }
-
-    catSlider.addEventListener("mouseup", stopDrag);
-    catSlider.addEventListener("mouseleave", stopDrag);
 </script>
-
