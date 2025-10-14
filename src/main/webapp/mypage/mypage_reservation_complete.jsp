@@ -1,19 +1,21 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="reservation.ReservationRepository,reservation.Reservation,java.util.List" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%--<link rel="stylesheet" href="<c:url value='/css/header.css'/>">--%>
-<link rel="stylesheet" href="<c:url value='/css/mypage.css'/>">
-<%--<link rel="stylesheet" href="<c:url value='/css/footer.css'/>">--%>
-
 <%@ include file="../header.jsp" %>
+
+<%
+    ReservationRepository repo = new ReservationRepository();
+    List<Reservation> recentReservations = repo.getRecentReservations(1); // 1개월 내역
+%>
+
+<link rel="stylesheet" href="<c:url value='/css/mypage.css'/>">
 
 <div class="mypage-wrapper in">
 
-    <!-- ✅ sidebar -->
-    <%@ include file="mypage_sidebar.jsp" %>
+    <%@ include file="/mypage/mypage_sidebar.jsp" %>
 
-    <!-- ✅ content -->
     <div class="mypage-content">
+        
         <h2>예약완료</h2>
         <div class="reservation-complete">
             <h3><strong>김혜민</strong> 고객님, 예약이 완료되었습니다.</h3>
@@ -62,7 +64,27 @@
                 <p>담당자 <strong>유럽4팀</strong> | 대표번호 <a href="tel:0220227285">02-2022-7285</a></p>
             </div>
         </div>
+
     </div>
 </div>
 
 <%@ include file="../footer.jsp" %>
+
+<script>
+    // 메뉴 열고 닫기 + 서브 메뉴 active
+    document.querySelectorAll(".menu-item").forEach(item => {
+        const title = item.querySelector(".menu-title");
+        const submenu = item.querySelector(".submenu");
+
+        title.addEventListener("click", () => {
+            submenu.classList.toggle("open");
+        });
+
+        submenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", (e) => {
+                submenu.querySelectorAll("a").forEach(a => a.classList.remove("active"));
+                e.target.classList.add("active");
+            });
+        });
+    });
+</script>

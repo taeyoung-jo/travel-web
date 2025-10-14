@@ -13,9 +13,8 @@
 
 <div class="mypage-wrapper in">
 
-    <%@ include file="mypage_sidebar.jsp" %>
+    <%@ include file="/mypage/mypage_sidebar.jsp" %>
 
-    <!-- 🔸 메인 콘텐츠 -->
     <div class="mypage-content">
         <h2>안녕하세요, <span>홍길동</span>님!</h2>
         <div class="mypage-iconwrap">
@@ -27,7 +26,7 @@
                 <div>
                     <img src="/image/reserv.png" alt="usericon">
                 </div>
-                <a href="mypage_reservation.jsp">예약내역 확인</a>
+                <a href="<c:url value='mypage_reservation_complete.jsp'/>">예약내역 확인</a>
             </div>
             <div class="wish-bar bar-wrap">
                 <div><img src="/image/full_wishlist.png" alt="usericon"></div>
@@ -102,6 +101,4 @@
             });
         });
     });
-
-
 </script>

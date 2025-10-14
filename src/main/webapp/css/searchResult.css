@@ -99,10 +99,14 @@ body {
     cursor: pointer;
     position: relative;
     padding: 8px;
+    border-radius: 8px;
     transition: color 0.2s;
     display: flex;
     justify-content: space-between;
-    border-radius: 8px;
+}
+
+.filter-btn:hover {
+    background-color: #e4e4e4;
 }
 
 .filter-btn:hover {
