@@ -94,7 +94,7 @@
             <input type="hidden" name="q" value="<%= keyword %>">
 
             <div class="filter-section">
-                <button type="button" class="filter-btn">출발지</button>
+                <button type="button" class="filter-btn">출발지<img src="image/arrow-bottom.png" alt="arrow"></button>
                 <ul class="filter-list <%= (departures != null) ? "show" : "" %>">
                     <li><label><input type="checkbox" name="departure" value="김포"
                         <%= (departures != null && Arrays.asList(departures).contains("김포")) ? "checked" : "" %>>
@@ -106,7 +106,7 @@
             </div>
 
             <div class="filter-section">
-                <button type="button" class="filter-btn">여행기간</button>
+                <button type="button" class="filter-btn">여행기간<img src="image/arrow-bottom.png" alt="arrow"></button>
                 <ul class="filter-list <%= (durations != null) ? "show" : "" %>">
                     <li><label><input type="checkbox" name="duration" value="2~3일"
                         <%= (durations != null && Arrays.asList(durations).contains("2~3일")) ? "checked" : "" %>>
@@ -121,7 +121,7 @@
             </div>
 
             <div class="filter-section">
-                <button type="button" class="filter-btn">상품가격</button>
+                <button type="button" class="filter-btn">상품가격<img src="image/arrow-bottom.png" alt="arrow"></button>
                 <ul class="filter-list <%= (prices != null) ? "show" : "" %>">
                     <li><label><input type="checkbox" name="price" value="100만원 이하"
                         <%= (prices != null && Arrays.asList(prices).contains("100만원 이하")) ? "checked" : "" %>> 100만원 이하</label>
