@@ -23,7 +23,6 @@
 <body>
 <div class="in">
     <section class="package-data">
-        <%--값 가져오기 테스트--%>
         <% if (pkg != null) { %>
         <div class="package-img">
             <img src="<%= pkg.getImageUrl() %>" alt="<%= pkg.getPackageName() %>">
@@ -79,14 +78,66 @@
         <div class="package-riview">
             <span>★</span>
             <%= (pkg != null) ? pkg.getRating() : "패키지 상세" %>실제 여행객 13명의 리뷰 보기 <img src="./image/arrow.png" alt="">
-            <div class=""></div>
+            <div class="review-box">
+                <div>
+                    <p class="star-rr"><span>★★★★★</span>5</p>
+                    <h4>일정이 알차고 가이드님이 친절해서 정말 즐거운 여행이었어요! 다음에도 꼭 이용하고 싶어요.</h4>
+                    <div class="span-flex">
+                        <p>김*수</p>
+                        <p class="star-cal">2025-07-29</p></div>
+                </div>
+                <div>
+                    <p class="star-rr"><span>★★★★★</span>5</p>
+                    <h4>처음으로 패키지여행을 선택했는데 일정이 정말 체계적이었어요.
+                        이동시간도 효율적으로 짜여 있어서 피로하지 않았고,
+                        가이드님 설명이 재밌어서 여행 내내 웃으면서 다녔습니다.</h4>
+                    <div class="span-flex">
+                        <p>이*진</p>
+                        <p class="star-cal">2025-06-01</p></div>
+                </div>
+                <div>
+                    <p class="star-rr"><span>★★★★★</span>5</p>
+                    <h4>가족끼리 다녀왔는데 모두 행복한 추억을 만들고 왔어요, 강력 추천합니다!</h4>
+                    <div class="span-flex">
+                        <p>천*준</p>
+                        <p class="star-cal">2025-05-16</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="detail-page">
+            <div class="de-img"><img src="./image/detail_page.jpg" alt="detail"></div>
+            <div class="de-side-ba">
+                <div class="de-slide-1">
+                    <div><p>출발</p>
+                        <p>2025.10.19 (일) 12:20</p></div>
+                    <div><p>도착</p>
+                        <p>2025.10.27 (월) 14:40</p></div>
+                    <div><p>교통</p>
+                        <p>아시아나항공</p></div>
+                </div>
+                <div class="de-slide-2">
+                    <div><p>인원수</p>
+                        <div class="counter">
+                            <button class="minus">-</button>
+                            <span class="num" id="adultCount">0</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="de-price"><%= String.format("%,.0f", pkg.getPrice()) %> <span>원</span></div>
+                <div>
+                    <form action="pakage-reservConfirm.jsp" method="get">
+                        <input type="hidden" name="pkgId" value="<%= pkg.getId() %>">
+                        <button class="de-button" type="submit">예약하기</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <form action="pakage-reservConfirm.jsp" method="get">
-        <input type="hidden" name="pkgId" value="<%= pkg.getId() %>">
-        <button type="submit">예약하기</button>
-    </form>
+
 </div>
 <%--    &lt;%&ndash;값 가져오기 테스트&ndash;%&gt;--%>
 <%--    <% if (pkg != null) { %>--%>
@@ -113,3 +164,24 @@
 </html>
 
 <%@ include file="footer.jsp" %>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function setupCounter(id) {
+            const container = document.getElementById(id);
+            const minusBtn = container.parentElement.querySelector(".minus");
+            const plusBtn = container.parentElement.querySelector(".plus");
+
+            minusBtn.addEventListener("click", () => {
+                let value = parseInt(container.textContent);
+                if (value > 0) container.textContent = value - 1;
+            });
+
+            plusBtn.addEventListener("click", () => {
+                let value = parseInt(container.textContent);
+                container.textContent = value + 1;
+            });
+        }
+
+        setupCounter("adultCount");
+    });
+</script>

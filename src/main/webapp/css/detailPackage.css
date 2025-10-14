@@ -116,7 +116,7 @@
     justify-content: center;
     gap: 35px;
     text-align: center;
-    border: 1px solid #E5E7EB;
+    border: 1px solid #ddd;
 }
 
 .icon-wrap li {
@@ -196,4 +196,161 @@
     margin-left: 10px;
 }
 
+.review-box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
 
+.review-box > div {
+    border: 1px solid #ddd;
+    width: 32.8%;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.review-box > div > .star-rr > span {
+    color: #ff5c46;
+    margin-right: 4px;
+}
+
+.review-box > div > .star-rr {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.review-box > div > .span-flex > .star-cal {
+    margin-left: 9px;
+    color: #6a6a6a;
+}
+
+.review-box > div > h4 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6a6a6a;
+    height: 70px;
+    margin-top: 9px;
+}
+
+.span-flex {
+    display: flex;
+    justify-content: end;
+    font-size: 12px;
+}
+
+/*detail-page*/
+.detail-page {
+    margin-top: 100px;
+    border-top: 1px solid #111;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 50px;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.detail-page .de-img {
+    width: 76%;
+}
+
+.detail-page .de-img > img {
+    width: 100%;
+}
+
+.detail-page .de-side-ba {
+    width: 20%;
+    height: 400px;
+    border: 1px solid #111;
+    padding: 18px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+
+/*de-slide-1*/
+.de-slide-1 {
+
+}
+
+.de-slide-1 > div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: #444;
+    font-size: 14px;
+}
+
+.de-slide-1 > div > p:first-child {
+    color: #111;
+    font-weight: 500;
+}
+
+/*de-slide2*/
+.de-slide-2 {
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.de-slide-2 > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.person-counter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.counter button {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.counter button:hover {
+    background-color: #d9eaff;
+}
+
+.counter .num {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.de-price {
+    display: flex;
+    justify-content: end;
+    font-size: 26px;
+    font-weight: 600;
+    color: #e60012;
+}
+
+.de-button {
+    background-color: #f5c000;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 25px;
+}
