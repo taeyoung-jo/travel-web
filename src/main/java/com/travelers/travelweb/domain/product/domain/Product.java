@@ -1,23 +1,24 @@
-package com.travelers.travelweb.domain.user.domain;
+package com.travelers.travelweb.domain.product.domain;
+
+import java.math.BigDecimal;
 
 import com.travelers.travelweb.global.BaseTimeEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @Getter
-@Setter
 @SuperBuilder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends BaseTimeEntity {
+public class Product extends BaseTimeEntity {
 
 	private Long id;
-	private String email;
-	private String name;
-	private String password;
-	private String phone;
+	private Long deptFlightId;
+	private Long arriveFlightId;
+	private Long hotelId;
+	private Long locationId;
+	private BigDecimal price;
 }
