@@ -129,7 +129,7 @@
                 </div>
                 <div class="de-price"><%= String.format("%,.0f", pkg.getPrice()) %> <span>원</span></div>
                 <div>
-                    <form action="pakage-reservConfirm.jsp" method="get">
+                    <form action="reservation_confirm.jsp" method="get">
                         <input type="hidden" name="pkgId" value="<%= pkg.getId() %>">
                         <button class="de-button" type="submit">예약하기</button>
                     </form>
