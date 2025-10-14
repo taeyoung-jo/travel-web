@@ -265,3 +265,413 @@ body {
     font-weight: 400;
     color: #222222;
 }
+
+/******캘린더********/
+:root {
+    --bg: #fff;
+    --text: #111;
+    --muted: #6b7280;
+    --brand: #FBBF24; /* 노랑풍선 노랑 */
+    --border: #E5E7EB;
+    --chip: #FFFBEB;
+    --danger: #EF4444;
+    --ok: #16A34A;
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    color: var(--text);
+    background: var(--bg)
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 16px
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:360px 1fr;
+    gap: 20px;
+    align-items: start
+}
+
+.card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08)
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12)
+}
+
+.card header {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 16px
+}
+
+.card .body {
+    padding: 12px
+}
+
+/* ===== 달력 기본 ===== */
+.cal {
+    width: 100%
+}
+
+.cal .cal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px
+}
+
+.cal .cal-head .ym {
+    font-weight: 700;
+    font-size: 16px
+}
+
+.cal .nav-btn {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 6px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s
+}
+
+.cal .nav-btn:hover {
+    background: #FEF3C7;
+    border-color: #FBBF24
+}
+
+.cal table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed
+}
+
+.cal th {
+    color: var(--muted);
+    font-weight: 600;
+    padding: 8px 0
+}
+
+/* hover/상태 */
+.cal td:hover {
+    background: #FFFBEB
+}
+
+.cal td.is-other {
+    background: #F9FAFB;
+    color: #9CA3AF
+}
+
+.cal td.is-today {
+    background: #FFFBEB;
+    border: 2px solid #FBBF24
+}
+
+.cal td.is-selected {
+    background: #FEF3C7;
+    border: 2px solid #FBBF24
+}
+
+/* legend */
+.legend {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #374151;
+    margin-top: 8px
+}
+
+.legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    display: inline-block;
+    vertical-align: -1px;
+    margin-right: 4px
+}
+
+.dot-ok {
+    background: var(--ok)
+}
+
+.dot-sold {
+    background: var(--danger)
+}
+
+/* 필터 */
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.chip {
+    background: var(--chip);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s;
+    user-select: none
+}
+
+.chip:hover {
+    background: #FEF3C7;
+    border-color: #FBBF24
+}
+
+.chip input {
+    display: none
+}
+
+.chip.checked {
+    background: #FBBF24;
+    color: #fff;
+    border-color: #FBBF24
+}
+
+.select {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff
+}
+
+/* 일정 리스트 */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px
+}
+
+.item {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px;
+    display: grid;
+    grid-template-columns:1fr auto;
+    gap: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .06);
+    transition: .2s
+}
+
+.item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+    transform: translateY(-2px)
+}
+
+.item h4 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 700
+}
+
+.item .meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    color: #374151;
+    font-size: 13px
+}
+
+.meta .tag {
+    background: #FEF3C7;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 999px;
+    color: #B45309;
+    font-weight: 600
+}
+
+.price {
+    font-weight: 700;
+    font-size: 18px;
+    color: #B45309
+}
+
+.sold {
+    color: var(--danger);
+    font-weight: 700;
+    opacity: .8
+}
+
+/* 안내 */
+.muted {
+    color: var(--muted);
+    font-size: 12px
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 40px 0;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    background: #FFFBEB
+}
+
+/* ===== 레이아웃 보정(유지) ===== */
+@media (max-width: 980px) {
+    .grid {
+        grid-template-columns:1fr
+    }
+}
+
+/* 카드 간격/달력 카드 여백 */
+.grid {
+    gap: 28px;
+    align-items: start
+}
+
+.card .body.cal {
+    padding: 18px 26px 24px 20px
+}
+
+.cal table {
+    margin-right: 4px
+}
+
+/* ===== ✅ 최종 기준: 가격 박스를 셀 안에 완전히 들어오게 ===== */
+/* (이 블록이 .td / .price / .dot / .day 의 단일 진리입니다) */
+.calendar td,
+.cal td {
+    position: relative;
+    height: 92px; /* 필요하면 88~100 사이로 조절 */
+    padding: 6px 8px 36px 8px; /* 점/가격 들어갈 하단 여유 */
+    border: 1px solid var(--border);
+    background: #fff;
+    vertical-align: top;
+    cursor: pointer;
+    transition: .2s;
+    overflow: hidden;
+}
+
+/* 날짜 숫자: 위쪽 고정 */
+.calendar td .day,
+.cal td .day {
+    position: absolute;
+    top: 6px;
+    left: 22px; /* 기존 8px → 22px */
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+    z-index: 2; /* 점보다 위 */
+}
+
+/* 가격 배지: 가운데 아래 */
+.calendar td .price,
+.cal td .price {
+    position: absolute;
+    left: 50%;
+    bottom: 4px; /* 그대로 사용해도 OK */
+    transform: translateX(-50%);
+    display: inline-block;
+    background: #fff8e6;
+    border: 1px solid #fcd34d;
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #92400e;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-align: center;
+    max-width: 88%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+/* 상태 점: 왼쪽 아래 (가격과 수평선상 X) */
+.calendar td .dot,
+.cal td .dot {
+    position: absolute;
+    top: 10px; /* 상단 라인에 맞춤 */
+    left: 8px; /* 날짜 왼쪽 */
+    transform: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    z-index: 1; /* 날짜 아래, 가격 위 */
+}
+
+/* 모바일 보정 */
+@media (max-width: 560px) {
+    .calendar td, .cal td {
+        height: 96px;
+        padding-bottom: 36px
+    }
+}
+
+/* 좌측 카드 폭(원래 유지하던 보정) */
+@media (min-width: 769px) {
+    .grid {
+        grid-template-columns:440px 1fr;
+        gap: 28px
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+.calendar-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1100px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}

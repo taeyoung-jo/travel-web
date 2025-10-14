@@ -28,7 +28,13 @@
                 <table class="calendar">
                     <thead>
                     <tr>
-                        <th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
                     </tr>
                     </thead>
                     <tbody id="calBody"><!-- JS가 채움 --></tbody>
@@ -80,6 +86,9 @@
 </div>
 
 <!-- body 끝나기 직전에: defer 로 반드시 늦게 로드 -->
+<script>
+    const pkgName = "<%= request.getParameter("pkgName") != null ? request.getParameter("pkgName") : "오사카3일" %>";
+</script>
 <script src="js/calendar.js" defer></script>
 
 </body>

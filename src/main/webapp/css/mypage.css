@@ -249,3 +249,69 @@ body {
     .grid2 { grid-template-columns: 1fr; }
     .hint-rules, .actions { grid-column: 1 / -1; }
 }
+
+/* ===============================
+   예약완료 페이지
+   =============================== */
+.reservation-complete {
+    padding: 40px 50px; /* 🔼 여백 확대해서 중앙 정돈 */
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* 🔼 부드러운 그림자 */
+    margin-top: 20px; /* 🔼 header와 간격 확보 */
+}
+
+.reservation-complete h3 {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.reservation-complete h3 strong {
+    font-weight: 700;
+}
+
+.print-btn {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.print-btn button {
+    padding: 8px 18px;
+    background: #ffbf1f;
+    color:#111;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.print-btn button:hover {
+    background: #f5a700;
+}
+
+/*.recently-table th {*/
+/*    width: 20%;*/
+/*}*/
+
+.recently-table td {
+    text-align: left;
+}
+
+.schedule p {
+    margin: 4px 0;
+}
+
+.contact-info {
+    margin-top: 30px;
+    text-align: right;
+    color: #444;
+    font-size: 14px;
+}
+
+.contact-info a {
+    color: #111;
+    text-decoration: underline;
+}

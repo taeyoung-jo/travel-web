@@ -1,12 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ include file="header.jsp" %>
+
 <%@ page import="reservation.ReservationRepository,reservation.Reservation,java.util.List" %>
 <%
     ReservationRepository repo = new ReservationRepository();
     List<Reservation> recentReservations = repo.getRecentReservations(1); // 1개월 내역
 %>
 
-<link rel="stylesheet" href="css/mypage.css">
+<%@ include file="header.jsp" %>
+<link rel="stylesheet" href="../css/mypage.css">
 
 <div class="mypage-wrapper in">
     <!-- 🔸 좌측 메뉴 -->

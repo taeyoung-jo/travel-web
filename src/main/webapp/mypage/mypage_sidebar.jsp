@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <aside class="mypage-sidebar">
-    <h2><a href="../mypage.jsp">마이페이지</a></h2>
+    <h2><a href="<c:url value='mypage.jsp'/>">마이페이지</a></h2>
     <ul class="menu">
         <li class="menu-item">
             <div class="menu-title">예약 / 취소내역 <img src="../../image/arrow-bottom.png" alt="arrow"></div>

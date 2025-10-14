@@ -1,72 +1,84 @@
+<%@ page import="reservation.ReservationRepository,reservation.Reservation,java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../header.jsp" %>
 
+<%
+    ReservationRepository repo = new ReservationRepository();
+    List<Reservation> recentReservations = repo.getRecentReservations(1); // 1개월 내역
+%>
+
 <link rel="stylesheet" href="<c:url value='/css/mypage.css'/>">
 
+
 <div class="mypage-wrapper in">
+
     <%@ include file="mypage_sidebar.jsp" %>
 
+    <!-- 🔸 메인 콘텐츠 -->
     <div class="mypage-content">
-        <div class="content-head">
-            <h2>비밀번호 변경</h2>
+        <h2>안녕하세요, <span>홍길동</span>님!</h2>
+        <div class="mypage-iconwrap">
+            <div class="user-bar bar-wrap">
+                <div><img src="/image/user.png" alt="usericon"></div>
+                <a href="#">개인정보 수정</a>
+            </div>
+            <div class="reserv-bar bar-wrap">
+                <div>
+                    <img src="/image/reserv.png" alt="usericon">
+                </div>
+                <a href="mypage_reservation.jsp">예약내역 확인</a>
+            </div>
+            <div class="wish-bar bar-wrap">
+                <div><img src="/image/full_wishlist.png" alt="usericon"></div>
+                <a href="#">찜 한 상품</a>
+            </div>
         </div>
-
-        <div class="card pw-card outlined">
-            <form id="pwForm" class="pw-form grid2" method="post" novalidate>
-                <!-- 현재 비밀번호 -->
-                <div class="row">
-                    <label for="currPw">현재 비밀번호</label>
-                    <div class="field">
-                        <div class="input-group">
-                            <input type="password" id="currPw" name="currPw" placeholder="현재 비밀번호를 입력하세요." required>
-                            <span class="input-icon">🔒</span>
-                            <div class="right-actions">
-                                <button type="button" class="link-toggle" data-target="currPw">표시</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 새 비밀번호 -->
-                <div class="row">
-                    <label for="newPw">새로운 비밀번호</label>
-                    <div class="field">
-                        <div class="input-group">
-                            <input type="password" id="newPw" name="newPw" placeholder="새로운 비밀번호를 입력하세요." required>
-                            <span class="input-icon">ℹ️</span>
-                            <div class="right-actions">
-                                <button type="button" class="link-toggle" data-target="newPw">표시</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 새 비밀번호 확인 -->
-                <div class="row">
-                    <label for="newPw2">비밀번호 확인</label>
-                    <div class="field">
-                        <div class="input-group">
-                            <input type="password" id="newPw2" name="newPw2" placeholder="확인을 위해 한 번 더 입력하세요." required>
-                            <span class="input-icon">✔️</span>
-                            <div class="right-actions">
-                                <button type="button" class="link-toggle" data-target="newPw2">표시</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 안내문 -->
-                <p class="hint">
-                    * 영문(대/소문자), 숫자, 특수문자 중 2가지 이상을 조합하여 <b>최소 10자리 이상</b> 또는<br>
-                    영문(대/소문자), 숫자, 특수문자 <b>3가지 조합 시 최소 8자리 이상</b>으로 사용하세요.
-                </p>
-
-                <!-- 버튼 -->
-                <div class="btn-wrap">
-                    <button type="submit" class="btn-primary">변경하기</button>
-                </div>
-            </form>
+        <div class="recently-reserv">
+            <div class="left-reserv">
+                <h3>최근 예약내역</h3>
+            </div>
+            <div class="right-reserv">
+                <a href="mypage_find-reserv.jsp">예약 찾기</a>
+                <a href="mypage_reservation.jsp">전체 보기</a>
+            </div>
+        </div>
+        <div class="recently-table">
+            <% if(recentReservations == null || recentReservations.isEmpty()) { %>
+            <p class="empty">최근 1개월 예약 내역이 없습니다.</p>
+            <% } else { %>
+            <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse; margin-top:10px;">
+                <thead>
+                <tr>
+                    <th>예약번호</th>
+                    <th>예약일</th>
+                    <th>상품명</th>
+                    <th>출발일</th>
+                    <th>인원</th>
+                    <th>총금액</th>
+                    <th>진행상황</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% for(Reservation r : recentReservations) { %>
+                <tr>
+                    <td><%= r.getId() %></td>
+                    <td><%= r.getOrderDate() %></td>
+                    <td><%= r.getName() %></td>
+                    <td><%= r.getDepartDate() %></td>
+                    <td><%= r.getPeople() %>명</td>
+                    <td><%= String.format("%,d", r.getTotalPrice()) %>원</td>
+                    <td><%= r.getStatus() %></td>
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+            <% } %>
+            <ol>
+                <li>[항공] 노랑풍선 비회원, 네이버, 카약, 스카이스캐너를 통해 예약하신 내역은 비회원 예약조회에서 확인이 가능합니다.</li>
+                <li>[항공] 지마켓, 11번가, 티몬, 위메프, SSG 등 제휴사에서 예약하신 예약내역은 해당 제휴사 마이페이지에서 확인 부탁드립니다.</li>
+                <li>해당 예약내역은 노랑풍선 페이지에서 확인이 불가능합니다.</li>
+            </ol>
         </div>
     </div>
 </div>
@@ -74,43 +86,22 @@
 <%@ include file="../footer.jsp" %>
 
 <script>
-    // 메뉴 열고 닫기 + 서브 메뉴 active (이미 있으면 생략 가능)
-    document.querySelectorAll(".menu-item").forEach(item=>{
-        const title=item.querySelector(".menu-title");
-        const submenu=item.querySelector(".submenu");
-        if(title && submenu){
-            title.addEventListener("click",()=>submenu.classList.toggle("open"));
-            submenu.querySelectorAll("a").forEach(a=>{
-                a.addEventListener("click",e=>{
-                    submenu.querySelectorAll("a").forEach(x=>x.classList.remove("active"));
-                    e.target.classList.add("active");
-                });
-            });
-        }
-    });
+    // 메뉴 열고 닫기 + 서브 메뉴 active
+    document.querySelectorAll(".menu-item").forEach(item => {
+        const title = item.querySelector(".menu-title");
+        const submenu = item.querySelector(".submenu");
 
-    // 비밀번호 표시/숨김
-    document.querySelectorAll(".link-toggle").forEach(btn=>{
-        btn.addEventListener("click",()=>{
-            const id = btn.dataset.target;
-            const ipt = document.getElementById(id);
-            ipt.type = (ipt.type === "password") ? "text" : "password";
-            btn.textContent = (ipt.type === "password") ? "표시" : "숨김";
+        title.addEventListener("click", () => {
+            submenu.classList.toggle("open");
+        });
+
+        submenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", (e) => {
+                submenu.querySelectorAll("a").forEach(a => a.classList.remove("active"));
+                e.target.classList.add("active");
+            });
         });
     });
 
-    // 간단 유효성 검사
-    const currPw = document.getElementById("currPw");
-    const newPw  = document.getElementById("newPw");
-    const newPw2 = document.getElementById("newPw2");
-    document.getElementById("pwForm").addEventListener("submit",(e)=>{
-        const c = currPw.value.trim();
-        const n1 = newPw.value.trim();
-        const n2 = newPw2.value.trim();
-        const rule = /^(?=.*[A-Za-z])(?:(?=.*\d)(?=.*[^\w\s])|(?=.*\d)|(?=.*[^\w\s])).{8,}$/;
 
-        if(!c || !n1 || !n2){ alert("모든 항목을 입력하세요."); e.preventDefault(); return; }
-        if(n1.length < 8 || !rule.test(n1)){ alert("새 비밀번호 규칙을 확인하세요."); e.preventDefault(); return; }
-        if(n1 !== n2){ alert("새 비밀번호와 확인 값이 일치하지 않습니다."); e.preventDefault(); }
-    });
 </script>

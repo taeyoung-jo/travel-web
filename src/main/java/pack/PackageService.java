@@ -45,4 +45,13 @@ public class PackageService {
 
 		return result;
 	}
+
+	public Package getPackageById(int id) {
+		for (Package p : repo.getAllPackages()) {
+			if (p.getId() == id)  // int끼리 비교
+				return p;
+		}
+		return null;
+	}
+
 }
