@@ -19,7 +19,7 @@
 
 <h2>회원정보 수정</h2>
 <form action="${pageContext.request.contextPath}/users" method="post">
-    <input type="hidden" name="action" value="update">
+    <input type="hidden" name="action" value="updateUser">
     <label>이메일: <input type="text" name="email"></label><br>
     <label>이름: <input type="text" name="name"></label><br>
     <label>비밀번호: <input type="password" name="password"></label><br>
@@ -29,7 +29,7 @@
 <hr>
 
 <form action="${pageContext.request.contextPath}/users" method="post">
-    <input type="hidden" name="action" value="delete">
+    <input type="hidden" name="action" value="deleteUser">
     <button type="submit">회원탈퇴</button>
 </form>
 <hr>
