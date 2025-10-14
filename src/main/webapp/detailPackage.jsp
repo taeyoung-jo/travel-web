@@ -35,6 +35,11 @@
 <p>별점: <%= pkg.getRating() %> / 5</p>
 <img src="<%= pkg.getImageUrl() %>" alt="<%= pkg.getPackageName() %>">
 <% } %>
+<%-- 예약 버튼 --%>
+<form action="pakage-reservConfirm.jsp" method="get">
+    <input type="hidden" name="pkgId" value="<%= pkg.getId() %>">
+    <button type="submit">예약하기</button>
+</form>
 </body>
 </html>
 
