@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="../css/reservation_confirm.css" />
+<link rel="stylesheet" href="../css/reservation_confirm.css"/>
 
 <%@ include file="header.jsp" %>
 
@@ -89,37 +89,26 @@
                 </form>
             </div>
         </div>
-
-        <aside class="right-summary">
-            <table>
-                <tr><td>출발</td><td>2025.10.26 (일) 11:55</td></tr>
-                <tr><td>도착</td><td>2025.11.03 (월) 14:15</td></tr>
-                <tr>
-                    <td>교통</td>
-                    <td>대한항공 <img src="../image/airline.png" alt="항공사"></td>
-                </tr>
-                <tr><td>남은좌석</td><td>1석</td></tr>
-                <tr><td>성인 × 1명</td><td>3,090,000원</td></tr>
-                <tr><td>아동 × 0명</td><td>3,090,000원</td></tr>
-                <tr><td>유아 × 0명</td><td>540,200원</td></tr>
-                <tr><td>할인쿠폰</td><td>쿠폰 적용</td></tr>
-                <tr><td>쿠폰할인</td><td>-0원</td></tr>
-            </table>
-
-            <div class="total-section">
-                <div class="total-price">
-                    3,090,000 <small>원</small>
-                </div>
+        <div class="de-side-ba">
+            <div class="de-slide-1">
+                <div><p>출발</p>
+                    <p>2025.10.19 (일) 12:20</p></div>
+                <div><p>도착</p>
+                    <p>2025.10.27 (월) 14:40</p></div>
+                <div><p>교통</p>
+                    <p>아시아나항공</p></div>
             </div>
-
-            <div class="point-info">
-                (성인1인기준) 30,900 P 적립예정<br>
-                <a href="#">포인트 적립 안내</a>
+            <div class="de-slide-2">
+                <div><p>인원수</p>
+                    <p>2명</p></div>
             </div>
-
-            <button class="btn-primary">예약하기</button>
-        </aside>
-
+            <div class="de-price">3,090,000<span>원</span></div>
+            <div>
+                <form action="mypage/mypage_reservation_complete.jsp" method="get">
+                    <button class="de-button" type="submit">예약하기</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -1,4 +1,3 @@
-
 <%@ page import="pack.PackageService" %>
 <%@ page import="pack.Package" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -129,7 +128,7 @@
                 </div>
                 <div class="de-price"><%= String.format("%,.0f", pkg.getPrice()) %> <span>원</span></div>
                 <div>
-                    <form action="pakage-reservConfirm.jsp" method="get">
+                    <form action="reservation_confirm.jsp" method="get">
                         <input type="hidden" name="pkgId" value="<%= pkg.getId() %>">
                         <button class="de-button" type="submit">예약하기</button>
                     </form>
