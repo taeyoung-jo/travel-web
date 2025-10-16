@@ -106,9 +106,8 @@ public class UserService {
 			User user = userOpt.get();
 
 			// 비밀번호 검증 (DB 해시 vs 입력 평문)
-			if (PasswordUtil.check(password, user.getPassword())) {
+			if (PasswordUtil.check(password, user.getPassword()))
 				return Optional.of(user);
-			}
 		}
 
 		throw new CustomException(

@@ -1,12 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="<c:url value='/css/header.css'/>">
 
 <div class="in">
     <div class="sm_top">
-        <a href="login.jsp">로그인</a>
-        <a href="signup.jsp">회원가입</a>
+        <c:choose>
+            <c:when test="${not empty sessionScope.loginUser}">
+                <span>${sessionScope.loginUser.name}님 환영합니다!</span>
+                <a href="${pageContext.request.contextPath}/users?action=logout" class="logout-btn">로그아웃</a>
+            </c:when>
+            <c:otherwise>
+                <a href="${pageContext.request.contextPath}/users?action=login" class="login-btn">로그인</a>
+            </c:otherwise>
+        </c:choose>
+        <a href="<c:url value='/user/signup.jsp'/>">회원가입</a>
         <a href="<c:url value='/mypage_reservation.jsp'/>">예약확인/결제</a>
     </div>
     <div class="header-top">
