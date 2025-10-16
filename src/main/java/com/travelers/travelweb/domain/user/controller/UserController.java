@@ -49,6 +49,9 @@ public class UserController extends HttpServlet {
 			case "resetPasswordForm":
 				req.getRequestDispatcher("/WEB-INF/views/user/resetPasswordTest.jsp").forward(req, resp);
 				break;
+            case "testUser":  // 새 액션 이름 // test용 추가
+                testUser(req, resp);
+                break;
 		}
 	}
 
@@ -108,8 +111,23 @@ public class UserController extends HttpServlet {
 		req.setAttribute("loginUser", userResp);
 		req.getRequestDispatcher("/WEB-INF/views/user/showMyInfoTest.jsp").forward(req, resp);
 	}
+//    test용 추가
+private void testUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    User user = userService.getById(4L).orElse(null);
 
-	private void register(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+    if (user == null) {
+        System.out.println("서비스에서 사용자 조회 실패");
+        resp.getWriter().println("사용자 정보가 없습니다.");
+        return;
+    }
+
+    System.out.println("서비스에서 사용자 조회 성공: " + user.getEmail());
+    req.setAttribute("user", user);
+    req.getRequestDispatcher("/WEB-INF/views/user/userTest.jsp").forward(req, resp);
+}
+
+
+    private void register(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		User user = User.builder()
 			.email(req.getParameter("email"))
 			.name(req.getParameter("name"))
