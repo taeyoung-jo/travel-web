@@ -42,38 +42,23 @@ public class JdbcUserRepository implements UserRepository {
 
 	@Override
 	public Optional<User> findById(Long id) {
-        String sql = "SELECT * FROM users WHERE id = ? AND deleted_at IS NULL";
-        try (Connection conn = DBConnection.open();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setLong(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    System.out.println("DB 조회 성공: " + rs.getString("email")); // <- 로그 추가
-                    return Optional.of(mapRow(rs));
-                } else {
-                    System.out.println("DB 조회 실패: id=" + id); // <- 로그 추가
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return Optional.empty();
-//		String sql = "SELECT * FROM users WHERE id = ? AND deleted_at IS NULL";
-//		try (Connection conn = DBConnection.open();
-//			 PreparedStatement ps = conn.prepareStatement(sql)) {
-//			ps.setLong(1, id);
-//			try (ResultSet rs = ps.executeQuery()) {
-//				if (rs.next())
-//					return Optional.of(mapRow(rs));
-//			}
-//		} catch (SQLException e) {
-//			throw new CustomException(
-//				"회원 조회(id) 중 오류가 발생했습니다.",
-//				"[DB Error] findById 실패: " + e.getMessage(),
-//				500
-//			);
-//		}
-//		return Optional.empty();
+
+		String sql = "SELECT * FROM users WHERE id = ? AND deleted_at IS NULL";
+		try (Connection conn = DBConnection.open();
+			 PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setLong(1, id);
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next())
+					return Optional.of(mapRow(rs));
+			}
+		} catch (SQLException e) {
+			throw new CustomException(
+				"회원 조회(id) 중 오류가 발생했습니다.",
+				"[DB Error] findById 실패: " + e.getMessage(),
+				500
+			);
+		}
+		return Optional.empty();
 	}
 
 	@Override
