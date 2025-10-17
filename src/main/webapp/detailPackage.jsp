@@ -114,15 +114,15 @@
                     <div><p>출발</p>
                         <p>2025.10.19 (일) 12:20</p></div>
                     <div><p>도착</p>
-                        <p>2025.10.27 (월) 14:40</p></div>
+                        <p>2025.10.21 (화) 14:40</p></div>
                     <div><p>교통</p>
-                        <p>아시아나항공</p></div>
+                        <p>대한항공</p></div>
                 </div>
                 <div class="de-slide-2">
                     <div><p>인원수</p>
                         <div class="counter">
                             <button class="minus">-</button>
-                            <span class="num" id="adultCount">0</span>
+                            <span class="num" id="adultCount">1</span>
                             <button class="plus">+</button>
                         </div>
                     </div>

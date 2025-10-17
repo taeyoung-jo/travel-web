@@ -38,8 +38,8 @@
                 <h3>최근 예약내역</h3>
             </div>
             <div class="right-reserv">
-                <a href="mypage_find-reserv.jsp">예약 찾기</a>
-                <a href="mypage_reservation.jsp">전체 보기</a>
+                <a href="/mypage_find-reserv.jsp">예약 찾기</a>
+                <a href="/mypage_reservation.jsp">전체 보기</a>
             </div>
         </div>
         <div class="recently-table">

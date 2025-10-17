@@ -49,9 +49,6 @@ public class UserController extends HttpServlet {
 			case "resetPasswordForm":
 				req.getRequestDispatcher("/WEB-INF/views/user/resetPasswordTest.jsp").forward(req, resp);
 				break;
-            case "testUser":  // 새 액션 이름 // test용 추가
-                testUser(req, resp);
-                break;
 		}
 	}
 
